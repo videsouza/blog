@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinicius A.</title>
+    <title>VINICIVS</title>
     <style>
         * {
             margin: 0;
@@ -237,9 +237,20 @@
             color: var(--text-primary);
         }
 
+        .sidebar-list a.active {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
         .count {
             color: var(--text-secondary);
             font-size: 0.85rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
         }
 
         footer {
@@ -313,7 +324,7 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="index.html" class="logo">Vinícius</a>
+            <a href="index.html" class="logo">Vinicius</a>
             <button class="menu-toggle" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -332,98 +343,178 @@
 
     <div class="container">
         <main class="main-content">
-            <div class="posts-grid">
-                <!-- Post 1 -->
-                <article class="post-card">
-                    <div class="post-thumbnail">
-                        <img src="https://via.placeholder.com/400x300/e8e8e8/666?text=Capa" alt="Capa do texto">
-                    </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span class="post-date">15 Nov 2024</span>
-                            <span class="post-category">Ficção</span>
-                        </div>
-                        <h2 class="post-title">O Silêncio das Palavras Não Ditas</h2>
-                        <p class="post-excerpt">Uma reflexão profunda sobre aquilo que guardamos dentro de nós, as palavras que nunca encontraram voz e os sentimentos que permanecem suspensos no ar.</p>
-                        <a href="post-exemplo.html" class="read-more">Ler texto</a>
-                    </div>
-                </article>
-
-                <!-- Post 2 -->
-                <article class="post-card">
-                    <div class="post-thumbnail">
-                        <img src="https://via.placeholder.com/400x300/e8e8e8/666?text=Capa" alt="Capa do texto">
-                    </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span class="post-date">02 Nov 2024</span>
-                            <span class="post-category">Ensaio</span>
-                        </div>
-                        <h2 class="post-title">Memórias de Uma Cidade Esquecida</h2>
-                        <p class="post-excerpt">As ruas vazias guardam histórias que ninguém mais conta. Um ensaio sobre o tempo e o esquecimento nas pequenas cidades do interior.</p>
-                        <a href="post-exemplo.html" class="read-more">Ler texto</a>
-                    </div>
-                </article>
-
-                <!-- Post 3 -->
-                <article class="post-card">
-                    <div class="post-thumbnail">
-                        <img src="https://via.placeholder.com/400x300/e8e8e8/666?text=Capa" alt="Capa do texto">
-                    </div>
-                    <div class="post-content">
-                        <div class="post-meta">
-                            <span class="post-date">20 Out 2024</span>
-                            <span class="post-category">Poesia</span>
-                        </div>
-                        <h2 class="post-title">Fragmentos do Cotidiano</h2>
-                        <p class="post-excerpt">Pequenos poemas sobre os momentos que passam despercebidos, as belezas ocultas nas coisas simples e ordinárias do dia a dia.</p>
-                        <a href="post-exemplo.html" class="read-more">Ler texto</a>
-                    </div>
-                </article>
+            <div class="posts-grid" id="postsGrid">
+                <div class="loading">Carregando posts...</div>
             </div>
         </main>
 
         <aside class="sidebar">
             <div class="sidebar-section">
                 <h3 class="sidebar-title">Temas</h3>
-                <ul class="sidebar-list">
-                    <li><a href="#"><span>Ficção</span><span class="count">8</span></a></li>
-                    <li><a href="#"><span>Ensaio</span><span class="count">5</span></a></li>
-                    <li><a href="#"><span>Poesia</span><span class="count">12</span></a></li>
-                    <li><a href="#"><span>Crônica</span><span class="count">6</span></a></li>
-                    <li><a href="#"><span>Reflexões</span><span class="count">9</span></a></li>
+                <ul class="sidebar-list" id="categoriesList">
+                    <li><a href="#" onclick="filterByCategory('all')"><span>Todos</span><span class="count" id="count-all">0</span></a></li>
                 </ul>
             </div>
 
             <div class="sidebar-section">
                 <h3 class="sidebar-title">Arquivo</h3>
-                <ul class="sidebar-list">
-                    <li><a href="#"><span>2024</span><span class="count">15</span></a></li>
-                    <li><a href="#"><span>2023</span><span class="count">22</span></a></li>
-                    <li><a href="#"><span>2022</span><span class="count">18</span></a></li>
+                <ul class="sidebar-list" id="archiveList">
                 </ul>
             </div>
         </aside>
     </div>
 
     <footer>
-        <p>&copy; 2025 Vinícius A. de Souza. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
     </footer>
 
     <script>
+        let allPosts = [];
+        let currentFilter = { type: null, value: null };
+
+        // Carregar posts do JSON
+        async function loadPosts() {
+            try {
+                const response = await fetch('posts.json');
+                allPosts = await response.json();
+                
+                // Ordenar por data (mais recente primeiro)
+                allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                renderPosts(allPosts);
+                buildSidebar(allPosts);
+            } catch (error) {
+                console.error('Erro ao carregar posts:', error);
+                document.getElementById('postsGrid').innerHTML = '<div class="loading">Erro ao carregar posts.</div>';
+            }
+        }
+
+        // Renderizar posts
+        function renderPosts(posts) {
+            const grid = document.getElementById('postsGrid');
+            
+            if (posts.length === 0) {
+                grid.innerHTML = '<div class="loading">Nenhum post encontrado.</div>';
+                return;
+            }
+            
+            grid.innerHTML = posts.map(post => `
+                <article class="post-card">
+                    <div class="post-thumbnail">
+                        <img src="${post.thumbnail || 'https://via.placeholder.com/400x300/e8e8e8/666?text=Capa'}" alt="${post.title}">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">${formatDate(post.date)}</span>
+                            <span class="post-category">${post.category}</span>
+                        </div>
+                        <h2 class="post-title">${post.title}</h2>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                        <a href="${post.url}" class="read-more">Ler texto</a>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Construir sidebar
+        function buildSidebar(posts) {
+            // Contar categorias
+            const categories = {};
+            const years = {};
+            
+            posts.forEach(post => {
+                categories[post.category] = (categories[post.category] || 0) + 1;
+                
+                const year = new Date(post.date).getFullYear();
+                years[year] = (years[year] || 0) + 1;
+            });
+
+            // Renderizar categorias
+            const categoriesList = document.getElementById('categoriesList');
+            document.getElementById('count-all').textContent = posts.length;
+            
+            Object.entries(categories)
+                .sort(([a], [b]) => a.localeCompare(b))
+                .forEach(([cat, count]) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="#" onclick="filterByCategory('${cat}'); return false;"><span>${cat}</span><span class="count">${count}</span></a>`;
+                    categoriesList.appendChild(li);
+                });
+
+            // Renderizar anos
+            const archiveList = document.getElementById('archiveList');
+            Object.entries(years)
+                .sort(([a], [b]) => b - a)
+                .forEach(([year, count]) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="#" onclick="filterByYear('${year}'); return false;"><span>${year}</span><span class="count">${count}</span></a>`;
+                    archiveList.appendChild(li);
+                });
+        }
+
+        // Filtrar por categoria
+        function filterByCategory(category) {
+            currentFilter = { type: 'category', value: category };
+            updateActiveFilter();
+            
+            if (category === 'all') {
+                renderPosts(allPosts);
+            } else {
+                const filtered = allPosts.filter(post => post.category === category);
+                renderPosts(filtered);
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Filtrar por ano
+        function filterByYear(year) {
+            currentFilter = { type: 'year', value: year };
+            updateActiveFilter();
+            
+            const filtered = allPosts.filter(post => {
+                return new Date(post.date).getFullYear() === parseInt(year);
+            });
+            renderPosts(filtered);
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Atualizar destaque do filtro ativo
+        function updateActiveFilter() {
+            document.querySelectorAll('.sidebar-list a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            if (currentFilter.type) {
+                const activeLink = Array.from(document.querySelectorAll('.sidebar-list a'))
+                    .find(link => link.textContent.includes(currentFilter.value));
+                if (activeLink) activeLink.classList.add('active');
+            }
+        }
+
+        // Formatar data
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const day = date.getDate().toString().padStart(2, '0');
+            const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+            const month = months[date.getMonth()];
+            const year = date.getFullYear();
+            return `${day} ${month} ${year}`;
+        }
+
+        // Menu mobile
         function toggleMenu() {
             const nav = document.getElementById('nav');
             nav.classList.toggle('active');
         }
 
-        // Fechar menu ao clicar em um link (mobile)
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('nav').classList.remove('active');
             });
         });
 
-        // Fechar menu ao clicar fora (mobile)
         document.addEventListener('click', (e) => {
             const nav = document.getElementById('nav');
             const toggle = document.querySelector('.menu-toggle');
@@ -431,6 +522,9 @@
                 nav.classList.remove('active');
             }
         });
+
+        // Carregar posts ao iniciar
+        loadPosts();
     </script>
 </body>
 </html>
