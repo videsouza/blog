@@ -1,21 +1,42 @@
 [
   {
-    "title": "Nada seria belo",
-    "excerpt": "Há amores que embelezam o mundo. Este fala de um amor que faz mais: que cria o mundo, que funda o sentido de tudo.",
-    "date": "2025-12-05",
-    "category": "Poesia",
-    "thumbnail": "images/thumbs/nada-seria-belo.png",
-    "url": "posts/2025/12/nada-seria-belo.html"
+    "type": "ai",
+    "title": "Cidade Cyberpunk ao Entardecer",
+    "prompt": "A futuristic cyberpunk city at sunset, neon lights reflecting on wet streets, flying cars, towering skyscrapers with holographic advertisements",
+    "date": "2024-12-05",
+    "image": "images/ai/cyberpunk-city.jpg",
+    "aiModel": "Midjourney v6",
+    "url": "ai-images/2024/12/cyberpunk-city.html"
   },
   {
-    "title": "Busco",
-    "excerpt": "Ser ou não ser: eis a questão.",
-    "date": "2025-12-09",
-    "category": "Poesia",
-    "thumbnail": "images/thumbs/busco-thumb.png",
-    "url": "posts/2025/12/busco.html"
+    "type": "text",
+    "title": "O Silêncio das Palavras Não Ditas",
+    "excerpt": "Uma reflexão profunda sobre aquilo que guardamos dentro de nós, as palavras que nunca encontraram voz e os sentimentos que permanecem suspensos no ar.",
+    "date": "2024-11-15",
+    "category": "Ficção",
+    "thumbnail": "images/capas/silencio-palavras.jpg",
+    "url": "posts/2024/11/silencio-palavras.html"
   },
   {
+    "type": "ai",
+    "title": "Portal Dimensional na Floresta",
+    "prompt": "A mystical glowing portal in the middle of an ancient forest, ethereal blue light, particles floating, surrounded by twisted ancient trees",
+    "date": "2024-11-10",
+    "image": "images/ai/portal-forest.jpg",
+    "aiModel": "DALL-E 3",
+    "url": "ai-images/2024/11/portal-forest.html"
+  },
+  {
+    "type": "text",
+    "title": "Memórias de Uma Cidade Esquecida",
+    "excerpt": "As ruas vazias guardam histórias que ninguém mais conta. Um ensaio sobre o tempo e o esquecimento nas pequenas cidades do interior.",
+    "date": "2024-11-02",
+    "category": "Ensaio",
+    "thumbnail": "images/capas/cidade-esquecida.jpg",
+    "url": "posts/2024/11/cidade-esquecida.html"
+  },
+  {
+    "type": "text",
     "title": "Fragmentos do Cotidiano",
     "excerpt": "Pequenos poemas sobre os momentos que passam despercebidos, as belezas ocultas nas coisas simples e ordinárias do dia a dia.",
     "date": "2024-10-20",
@@ -24,14 +45,34 @@
     "url": "posts/2024/10/fragmentos.html"
   },
   {
+    "type": "ai",
+    "title": "Astronauta Solitário",
+    "prompt": "An astronaut floating alone in deep space, Earth visible in the distance, nebula clouds, stars, sense of isolation and wonder",
+    "date": "2024-10-15",
+    "image": "images/ai/astronaut-space.jpg",
+    "aiModel": "Stable Diffusion XL",
+    "url": "ai-images/2024/10/astronaut-space.html"
+  },
+  {
+    "type": "text",
     "title": "O Peso das Escolhas",
     "excerpt": "Cada decisão que tomamos carrega consigo um universo de possibilidades não realizadas. Uma reflexão sobre livre arbítrio e destino.",
     "date": "2024-09-08",
-    "category": "Ensaio",
+    "category": "Reflexões",
     "thumbnail": "images/capas/peso-escolhas.jpg",
     "url": "posts/2024/09/peso-escolhas.html"
   },
   {
+    "type": "ai",
+    "title": "Jardim Bioluminescente",
+    "prompt": "A magical bioluminescent garden at night, glowing flowers and plants in purple and blue, fireflies, mystical atmosphere, fantasy landscape",
+    "date": "2024-08-30",
+    "image": "images/ai/bio-garden.jpg",
+    "aiModel": "Midjourney v6",
+    "url": "ai-images/2024/08/bio-garden.html"
+  },
+  {
+    "type": "text",
     "title": "Diálogos com a Noite",
     "excerpt": "Quando o dia termina, a noite nos convida para conversas que só acontecem no silêncio. Um conto sobre insônia e revelações.",
     "date": "2024-08-25",
@@ -40,6 +81,7 @@
     "url": "posts/2024/08/dialogos-noite.html"
   },
   {
+    "type": "text",
     "title": "A Arte de Observar",
     "excerpt": "Vivemos em um mundo que se move rápido demais. Um ensaio sobre a importância de pausar e realmente ver o que está ao nosso redor.",
     "date": "2023-12-10",
@@ -48,6 +90,7 @@
     "url": "posts/2023/12/arte-observar.html"
   },
   {
+    "type": "text",
     "title": "Cartas Nunca Enviadas",
     "excerpt": "Uma coletânea de cartas escritas mas nunca entregues, endereçadas a pessoas reais e imaginárias, presentes e ausentes.",
     "date": "2023-11-15",
