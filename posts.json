@@ -24,35 +24,12 @@
     "url": "posts/2025/12/transito.html"
   },
   {
-    "title": "O Peso das Escolhas",
-    "excerpt": "Cada decisão que tomamos carrega consigo um universo de possibilidades não realizadas. Uma reflexão sobre livre arbítrio e destino.",
-    "date": "2024-09-08",
-    "category": "Reflexões",
-    "thumbnail": "images/capas/peso-escolhas.jpg",
-    "url": "posts/2024/09/peso-escolhas.html"
-  },
-  {
-    "title": "Diálogos com a Noite",
-    "excerpt": "Quando o dia termina, a noite nos convida para conversas que só acontecem no silêncio. Um conto sobre insônia e revelações.",
-    "date": "2024-08-25",
-    "category": "Ficção",
-    "thumbnail": "images/capas/dialogos-noite.jpg",
-    "url": "posts/2024/08/dialogos-noite.html"
-  },
-  {
-    "title": "A Arte de Observar",
-    "excerpt": "Vivemos em um mundo que se move rápido demais. Um ensaio sobre a importância de pausar e realmente ver o que está ao nosso redor.",
-    "date": "2023-12-10",
-    "category": "Ensaio",
-    "thumbnail": "images/capas/arte-observar.jpg",
-    "url": "posts/2023/12/arte-observar.html"
-  },
-  {
-    "title": "Cartas Nunca Enviadas",
-    "excerpt": "Uma coletânea de cartas escritas mas nunca entregues, endereçadas a pessoas reais e imaginárias, presentes e ausentes.",
-    "date": "2023-11-15",
-    "category": "Crônica",
-    "thumbnail": "images/capas/cartas.jpg",
-    "url": "posts/2023/11/cartas-nunca-enviadas.html"
+    "title": "Espaço-tempo",
+    "excerpt": "Um poema sobre a presença que transfigura o tempo e habita o silêncio. Nos fios de cabelo e na voz amada, o efêmero se dobra em permanência.",
+    "date": "2025-12-11",
+    "category": "Poesia",
+    "thumbnail": "images/capas/espaco-tempo-thumb.png",
+    "url": "posts/2025/12/espaco-tempo.html"
   }
+ 
 ]
