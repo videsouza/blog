@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VINICIVS AVGVSTVS</title>
+    <title>VINICIVS</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,6 @@
             --accent: #2a2a2a;
             --border: #e0e0e0;
             --hover: #f0f0f0;
-            --ai-accent: #4a90e2;
         }
 
         body {
@@ -112,7 +111,6 @@
             margin-top: 2rem;
         }
 
-        /* Card de Texto */
         .post-card {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
@@ -120,7 +118,6 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            position: relative;
         }
 
         .post-card:hover {
@@ -136,7 +133,6 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            position: relative;
         }
 
         .post-thumbnail img {
@@ -159,25 +155,11 @@
             font-size: 0.8rem;
             color: var(--text-secondary);
             font-family: 'Arial', sans-serif;
-            flex-wrap: wrap;
         }
 
-        .post-date, .post-category, .post-type-badge {
+        .post-date, .post-category {
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-
-        .post-type-badge {
-            background: var(--accent);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 3px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        .post-type-badge.ai {
-            background: var(--ai-accent);
         }
 
         .post-title {
@@ -210,108 +192,6 @@
 
         .read-more:hover {
             background: var(--text-primary);
-        }
-
-        /* Card de Imagem IA - Design diferenciado */
-        .ai-card {
-            background: var(--bg-secondary);
-            border: 2px solid var(--ai-accent);
-            transition: all 0.3s ease;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .ai-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(74, 144, 226, 0.15);
-            border-color: var(--text-primary);
-        }
-
-        .ai-image-container {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .ai-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .ai-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--ai-accent);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: 'Arial', sans-serif;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .ai-content {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .ai-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            font-weight: 400;
-            line-height: 1.4;
-            color: var(--text-primary);
-        }
-
-        .ai-prompt {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-            flex: 1;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .ai-meta {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            font-family: 'Arial', sans-serif;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .view-full {
-            display: inline-block;
-            padding: 0.6rem 1.5rem;
-            background: var(--ai-accent);
-            color: white;
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            font-family: 'Arial', sans-serif;
-            align-self: flex-start;
-        }
-
-        .view-full:hover {
-            background: #357abd;
         }
 
         .sidebar {
@@ -438,10 +318,6 @@
             .container {
                 padding: 2rem 1rem;
             }
-
-            .ai-image-container {
-                height: 300px;
-            }
         }
     </style>
 </head>
@@ -474,17 +350,9 @@
 
         <aside class="sidebar">
             <div class="sidebar-section">
-                <h3 class="sidebar-title">Tipo</h3>
-                <ul class="sidebar-list">
-                    <li><a href="#" onclick="filterByType('all'); return false;"><span>Todos</span><span class="count" id="count-all">0</span></a></li>
-                    <li><a href="#" onclick="filterByType('text'); return false;"><span>Textos</span><span class="count" id="count-text">0</span></a></li>
-                    <li><a href="#" onclick="filterByType('ai'); return false;"><span>Imagens IA</span><span class="count" id="count-ai">0</span></a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
                 <h3 class="sidebar-title">Temas</h3>
                 <ul class="sidebar-list" id="categoriesList">
+                    <li><a href="#" onclick="filterByCategory('all')"><span>Todos</span><span class="count" id="count-all">0</span></a></li>
                 </ul>
             </div>
 
@@ -504,11 +372,13 @@
         let allPosts = [];
         let currentFilter = { type: null, value: null };
 
+        // Carregar posts do JSON
         async function loadPosts() {
             try {
                 const response = await fetch('posts.json');
                 allPosts = await response.json();
                 
+                // Ordenar por data (mais recente primeiro)
                 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
                 
                 renderPosts(allPosts);
@@ -519,6 +389,7 @@
             }
         }
 
+        // Renderizar posts
         function renderPosts(posts) {
             const grid = document.getElementById('postsGrid');
             
@@ -527,24 +398,13 @@
                 return;
             }
             
-            grid.innerHTML = posts.map(post => {
-                if (post.type === 'ai') {
-                    return renderAICard(post);
-                } else {
-                    return renderTextCard(post);
-                }
-            }).join('');
-        }
-
-        function renderTextCard(post) {
-            return `
+            grid.innerHTML = posts.map(post => `
                 <article class="post-card">
                     <div class="post-thumbnail">
                         <img src="${post.thumbnail || 'https://via.placeholder.com/400x300/e8e8e8/666?text=Capa'}" alt="${post.title}">
                     </div>
                     <div class="post-content">
                         <div class="post-meta">
-                            <span class="post-type-badge">Texto</span>
                             <span class="post-date">${formatDate(post.date)}</span>
                             <span class="post-category">${post.category}</span>
                         </div>
@@ -553,52 +413,26 @@
                         <a href="${post.url}" class="read-more">Ler texto</a>
                     </div>
                 </article>
-            `;
+            `).join('');
         }
 
-        function renderAICard(post) {
-            return `
-                <article class="ai-card">
-                    <div class="ai-image-container">
-                        <img src="${post.image}" alt="${post.title}">
-                        <div class="ai-badge">✨ IA</div>
-                    </div>
-                    <div class="ai-content">
-                        <h2 class="ai-title">${post.title}</h2>
-                        <p class="ai-prompt">"${post.prompt}"</p>
-                        <div class="ai-meta">
-                            <span>${formatDate(post.date)}</span>
-                            <span>${post.aiModel || 'IA Generativa'}</span>
-                        </div>
-                        <a href="${post.url}" class="view-full" style="margin-top: 1rem;">Ver completo</a>
-                    </div>
-                </article>
-            `;
-        }
-
+        // Construir sidebar
         function buildSidebar(posts) {
+            // Contar categorias
             const categories = {};
             const years = {};
-            const types = { text: 0, ai: 0 };
             
             posts.forEach(post => {
-                const postType = post.type || 'text';
-                types[postType]++;
-                
-                if (post.category) {
-                    categories[post.category] = (categories[post.category] || 0) + 1;
-                }
+                categories[post.category] = (categories[post.category] || 0) + 1;
                 
                 const year = new Date(post.date).getFullYear();
                 years[year] = (years[year] || 0) + 1;
             });
 
-            document.getElementById('count-all').textContent = posts.length;
-            document.getElementById('count-text').textContent = types.text;
-            document.getElementById('count-ai').textContent = types.ai;
-
+            // Renderizar categorias
             const categoriesList = document.getElementById('categoriesList');
-            categoriesList.innerHTML = '';
+            document.getElementById('count-all').textContent = posts.length;
+            
             Object.entries(categories)
                 .sort(([a], [b]) => a.localeCompare(b))
                 .forEach(([cat, count]) => {
@@ -607,8 +441,8 @@
                     categoriesList.appendChild(li);
                 });
 
+            // Renderizar anos
             const archiveList = document.getElementById('archiveList');
-            archiveList.innerHTML = '';
             Object.entries(years)
                 .sort(([a], [b]) => b - a)
                 .forEach(([year, count]) => {
@@ -618,30 +452,22 @@
                 });
         }
 
-        function filterByType(type) {
-            currentFilter = { type: 'contentType', value: type };
+        // Filtrar por categoria
+        function filterByCategory(category) {
+            currentFilter = { type: 'category', value: category };
             updateActiveFilter();
             
-            if (type === 'all') {
+            if (category === 'all') {
                 renderPosts(allPosts);
             } else {
-                const filtered = allPosts.filter(post => (post.type || 'text') === type);
+                const filtered = allPosts.filter(post => post.category === category);
                 renderPosts(filtered);
             }
             
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function filterByCategory(category) {
-            currentFilter = { type: 'category', value: category };
-            updateActiveFilter();
-            
-            const filtered = allPosts.filter(post => post.category === category);
-            renderPosts(filtered);
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
+        // Filtrar por ano
         function filterByYear(year) {
             currentFilter = { type: 'year', value: year };
             updateActiveFilter();
@@ -654,6 +480,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Atualizar destaque do filtro ativo
         function updateActiveFilter() {
             document.querySelectorAll('.sidebar-list a').forEach(link => {
                 link.classList.remove('active');
@@ -666,6 +493,7 @@
             }
         }
 
+        // Formatar data
         function formatDate(dateString) {
             const date = new Date(dateString);
             const day = date.getDate().toString().padStart(2, '0');
@@ -675,6 +503,7 @@
             return `${day} ${month} ${year}`;
         }
 
+        // Menu mobile
         function toggleMenu() {
             const nav = document.getElementById('nav');
             nav.classList.toggle('active');
@@ -694,6 +523,7 @@
             }
         });
 
+        // Carregar posts ao iniciar
         loadPosts();
     </script>
 </body>
