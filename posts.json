@@ -2,7 +2,7 @@
     {
     "title": "Espaço-tempo",
     "excerpt": "Um poema sobre a presença que transfigura o tempo e habita o silêncio. Nos fios de cabelo e na voz amada, o efêmero se dobra em permanência.",
-    "date": "2025-12-07",
+    "date": "2025-12-08",
     "category": "Poesia",
     "thumbnail": "images/thumbs/espaco-tempo-thumb.png",
     "url": "posts/2025/12/espaco-tempo.html"
@@ -11,10 +11,19 @@
   {
     "title": "Atravesso",
     "excerpt": "Quando o trânsito vira procissão de velas e o observador descobre-se suspenso entre ir e voltar, incapaz de distinguir o próprio movimento.",
-    "date": "2025-12-05",
+    "date": "2025-12-06",
     "category": "Poesia",
     "thumbnail": "images/thumbs/transito-thumb.png",
     "url": "posts/2025/12/transito.html"
+  },
+
+    {
+    "title": "Busco",
+    "excerpt": "Uma coletânea de cartas escritas mas nunca entregues, endereçadas a pessoas reais e imaginárias, presentes e ausentes.",
+    "date": "2025-12-04",
+    "category": "Poesia",
+    "thumbnail": "images/thumbs/busco-thumb.png",
+    "url": "posts/2025/12/busco.html"
   },
   
   {
