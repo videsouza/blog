@@ -68,44 +68,55 @@ nav a:hover {
 }
 
 /* Lista de Posts (Home) */
+/* Lista de Posts (Home) - Centralizado e Restaurado */
 .post-list {
     list-style: none;
-    text-align: center; /* Centraliza tudo dentro da lista */
+    text-align: center; /* Centraliza tudo */
 }
 
 .post-item {
-    margin-bottom: 4rem; /* Aumentei um pouco o espaço para dar mais respiro */
+    margin-bottom: 4rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(0,0,0,0.03); /* Linha divisória muito sutil (opcional) */
+    border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 
-/* Remove a linha divisória do último item para não ficar estranho */
 .post-item:last-child {
     border-bottom: none;
 }
 
 .post-date {
-    display: inline-block; /* Necessário para centralizar corretamente junto com a categoria */
+    display: inline-block;
     font-size: 0.85rem;
     color: var(--accent-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-family: var(--font-heading);
     font-style: italic;
 }
 
 .post-title {
     font-family: var(--font-heading);
-    font-size: 2.2rem; /* Levemente maior para dar destaque */
+    font-size: 2.2rem;
     line-height: 1.2;
     margin-bottom: 1rem;
+}
+
+/* AQUI ESTÁ A CORREÇÃO DO DESIGN */
+.post-title a {
+    text-decoration: none; /* Remove o sublinhado padrão feio */
+    color: var(--text-color); /* Garante a cor cinza chumbo */
+    border-bottom: 1px solid transparent; /* Prepara a animação */
+    transition: border-bottom 0.3s ease;
+}
+
+.post-title a:hover {
+    border-bottom: 1px solid var(--text-color); /* Sublinhado fino ao passar o mouse */
 }
 
 .post-excerpt {
     color: var(--accent-color);
     margin-top: 0.5rem;
-    /* Truque para textos centralizados não ficarem cansativos de ler: */
-    max-width: 600px; 
-    margin-left: auto; 
+    max-width: 600px; /* Garante que o texto não estique demais */
+    margin-left: auto;
     margin-right: auto;
 }
 
