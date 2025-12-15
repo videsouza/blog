@@ -1,418 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VINICIVS</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f8f8;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666;
-            --accent: #2a2a2a;
-            --border: #e0e0e0;
-            --hover: #f0f0f0;
-        }
-
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        header {
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-            font-family: 'Arial', sans-serif;
-        }
-
-        nav a:hover {
-            color: var(--text-primary);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text-primary);
-            margin: 5px 0;
-            transition: 0.3s;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            transition: color 0.3s;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .back-link:hover {
-            color: var(--text-primary);
-        }
-
-        .post-container {
-            max-width: 800px;
-        }
-
-        .post-header {
-            margin-bottom: 3rem;
-        }
-
-        .post-meta {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-family: 'Arial', sans-serif;
-        }
-
-        .post-date, .post-category {
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .post-title {
-            font-size: 2.5rem;
-            font-weight: 400;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-        }
-
-        .post-cover {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            margin: 2rem 0 3rem;
-            border: 1px solid var(--border);
-        }
-
-        .post-body {
-            font-size: 1.1rem;
-            line-height: 1.9;
-        }
-
-        .post-body p {
-            margin-bottom: 1.5rem;
-        }
-
-        .post-body h2 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin: 2.5rem 0 1rem;
-        }
-
-        .post-body h3 {
-            font-size: 1.4rem;
-            font-weight: 400;
-            margin: 2rem 0 1rem;
-        }
-
-        .post-body blockquote {
-            border-left: 3px solid var(--accent);
-            padding-left: 2rem;
-            margin: 2rem 0;
-            font-style: italic;
-            color: var(--text-secondary);
-        }
-
-        .post-body ul, .post-body ol {
-            margin: 1.5rem 0 1.5rem 2rem;
-        }
-
-        .post-body li {
-            margin-bottom: 0.75rem;
-        }
-
-        .post-footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .share-section {
-            margin-top: 2rem;
-        }
-
-        .share-title {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-            font-family: 'Arial', sans-serif;
-        }
-
-        .share-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .share-button {
-            padding: 0.6rem 1.2rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .share-button:hover {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            margin-top: 4rem;
-            padding: 2rem;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-family: 'Arial', sans-serif;
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                padding: 1rem;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 80%;
-                height: 100vh;
-                background: var(--bg-primary);
-                padding: 5rem 2rem 2rem;
-                transition: left 0.3s;
-                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-            }
-
-            nav.active {
-                left: 0;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .container {
-                padding: 2rem 1rem;
-            }
-
-            .post-title {
-                font-size: 2rem;
-            }
-
-            .post-body {
-                font-size: 1.05rem;
-            }
-
-            .share-buttons {
-                flex-wrap: wrap;
-            }
-        }
-    </style>
+    <title>A Elegância do Essencial | Seu Nome</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="https://videsouza.github.io/blog/" class="logo">VINICIVS</a>
-            <button class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav id="nav">
-                <ul>
-                    <li><a href="https://videsouza.github.io/blog/">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#livros">Livros</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
     <div class="container">
-        <a href="https://videsouza.github.io/blog/" class="back-link">
-            ← Voltar para o início
-        </a>
+        <header>
+            <h1><a href="index.html">Seu Nome</a></h1>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </nav>
+        </header>
 
-        <article class="post-container">
-            <header class="post-header">
-                <div class="post-meta">
-                    <span class="post-date">12 Dec 2025</span>
-                    <span class="post-category">Estudo</span>
+        <main>
+            <article>
+                <header class="article-header">
+                    <h1>A Elegância do Essencial</h1>
+                    <div class="article-meta">14 de Dezembro, 2025</div>
+                </header>
+
+                <div class="article-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. O minimalismo não é apenas a ausência de elementos, mas a presença perfeita do que é necessário. Em um mundo de ruído constante, o silêncio visual torna-se um luxo.</p>
+
+                    <h2>Um Subtítulo Clássico</h2>
+                    
+                    <p>Ao utilizarmos tipografia serifada, evocamos a autoridade dos livros impressos. O contraste entre o antigo e o novo cria uma estética atemporal.</p>
+
+                    <p>Escrever para a web não precisa ser caótico. Pode ser uma experiência calma, focada na palavra e no leitor.</p>
                 </div>
-                <h1 class="post-title">Dicas para o estudo de matemática</h1>
-            </header>
+            </article>
 
-            <img src="../../../images/capas/estudar-matematica-capa.png" alt="Capa" class="post-cover">
-
-            <div class="post-body">
-                <p>Estudar matemática de forma eficiente requer organização, prática consistente e estratégias adequadas de aprendizado. 
-                  Este guia apresenta recomendações essenciais — acompanhadas de exemplos práticos — para ajudá-lo a desenvolver suas 
-                  habilidades matemáticas de modo mais sólido e confiante.</p>
-              <p> 
-              1. Entenda os conceitos fundamentais: Antes de avançar para tópicos mais complexos, certifique-se de que domina bem os conceitos básicos. Se tiver dificuldades, 
-              revise com calma e tente explicar a ideia com suas próprias palavras — isso reforça o entendimento.
-              Exemplo prático: Antes de aprender funções quadráticas, revise o que é uma função, domínio, imagem e gráficos simples. 
-              Se uma definição estiver confusa, tente reescrevê-la com um exemplo do cotidiano, como relacionar “tempo de uso” com “carga da bateria do celular”.
-              </p>
-
-              <p>
-               2. Dê atenção especial às demonstrações matemáticas: As demonstrações são o coração da matemática. Ao estudá-las, garanta que cada passo faça sentido e que você compreenda a lógica envolvida.
-              Exemplo prático: Ao ler a demonstração de que a soma de dois números pares é sempre par, substitua símbolos por exemplos concretos. 
-              Se temos 2k e 2m (onde k e m são inteiros), a soma é 2k + 2m = 2(k + m). Verifique com números reais: 4 + 8 = 12, que é 2(6).
-              Dica extra: Reescreva a demonstração com suas próprias palavras, como se estivesse explicando para um amigo que não conhece o tema.
-                </p>
-
-                <p>
-                3. Faça muitos exercícios práticos, variando os níveis de dificuldade e resolvendo problemas que desafiem sua compreensão.
-                </p>
-
-                <p>
-                    4. Varie os métodos de resolução: Sempre que possível, tente resolver o mesmo exercício de formas diferentes. Isso aprofunda sua compreensão e desenvolve flexibilidade mental.
-                    Exemplo: Um sistema linear pode ser resolvido por: - Método da substituição: Isolar uma variável - Método da adição: Eliminar variáveis somando equações - Método matricial: 
-                    Usar matriz inversa ou escalonamento - Método gráfico: Encontrar o ponto de interseção. Você verá que cada método revela aspectos diferentes do problema.
-                </p>
-                
-            </div>
-
-            <footer class="post-footer">
-                <a href="https://videsouza.github.io/blog/" class="back-link">← Voltar para o início</a>
-                
-                <div class="share-section">
-                    <h3 class="share-title">Compartilhar</h3>
-                    <div class="share-buttons">
-                        <a href="#" class="share-button">Twitter</a>
-                        <a href="#" class="share-button">Facebook</a>
-                        <a href="#" class="share-button">WhatsApp</a>
-                    </div>
-                </div>
-            </footer>
-        </article>
-    </div>
-
- <div class="container">
-        <main class="main-content">
-            <div class="posts-grid" id="postsGrid">
-                <div class="loading">Carregando posts...</div>
-            </div>
+            <a href="index.html" class="back-link" title="Voltar ao início">❧</a>
         </main>
 
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Temas</h3>
-                <ul class="sidebar-list" id="categoriesList">
-                    <li><a href="#" onclick="filterByCategory('all')"><span>Todos</span><span class="count" id="count-all">0</span></a></li>
-                </ul>
-            </div>
+        <footer>
+            <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+        </footer>
+    </div>
 
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Arquivo</h3>
-                <ul class="sidebar-list" id="archiveList">
-                </ul>
-            </div>
-        </aside>
- </div>
-    
-    <footer>
-        <p>&copy; 2025 Vinícius de Souza. Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const nav = document.getElementById('nav');
-            nav.classList.toggle('active');
-        }
-
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('nav').classList.remove('active');
-            });
-        });
-
-        document.addEventListener('click', (e) => {
-            const nav = document.getElementById('nav');
-            const toggle = document.querySelector('.menu-toggle');
-            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
-                nav.classList.remove('active');
-            }
-        });
-    </script>
 </body>
 </html>
