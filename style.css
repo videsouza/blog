@@ -70,42 +70,43 @@ nav a:hover {
 /* Lista de Posts (Home) */
 .post-list {
     list-style: none;
+    text-align: center; /* Centraliza tudo dentro da lista */
 }
 
 .post-item {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem; /* Aumentei um pouco o espaço para dar mais respiro */
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.03); /* Linha divisória muito sutil (opcional) */
+}
+
+/* Remove a linha divisória do último item para não ficar estranho */
+.post-item:last-child {
+    border-bottom: none;
 }
 
 .post-date {
-    display: block;
+    display: inline-block; /* Necessário para centralizar corretamente junto com a categoria */
     font-size: 0.85rem;
     color: var(--accent-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-family: var(--font-heading);
     font-style: italic;
 }
 
 .post-title {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.2rem; /* Levemente maior para dar destaque */
     line-height: 1.2;
-    margin-bottom: 0.5rem;
-}
-
-.post-title a {
-    text-decoration: none;
-    color: var(--text-color);
-    border-bottom: 1px solid transparent;
-    transition: border-bottom 0.3s ease;
-}
-
-.post-title a:hover {
-    border-bottom: 1px solid var(--text-color);
+    margin-bottom: 1rem;
 }
 
 .post-excerpt {
     color: var(--accent-color);
     margin-top: 0.5rem;
+    /* Truque para textos centralizados não ficarem cansativos de ler: */
+    max-width: 600px; 
+    margin-left: auto; 
+    margin-right: auto;
 }
 
 /* Página do Artigo Individual */
