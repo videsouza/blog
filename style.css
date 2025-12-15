@@ -205,6 +205,61 @@ footer {
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+/* --- Página Sobre (Novo) --- */
+
+.about-grid {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start; /* Alinha ao topo */
+    margin-top: 2rem;
+}
+
+.about-img {
+    flex: 0 0 250px; /* Largura fixa da imagem */
+    max-width: 100%;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px; /* Canto levemente arredondado */
+    filter: grayscale(100%); /* Deixa a foto preto e branco (clássico) */
+    transition: filter 0.5s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-img img:hover {
+    filter: grayscale(0%); /* Volta a cor quando passa o mouse */
+}
+
+.about-text {
+    flex: 1; /* O texto ocupa o resto do espaço */
+}
+
+.about-text h2 {
+    font-family: var(--font-heading);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Ajuste para Celular */
+@media (max-width: 650px) {
+    .about-grid {
+        flex-direction: column; /* Empilha um em cima do outro */
+        align-items: center;
+    }
+
+    .about-img {
+        flex: 0 0 auto;
+        width: 200px;
+        margin-bottom: 2rem;
+    }
+}
+
 .hide {
     display: none;
 }
