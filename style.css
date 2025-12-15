@@ -322,3 +322,28 @@ footer {
     margin: 0 auto 3rem auto;
     color: var(--accent-color);
 }
+
+/* --- Imagem de Destaque no Post --- */
+
+.featured-image {
+    margin: 2rem 0 3rem 0; /* Espaço em cima e embaixo */
+    text-align: center;
+    width: 100%;
+}
+
+.featured-image img {
+    max-width: 100%; /* Garante que não ultrapasse a largura da tela */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* Sombra suave e luxuosa */
+    border-radius: 2px; /* Canto minimamente arredondado */
+}
+
+.featured-image figcaption {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-top: 0.8rem;
+    font-style: italic;
+}
