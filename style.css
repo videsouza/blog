@@ -1,161 +1,48 @@
-/* style.css */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Proza+Libre:wght@400;500&display=swap');
+/* --- Sistema de Filtros (Novo) --- */
 
-:root {
-    --bg-color: #faf9f6; /* Off-white, cor de papel antigo */
-    --text-color: #2c2c2c; /* Cinza chumbo, mais suave que preto puro */
-    --accent-color: #585858; /* Cinza para meta-dados */
-    --link-color: #000000;
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Proza Libre', sans-serif;
-    --max-width: 720px;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+.filter-menu {
+    text-align: center;
+    margin-bottom: 3rem;
     font-family: var(--font-body);
-    line-height: 1.8;
-    font-size: 18px;
-    padding: 2rem;
-}
-
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-}
-
-/* Header Minimalista */
-header {
-    text-align: center;
-    margin-bottom: 4rem;
-    padding-top: 2rem;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding-bottom: 2rem;
-}
-
-header h1 a {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    text-decoration: none;
-    color: var(--text-color);
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-nav {
-    margin-top: 1rem;
-}
-
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: var(--accent-color);
     font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: var(--link-color);
-}
-
-/* Lista de Posts (Home) */
-.post-list {
-    list-style: none;
-}
-
-.post-item {
-    margin-bottom: 3rem;
-}
-
-.post-date {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
-    font-family: var(--font-heading);
-    font-style: italic;
-}
-
-.post-title {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-}
-
-.post-title a {
-    text-decoration: none;
-    color: var(--text-color);
     border-bottom: 1px solid transparent;
-    transition: border-bottom 0.3s ease;
 }
 
-.post-title a:hover {
-    border-bottom: 1px solid var(--text-color);
+.filter-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--accent-color); /* Cinza claro */
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
 }
 
-.post-excerpt {
-    color: var(--accent-color);
-    margin-top: 0.5rem;
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--text-color); /* Fica escuro quando selecionado */
+    border-bottom: 1px solid var(--text-color); /* Sublinhado elegante */
 }
 
-/* Página do Artigo Individual */
-article {
-    margin-bottom: 4rem;
+/* Pequena tag de categoria dentro do post */
+.post-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 10px;
+    color: var(--text-color);
+    border: 1px solid #ddd;
+    padding: 2px 6px;
+    border-radius: 2px;
 }
 
-article h1 {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
-    text-align: center;
+/* Animação suave ao filtrar */
+.post-item {
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.article-meta {
-    text-align: center;
-    color: var(--accent-color);
-    font-family: var(--font-heading);
-    font-style: italic;
-    margin-bottom: 3rem;
-}
-
-.article-content p {
-    margin-bottom: 1.5rem;
-    text-align: justify; /* Opcional: Para um visual de livro */
-}
-
-.article-content h2 {
-    font-family: var(--font-heading);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-}
-
-.back-link {
-    display: block;
-    margin-top: 3rem;
-    text-align: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: var(--accent-color);
-}
-
-/* Footer Simples */
-footer {
-    text-align: center;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    font-size: 0.8rem;
-    color: var(--accent-color);
+.hide {
+    display: none;
 }
