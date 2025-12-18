@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor H. de Souza | Portfólio & Escritos</title>
+    <style>
+        :root {
+            --bg-color: #f3f2ef; /* Cor de fundo estilo LinkedIn */
+            --card-bg: #ffffff;
+            --primary-text: #191919;
+            --secondary-text: #666666;
+            --accent-color: #0a66c2; /* Azul LinkedIn clássico ou pode trocar por preto para ser mais minimalista */
+            --border-radius: 10px;
+            --spacing: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Cartão de Perfil (Topo) */
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .cover-photo {
+            height: 200px;
+            background: linear-gradient(135deg, #1e1e1e, #434343); /* Pode substituir por uma imagem */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .profile-header {
+            padding: 0 var(--spacing) var(--spacing);
+            position: relative;
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--card-bg);
+            background-color: #ddd;
+            margin-top: -100px; /* Sobe a foto para cima da capa */
+            margin-bottom: 15px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.02);
+        }
+
+        .name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .headline {
+            color: var(--secondary-text);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #004182;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--secondary-text);
+            border: 1px solid #666;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(0,0,0,0.05);
+            border-color: #333;
+            color: #333;
+        }
+
+        /* Navegação (Abas) */
+        .nav-tabs {
+            display: flex;
+            background: var(--card-bg);
+            margin-top: 10px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--secondary-text);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab:hover {
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        .tab.active {
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        /* Áreas de Conteúdo */
+        .content-section {
+            display: none; /* Esconde todas por padrão */
+            animation: fadeIn 0.4s ease;
+        }
+
+        .content-section.active {
+            display: block; /* Mostra a ativa */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards de Conteúdo (Sobre, Artigos, Poesias) */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing);
+            margin-top: 10px;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-text);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        /* Estilo para Poesias */
+        .poetry-card {
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: 15px;
+            padding-left: 15px;
+        }
+
+        .poetry-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .poetry-date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .poetry-content {
+            font-family: "Georgia", serif; /* Fonte serifada para poesia */
+            font-style: italic;
+            white-space: pre-line; /* Respeita as quebras de linha */
+            color: #333;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .profile-pic {
+                width: 130px;
+                height: 130px;
+                margin-top: -65px;
+            }
+            .name {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="profile-card">
+            <div class="cover-photo"></div>
+            
+            <div class="profile-header">
+                <img src="https://github.com/vihdesouza.png" alt="Victor H. de Souza" class="profile-pic">
+                
+                <h1 class="name">Victor H. de Souza</h1>
+                <p class="headline">Desenvolvedor | Entusiasta de Tecnologia | Poeta nas horas vagas</p>
+                
+                <div class="location">
+                    <span>📍 São Paulo, Brasil</span> &nbsp; • &nbsp; 
+                    <a href="#" style="color:var(--accent-color); text-decoration:none;">Informações de contato</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/vihdesouza/" target="_blank" class="btn btn-primary">Conectar no LinkedIn</a>
+                    <a href="https://github.com/vihdesouza" target="_blank" class="btn btn-outline">GitHub</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav-tabs">
+            <div class="tab active" onclick="openTab('sobre')">Sobre</div>
+            <div class="tab" onclick="openTab('poesias')">Escritos & Poesias</div>
+        </nav>
+
+        <main id="sobre" class="content-section active">
+            <div class="card">
+                <h2 class="section-title">Sobre</h2>
+                <p>
+                    Olá! Sou Victor. Aqui é onde você pode escrever um resumo profissional sobre você, similar ao "Resumo" do LinkedIn.
+                    Fale sobre sua experiência técnica, seus objetivos e o que te motiva.
+                </p>
+                <p>
+                    A ideia deste site é manter a simplicidade, focando no que realmente importa: o conteúdo e a apresentação elegante.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2 class="section-title">Experiência</h2>
+                <div style="margin-bottom: 20px;">
+                    <h3 style="font-size: 1rem;">Desenvolvedor Full Stack</h3>
+                    <span style="color: #666; font-size: 0.9rem;">Empresa X • 2023 - Presente</span>
+                    <p style="margin-top: 5px; font-size: 0.95rem;">Descrição breve das atividades realizadas.</p>
+                </div>
+                </div>
+        </main>
+
+        <section id="poesias" class="content-section">
+            <div class="card">
+                <h2 class="section-title">Publicações Recentes</h2>
+                
+                <article class="poetry-card">
+                    <h3 class="poetry-title">O Código e o Verso</h3>
+                    <span class="poetry-date">18 de Dezembro de 2025</span>
+                    <div class="poetry-content">
+Entre chaves e colchetes, a lógica impera,
+Mas é no espaço em branco que a alma espera.
+Compilei meus sonhos em binário frio,
+Mas foi na poesia que encontrei o rio.
+
+Que flui sem sintaxe, sem erro fatal,
+Apenas a vida, em loop natural.
+                    </div>
+                </article>
+
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+                <article class="poetry-card">
+                    <h3 class="poetry-title">Reflexão sobre Minimalismo</h3>
+                    <span class="poetry-date">10 de Dezembro de 2025</span>
+                    <div class="poetry-content">
+O minimalismo não é sobre a ausência de coisas, mas sobre a evidência do que importa. 
+No design, no código e na vida: menos ruído, mais sinal.
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            // Esconde todas as seções
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Remove classe active de todas as abas
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Ativa a seção e a aba clicada
+            document.getElementById(tabName).classList.add('active');
+            
+            // Encontra a aba que foi clicada (baseado no texto ou índice seria mais complexo, 
+            // aqui vamos simplificar pegando pelo evento se fosse passado, mas vamos iterar)
+            // Maneira simples:
+            const clickedTab = Array.from(tabs).find(t => t.getAttribute('onclick').includes(tabName));
+            if(clickedTab) clickedTab.classList.add('active');
+        }
+    </script>
+</body>
+</html>
