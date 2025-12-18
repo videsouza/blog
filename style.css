@@ -375,3 +375,42 @@ audio {
     height: 35px;
     outline: none;
 }
+
+/* --- Design Específico para Poemas --- */
+
+.poem-container {
+    max-width: 500px; /* Mais estreito que o texto normal para criar moldura branca */
+    margin: 0 auto 3rem auto; /* Centraliza o bloco na tela */
+    text-align: center; /* Centraliza os versos (estilo clássico) */
+}
+
+.poem-content {
+    font-family: var(--font-heading); /* Usa a fonte Serifada do título */
+    font-size: 1.5rem; /* Letra um pouco maior para destaque */
+    line-height: 1.6;
+    color: var(--text-color);
+    font-style: italic; /* Opcional: dá um tom mais lírico */
+}
+
+/* Espaço entre estrofes */
+.poem-content p {
+    margin-bottom: 2.5rem; 
+}
+
+/* Opcional: Primeira letra da primeira estrofe maior (Capitular) */
+.poem-content p:first-of-type::first-letter {
+    font-size: 3.5rem;
+    float: none; /* Em layout centralizado, float não funciona bem, então usamos tamanho puro */
+    line-height: 0.8;
+    vertical-align: -5px;
+    margin-right: 2px;
+}
+
+/* Separador ornamental (opcional, fica lindo em poemas) */
+.poem-separator {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin: 2rem 0;
+    font-family: var(--font-heading);
+}
