@@ -414,3 +414,32 @@ audio {
     margin: 2rem 0;
     font-family: var(--font-heading);
 }
+
+/* --- Estilo de Links no Texto --- */
+
+/* Aplica apenas dentro do conteúdo do artigo para não quebrar menus */
+.article-content a {
+    text-decoration: none; /* Remove o sublinhado padrão feio */
+    color: var(--text-color);
+    font-weight: 500; /* Um pouquinho mais grosso que o texto normal */
+    
+    /* A mágica da linha inferior */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); 
+    padding-bottom: 1px;
+    
+    /* Prepara a animação */
+    transition: all 0.3s ease-in-out;
+}
+
+.article-content a:hover {
+    background-color: #eaddcf; /* Um tom "papel envelhecido" muito suave, ou use #e0e0e0 para cinza */
+    border-bottom-color: transparent; /* A linha some para dar lugar ao fundo */
+    color: #000;
+    
+    /* Pequeno truque para o fundo não ficar colado na letra */
+    padding: 2px 4px; 
+    border-radius: 3px;
+    
+    /* Compensa o padding para o texto não "pular" de lugar */
+    margin: 0 -4px; 
+}
