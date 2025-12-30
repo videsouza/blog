@@ -1,195 +1,248 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>2026 — Estrutura Matemática</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    :root{
-      --bg:#f6f7f9;
-      --card:#ffffff;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --accent:#374151;
-      --border:#e5e7eb;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.65;
-    }
-    header{
-      max-width:1100px;
-      margin:3rem auto 2.5rem;
-      padding:0 1.5rem;
-      text-align:center;
-    }
-    header h1{
-      margin:0;
-      font-size:3rem;
-      font-weight:600;
-      color:var(--accent);
-      letter-spacing:.02em;
-    }
-    header p{
-      margin:1.2rem auto 0;
-      max-width:760px;
-      color:var(--muted);
-      font-size:1.1rem;
-    }
-    main{
-      max-width:1100px;
-      margin:0 auto 4rem;
-      padding:0 1.5rem;
-    }
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:1.8rem;
-    }
-    section{
-      background:var(--card);
-      border-radius:14px;
-      padding:1.6rem 1.8rem;
-      border:1px solid var(--border);
-    }
-    section h2{
-      margin-top:0;
-      font-size:1.35rem;
-      font-weight:600;
-      color:var(--accent);
-      border-bottom:1px solid var(--border);
-      padding-bottom:.4rem;
-    }
-    .math{
-      background:#f3f4f6;
-      border-radius:8px;
-      padding:.75rem 1rem;
-      margin:1rem 0;
-      font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
-      font-size:.95rem;
-      color:#111827;
-    }
-    .highlight{
-      font-weight:600;
-      color:#111827;
-    }
-    footer{
-      max-width:1100px;
-      margin:4rem auto 2rem;
-      padding:0 1.5rem;
-      text-align:center;
-      color:var(--muted);
-      font-size:.9rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>2026 — Estrutura Matemática</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- MathJax para LaTeX -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+:root {
+  --bg: #f6f7f8;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+}
+
+main {
+  max-width: 920px;
+  margin: auto;
+  padding: 60px 24px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 60px;
+  font-size: 1.1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 30px;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.card p {
+  line-height: 1.65;
+  margin: 12px 0;
+}
+
+.math {
+  background: #fafafa;
+  border-left: 4px solid #d1d5db;
+  padding: 14px 18px;
+  margin: 18px 0;
+  border-radius: 6px;
+  font-size: 1.05rem;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 80px;
+}
+</style>
 </head>
+
 <body>
-
-<header>
-  <h1>2026</h1>
-  <p>
-    Saiba tudo sobre <strong>2026</strong> e inicie o ano com o pé direito.
-  </p>
-</header>
-
 <main>
-  <div class="cards">
 
-    <section>
-      <h2>Semiprimo</h2>
-      <p>
-        O número 2026 é composto por exatamente dois números primos distintos.
-      </p>
-      <div class="math">2026 = 2 × 1013</div>
-      <p>
-        O fator 1013 é primo, conforme verificação por divisores até
-        √1013 ≈ 31,8.
-      </p>
-    </section>
+<h1>2026</h1>
+<p class="subtitle">
+Saiba tudo sobre 2026 e comece o ano com o pé direito.
+</p>
 
-    <section>
-      <h2>Quadrado Perfeito + 1</h2>
-      <p>
-        2026 é o sucessor imediato de um quadrado perfeito.
-      </p>
-      <div class="math">2026 = 45² + 1</div>
-      <p>
-        Geometricamente, representa um arranjo quadrado completo acrescido
-        de um único ponto excedente.
-      </p>
-    </section>
+<!-- Card 1 -->
+<div class="card">
+<h2>1. Fatoração e Classificação</h2>
+<p>
+O número 2026 não é primo, mas possui exatamente dois fatores primos distintos.
+</p>
+<div class="math">
+$$2026 = 2 \times 1013$$
+</div>
+<p>
+Como possui apenas dois fatores primos, ele é classificado como um
+<strong>número semiprimo</strong> (ou biprimo).
+</p>
+</div>
 
-    <section>
-      <h2>Soma de 4 Inteiros Consecutivos</h2>
-      <div class="math">2026 = 505 + 506 + 507 + 508</div>
-      <p>
-        Forma geral: n + (n+1) + (n+2) + (n+3), com n = 505.
-      </p>
-    </section>
+<!-- Card 2 -->
+<div class="card">
+<h2>2. Quadrado Perfeito + 1</h2>
+<p>
+2026 é o sucessor imediato de um quadrado perfeito:
+</p>
+<div class="math">
+$$2026 = 45^2 + 1$$
+</div>
+<p>
+O ano anterior, 2025, é um quadrado perfeito — um evento raro no calendário.
+</p>
+</div>
 
-    <section>
-      <h2>Número Deficiente</h2>
-      <div class="math">
-        Divisores próprios: 1, 2, 1013<br>
-        Soma = 1016 &lt; 2026
-      </div>
-      <p>
-        A soma dos divisores próprios é menor que o próprio número.
-      </p>
-    </section>
+<!-- Card 3 -->
+<div class="card">
+<h2>3. Soma de Quatro Inteiros Consecutivos</h2>
+<div class="math">
+$$2026 = 505 + 506 + 507 + 508$$
+</div>
+<p>
+Essa decomposição revela a simetria aritmética do número em progressões simples.
+</p>
+</div>
 
-    <section>
-      <h2>Livre de Quadrados (Square-free)</h2>
-      <div class="math">2026 = 2¹ × 1013¹</div>
-      <p>
-        Nenhum fator primo aparece elevado ao quadrado.
-      </p>
-    </section>
+<!-- Card 4 -->
+<div class="card">
+<h2>4. Número Deficiente</h2>
+<p>
+A soma de seus divisores próprios é menor que o próprio número:
+</p>
+<div class="math">
+$$1 + 2 + 1013 = 1016 < 2026$$
+</div>
+<p>
+Portanto, 2026 é um <strong>número deficiente</strong>.
+</p>
+</div>
 
-    <section>
-      <h2>Representação Binária</h2>
-      <div class="math">11111101010₂</div>
-      <p>
-        Possui oito dígitos "1"; portanto, trata-se de um
-        <span class="highlight">Número Maligno (Evil Number)</span>.
-      </p>
-    </section>
+<!-- Card 5 -->
+<div class="card">
+<h2>5. Livre de Quadrados</h2>
+<p>
+Nenhum fator primo de 2026 aparece elevado ao quadrado.
+</p>
+<div class="math">
+$$2026 = 2^1 \times 1013^1$$
+</div>
+<p>
+Isso o torna um número <em>square-free</em>.
+</p>
+</div>
 
-    <section>
-      <h2>Soma de Primos Consecutivos</h2>
-      <div class="math">
-        101 + 103 + 107 + 109 + 113 + 127 + 131 + 137 +<br>
-        139 + 149 + 151 + 157 + 163 + 167 + 173 + 179 = 2026
-      </div>
-      <p>
-        Soma exata de <strong>16 números primos consecutivos</strong>.
-      </p>
-    </section>
+<!-- Card 6 -->
+<div class="card">
+<h2>6. Representação Binária</h2>
+<div class="math">
+$$2026_{10} = 11111101010_2$$
+</div>
+<p>
+O número possui oito dígitos “1” em binário, quantidade par — portanto é um
+<strong>Evil Number</strong>.
+</p>
+</div>
 
-    <section>
-      <h2>Estrutura Pitagórica</h2>
-      <p>
-        Por ser da forma n² + 1, o número 2026 pode atuar como hipotenusa
-        de um triângulo retângulo com lados inteiros.
-      </p>
-      <div class="math">
-        n = 45<br>
-        Catetos: 2n = 90, n² − 1 = 2024<br>
-        Hipotenusa: 2026
-      </div>
-      <div class="math">90² + 2024² = 2026²</div>
-    </section>
+<!-- Card 7 -->
+<div class="card">
+<h2>7. Soma de Primos Consecutivos</h2>
+<p>
+2026 pode ser escrito como a soma exata de
+<strong>16 números primos consecutivos</strong>,
+iniciando em 101.
+</p>
+<p class="note">
+Essa propriedade conecta o número a uma progressão discreta altamente estruturada.
+</p>
+</div>
 
-  </div>
-</main>
+<!-- Card 8 -->
+<div class="card">
+<h2>8. Interpretação Geométrica (Triângulo Pitagórico)</h2>
+<p>
+Por ser da forma $n^2 + 1$, o número 2026 é a hipotenusa de um triângulo retângulo
+com lados inteiros.
+</p>
+<div class="math">
+\[
+\begin{aligned}
+\text{Hipotenusa} &= n^2 + 1 \\
+\text{Catetos} &= 2n \quad \text{e} \quad n^2 - 1
+\end{aligned}
+\]
+</div>
+<p>
+Para $n = 45$, temos um triângulo pitagórico perfeito.
+</p>
+</div>
+
+<!-- Card 9 -->
+<div class="card">
+<h2>9. O Loop Infinito — Fração Contínua</h2>
+<p>
+A raiz quadrada de números da forma $n^2 + 1$ gera uma fração contínua
+extremamente regular.
+</p>
+<div class="math">
+$$
+\sqrt{2026} = 45 +
+\cfrac{1}{90 +
+\cfrac{1}{90 +
+\cfrac{1}{90 +
+\cfrac{1}{\ddots}}}}
+$$
+</div>
+<p>
+Diferente da maioria das raízes quadradas, cuja expansão é caótica,
+a de 2026 apresenta um <strong>monólogo infinito do número 90</strong>.
+</p>
+<p class="note">
+Essa repetição cria um efeito hipnótico e raro na teoria das frações contínuas.
+</p>
+</div>
 
 <footer>
- Por Vinicius de Souza com ChatGPT e Gemini.
+Por Vinicius de Souza com ChatGPT e Gemini.
 </footer>
 
+</main>
 </body>
 </html>
