@@ -123,127 +123,89 @@
 
 <main>
 
-  <!-- FATORAÇÃO -->
+   <!-- SOMA DE PRIMOS CONSECUTIVOS -->
   <section>
-    <h2>1. Fatoração e Classificação</h2>
+    <h2>7. Soma de Primos em Progressão</h2>
     <p>
-      O número <span class="highlight">2026</span> é um <strong>semiprimo</strong>,
-      pois é composto por exatamente dois números primos distintos.
+      O número <span class="highlight">2026</span> possui uma propriedade rara:
+      ele pode ser escrito como a soma exata de
+      <strong>16 números primos consecutivos</strong>,
+      iniciando em 101.
     </p>
+
     <div class="math">
-      2026 = 2 × 1013
+      101 + 103 + 107 + 109 + 113 + 127 + 131 + 137<br>
+      + 139 + 149 + 151 + 157 + 163 + 167 + 173 + 179 = 2026
     </div>
+
     <p>
-      Como termina em 6, é divisível por 2:
+      Observações matemáticas importantes:
+      <ul>
+        <li>Todos os termos são primos consecutivos;</li>
+        <li>O número de termos (16) é par;</li>
+        <li>A soma preserva uma simetria aritmética notável.</li>
+      </ul>
     </p>
-    <div class="math">
-      2026 ÷ 2 = 1013
-    </div>
-    <p>
-      Testando divisores primos até √1013 ≈ 31,8, concluímos que <strong>1013 é primo</strong>.
+
+    <p style="font-size:.9rem;color:var(--muted)">
+      Representações desse tipo são estudadas na teoria aditiva dos números
+      e são relativamente raras para valores específicos.
     </p>
   </section>
 
-  <!-- QUADRADO + 1 -->
+  <!-- INTERPRETAÇÃO PITAGÓRICA -->
   <section>
-    <h2>2. Quadrado Perfeito + 1</h2>
+    <h2>8. Estrutura Pitagórica (n² + 1)</h2>
     <p>
-      Esta é a propriedade geométrica mais expressiva de 2026.
+      Por ser da forma
+      <strong>n² + 1</strong>, o número 2026 pode ser interpretado
+      geometricamente como a <strong>hipotenusa de um triângulo retângulo
+      com lados inteiros</strong>.
+    </p>
+
+    <p>
+      Como vimos:
     </p>
     <div class="math">
       2026 = 45² + 1
     </div>
+
     <p>
-      O número anterior, 2025, forma um quadrado perfeito <strong>45 × 45</strong>.
-      O 2026 é esse quadrado com <strong>um único ponto excedente</strong>.
+      Para números dessa forma, existe sempre um triângulo pitagórico:
     </p>
 
-    <p><em>Visualização conceitual:</em></p>
-    <div class="grid">
-      <!-- 45x45 é simbólico; aqui mostramos uma versão reduzida -->
-      <!-- 99 células regulares -->
-      <script>
-        for(let i=0;i<99;i++){
-          document.write('<div class="cell"></div>');
-        }
-        document.write('<div class="cell extra"></div>');
-      </script>
+    <div class="math">
+      Hipotenusa: n² + 1 = 2026<br>
+      Cateto 1: 2n = 90<br>
+      Cateto 2: n² − 1 = 2024
     </div>
+
+    <p>
+      Verificação:
+    </p>
+    <div class="math">
+      90² + 2024² = 8100 + 4 096 576 = 4 104 676<br>
+      √4 104 676 = 2026
+    </div>
+
+    <p>
+      Portanto, o triângulo retângulo:
+    </p>
+    <div class="math">
+      (90, 2024, 2026)
+    </div>
+
+    <p>
+      é um <span class="highlight">triângulo pitagórico primitivo não reduzido</span>,
+      diretamente associado à estrutura quadrática do número.
+    </p>
+
     <p style="font-size:.9rem;color:var(--muted)">
-      Quadrado + 1 ponto fora da simetria.
+      Geometricamente, isso conecta 2026 à tradição clássica da aritmética grega,
+      onde números eram compreendidos como formas.
     </p>
   </section>
 
-  <!-- SOMA CONSECUTIVOS -->
-  <section>
-    <h2>3. Soma de 4 Inteiros Consecutivos</h2>
-    <p>
-      O número 2026 pode ser escrito como soma de quatro números consecutivos.
-    </p>
-    <div class="math">
-      2026 = 505 + 506 + 507 + 508
-    </div>
-    <p>
-      Demonstração:
-    </p>
-    <div class="math">
-      n + (n+1) + (n+2) + (n+3) = 4n + 6 = 2026<br>
-      4n = 2020 → n = 505
-    </div>
-  </section>
-
-  <!-- DEFICIENTE -->
-  <section>
-    <h2>4. Número Deficiente</h2>
-    <p>
-      A soma dos divisores próprios de 2026 é menor que ele mesmo.
-    </p>
-    <div class="math">
-      Divisores: {1, 2, 1013, 2026}<br>
-      Divisores próprios: 1 + 2 + 1013 = 1016
-    </div>
-    <p>
-      Como <strong>1016 &lt; 2026</strong>, ele é classificado como
-      <span class="highlight">número deficiente</span>.
-    </p>
-  </section>
-
-  <!-- SQUARE-FREE -->
-  <section>
-    <h2>5. Livre de Quadrados (Square-free)</h2>
-    <p>
-      Nenhum fator primo aparece elevado ao quadrado.
-    </p>
-    <div class="math">
-      2026 = 2¹ × 1013¹
-    </div>
-    <p>
-      Consequências:
-      <ul>
-        <li>μ(2026) = +1</li>
-        <li>Estrutura multiplicativa simples</li>
-        <li>Ausência de camadas repetidas</li>
-      </ul>
-    </p>
-  </section>
-
-  <!-- BINÁRIO -->
-  <section>
-    <h2>6. Representação Binária</h2>
-    <p>
-      Em base 2:
-    </p>
-    <div class="math">
-      2026 = 11111101010₂
-    </div>
-    <p>
-      Há <strong>8 dígitos “1”</strong>.
-      Como 8 é par, 2026 é um <span class="highlight">Número Maligno (Evil Number)</span>.
-    </p>
-    <p style="font-size:.9rem;color:var(--muted)">
-      Na teoria dos números, “maligno” significa apenas paridade binária.
-    </p>
-  </section>
 
 </main>
 
