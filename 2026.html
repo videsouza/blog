@@ -1,288 +1,256 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudo o que você precisa saber sobre 2026</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <meta charset="UTF-8">
+  <title>2026 — Estrutura Matemática e Geométrica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121a33;
+      --accent: #4da3ff;
+      --accent2: #7cf2c2;
+      --text: #e8ecff;
+      --muted: #aab0d6;
+    }
 
-    <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #475569;
-            --accent: #ef4444;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1e293b;
-        }
+    * { box-sizing: border-box; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top, #162050, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
 
-        header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+    header h1 {
+      font-size: 3.2rem;
+      margin: 0;
+      color: var(--accent);
+    }
 
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, var(--primary), #1e1b4b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    header p {
+      max-width: 900px;
+      margin: 1rem auto 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--secondary);
-        }
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
 
-        .card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: transform 0.2s;
-        }
+    section {
+      background: linear-gradient(180deg, var(--card), #0f152b);
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.05);
+    }
 
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
+    section h2 {
+      margin-top: 0;
+      color: var(--accent2);
+      font-size: 1.4rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding-bottom: .4rem;
+    }
 
-        h2 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
+    .math {
+      background: #0a1026;
+      border-radius: 8px;
+      padding: .7rem 1rem;
+      margin: .8rem 0;
+      font-family: "Consolas", monospace;
+      color: #dbe4ff;
+    }
 
-        .highlight-box {
-            background-color: #eff6ff;
-            border-left: 4px solid var(--primary);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
-        }
+    .highlight {
+      color: var(--accent);
+      font-weight: bold;
+    }
 
-        /* Estilo para as visualizações */
-        .visual-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-            flex-direction: column;
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 2px;
+      margin: 1rem 0;
+    }
 
-        canvas {
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            background: #fff;
-            max-width: 100%;
-        }
+    .cell {
+      aspect-ratio: 1 / 1;
+      background: #22306a;
+      border-radius: 3px;
+    }
 
-        .tag {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-        .tag-blue { background: #dbeafe; color: #1e40af; }
-        .tag-red { background: #fee2e2; color: #991b1b; }
-        .tag-green { background: #dcfce7; color: #166534; }
+    .cell.extra {
+      background: #ffcc66;
+      box-shadow: 0 0 10px #ffcc66;
+    }
 
-        .binary-code {
-            font-family: 'Courier New', monospace;
-            background: #1e293b;
-            color: #4ade80;
-            padding: 10px;
-            border-radius: 6px;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: var(--secondary);
-            font-size: 0.9rem;
-        }
-    </style>
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.4rem; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <span class="tag tag-blue">Análise Matemática</span>
-        <h1>2026</h1>
-        <div class="subtitle">Tudo o que você precisa saber sobre este número</div>
-    </header>
+<header>
+  <h1>2026</h1>
+  <p>
+    Um estudo matemático, geométrico e estrutural de um número logo após a perfeição:
+    <strong>2026 = 45² + 1</strong>.
+  </p>
+</header>
 
-    <div class="card">
-        <h2>1. O DNA do Número</h2>
-        <p>Antes de mergulhar nas propriedades complexas, vamos olhar a identidade básica de 2026.</p>
-        
-        <div style="margin-top: 20px;">
-            <span class="tag tag-green">Par</span>
-            <span class="tag tag-green">Semiprimo</span>
-            <span class="tag tag-green">Deficiente</span>
-            <span class="tag tag-red">Evil Number</span>
-        </div>
+<main>
 
-        <div class="highlight-box">
-            <strong>Fatoração:</strong> Ele é composto por apenas dois primos distintos.<br>
-            $$2026 = 2 \times 1013$$
-        </div>
-
-        <p>No mundo digital (binário), ele é conhecido como um <em>"Evil Number"</em> porque possui uma quantidade par de números 1:</p>
-        <div class="binary-code" style="text-align: center;">
-            11111101010
-        </div>
-        <p style="text-align: center; font-size: 0.8rem; color: #64748b;">(8 dígitos '1' &rarr; 8 é par &rarr; Evil)</p>
+  <!-- FATORAÇÃO -->
+  <section>
+    <h2>1. Fatoração e Classificação</h2>
+    <p>
+      O número <span class="highlight">2026</span> é um <strong>semiprimo</strong>,
+      pois é composto por exatamente dois números primos distintos.
+    </p>
+    <div class="math">
+      2026 = 2 × 1013
     </div>
-
-    <div class="card" style="border: 2px solid var(--primary);">
-        <h2 style="color: var(--primary);">2. A Propriedade "Campeã": \(n^2 + 1\)</h2>
-        <p>Esta é a característica mais elegante de 2026. Ele é o sucessor imediato de um quadrado perfeito.</p>
-        
-        $$2026 = 45^2 + 1$$
-        
-        <p>Isso significa que <strong>2025</strong> é um quadrado perfeito ($45 \times 45$). O gráfico abaixo representa os 2025 pontos azuis formando o quadrado perfeito e o ponto vermelho solitário que transforma o número em 2026.</p>
-
-        <div class="visual-container">
-            <canvas id="squareCanvas" width="400" height="420"></canvas>
-            <p style="font-size: 0.8rem; color: #64748b; margin-top: 5px;">Cada ponto é uma unidade. O vermelho é o "+1".</p>
-        </div>
+    <p>
+      Como termina em 6, é divisível por 2:
+    </p>
+    <div class="math">
+      2026 ÷ 2 = 1013
     </div>
+    <p>
+      Testando divisores primos até √1013 ≈ 31,8, concluímos que <strong>1013 é primo</strong>.
+    </p>
+  </section>
 
-    <div class="card">
-        <h2>3. O Triângulo Oculto</h2>
-        <p>Por ser da forma \(n^2 + 1\), o número 2026 é automaticamente a hipotenusa de um triângulo retângulo com lados inteiros (Triângulo Pitagórico).</p>
-        
-        <div class="highlight-box">
-            Os lados são calculados baseados em \(n=45\):<br>
-            <ul>
-                <li>Cateto 1: \(2n = 90\)</li>
-                <li>Cateto 2: \(n^2 - 1 = 2024\)</li>
-                <li><strong>Hipotenusa: 2026</strong></li>
-            </ul>
-        </div>
-
-        <div class="visual-container">
-            <svg width="100%" height="200" viewBox="-20 -20 400 150" style="font-family: sans-serif;">
-                <path d="M 50 100 L 350 100 L 50 20 Z" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
-                
-                <rect x="50" y="80" width="20" height="20" fill="none" stroke="#2563eb" stroke-width="1"/>
-                <circle cx="60" cy="90" r="2" fill="#2563eb"/>
-
-                <text x="200" y="120" text-anchor="middle" fill="#475569">Cateto B = 2024</text>
-                <text x="30" y="60" text-anchor="middle" fill="#475569" transform="rotate(-90 30,60)">Cateto A = 90</text>
-                <text x="220" y="50" text-anchor="middle" fill="#ef4444" font-weight="bold">Hipotenusa = 2026</text>
-            </svg>
-            <p style="font-size: 0.8rem; color: #64748b;">(Representação esquemática. Na escala real, o triângulo seria extremamente fino)</p>
-        </div>
+  <!-- QUADRADO + 1 -->
+  <section>
+    <h2>2. Quadrado Perfeito + 1</h2>
+    <p>
+      Esta é a propriedade geométrica mais expressiva de 2026.
+    </p>
+    <div class="math">
+      2026 = 45² + 1
     </div>
+    <p>
+      O número anterior, 2025, forma um quadrado perfeito <strong>45 × 45</strong>.
+      O 2026 é esse quadrado com <strong>um único ponto excedente</strong>.
+    </p>
 
-    <div class="card">
-        <h2>4. Frações e Primos</h2>
-        
-        <h3>O Loop Infinito</h3>
-        <p>A raiz quadrada de 2026 gera uma fração contínua extremamente organizada, onde o denominador 90 se repete para sempre:</p>
-        $$ \sqrt{2026} = [45; \overline{90}] = 45 + \cfrac{1}{90 + \cfrac{1}{90 + \dots}} $$
-
-        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;">
-
-        <h3>Soma de Primos</h3>
-        <p>2026 é a soma exata de 16 números primos consecutivos:</p>
-        <p style="background: #f1f5f9; padding: 10px; border-radius: 8px; font-size: 0.9rem; line-height: 1.8;">
-            101 + 103 + 107 + 109 + 113 + 127 + 131 + 137 + <br>
-            139 + 149 + 151 + 157 + 163 + 167 + 173 + 179 <br>
-            <strong>= 2026</strong>
-        </p>
-    </div>
-
-    <footer>
-        <p>Gerado pelo seu assistente de IA • 2025</p>
-    </footer>
-</div>
-
-<script>
-    // Script para desenhar o quadrado 45x45 + 1 no Canvas
-    function drawSquare() {
-        const canvas = document.getElementById('squareCanvas');
-        const ctx = canvas.getContext('2d');
-        
-        const cols = 45;
-        const rows = 45;
-        const dotSize = 4;
-        const gap = 4;
-        const offsetX = (canvas.width - (cols * (dotSize + gap))) / 2;
-        const offsetY = 10;
-
-        // Limpa o canvas
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Desenha os 2025 pontos azuis
-        ctx.fillStyle = '#3b82f6'; // Azul
-        for (let i = 0; i < rows; i++) {
-            for (let j = 0; j < cols; j++) {
-                ctx.beginPath();
-                ctx.arc(
-                    offsetX + j * (dotSize + gap), 
-                    offsetY + i * (dotSize + gap), 
-                    dotSize / 2, 0, Math.PI * 2
-                );
-                ctx.fill();
-            }
+    <p><em>Visualização conceitual:</em></p>
+    <div class="grid">
+      <!-- 45x45 é simbólico; aqui mostramos uma versão reduzida -->
+      <!-- 99 células regulares -->
+      <script>
+        for(let i=0;i<99;i++){
+          document.write('<div class="cell"></div>');
         }
+        document.write('<div class="cell extra"></div>');
+      </script>
+    </div>
+    <p style="font-size:.9rem;color:var(--muted)">
+      Quadrado + 1 ponto fora da simetria.
+    </p>
+  </section>
 
-        // Desenha o ponto vermelho (+1)
-        // Vamos colocá-lo centralizado abaixo do quadrado
-        ctx.fillStyle = '#ef4444'; // Vermelho
-        ctx.beginPath();
-        const lastY = offsetY + rows * (dotSize + gap);
-        
-        ctx.arc(
-            canvas.width / 2, 
-            lastY + 15, 
-            6, 0, Math.PI * 2 // Um pouco maior
-        );
-        ctx.fill();
+  <!-- SOMA CONSECUTIVOS -->
+  <section>
+    <h2>3. Soma de 4 Inteiros Consecutivos</h2>
+    <p>
+      O número 2026 pode ser escrito como soma de quatro números consecutivos.
+    </p>
+    <div class="math">
+      2026 = 505 + 506 + 507 + 508
+    </div>
+    <p>
+      Demonstração:
+    </p>
+    <div class="math">
+      n + (n+1) + (n+2) + (n+3) = 4n + 6 = 2026<br>
+      4n = 2020 → n = 505
+    </div>
+  </section>
 
-        // Texto "+1"
-        ctx.fillStyle = '#ef4444';
-        ctx.font = 'bold 14px Inter';
-        ctx.textAlign = 'center';
-        ctx.fillText("+1", canvas.width / 2, lastY + 35);
-    }
+  <!-- DEFICIENTE -->
+  <section>
+    <h2>4. Número Deficiente</h2>
+    <p>
+      A soma dos divisores próprios de 2026 é menor que ele mesmo.
+    </p>
+    <div class="math">
+      Divisores: {1, 2, 1013, 2026}<br>
+      Divisores próprios: 1 + 2 + 1013 = 1016
+    </div>
+    <p>
+      Como <strong>1016 &lt; 2026</strong>, ele é classificado como
+      <span class="highlight">número deficiente</span>.
+    </p>
+  </section>
 
-    // Executa ao carregar
-    window.onload = drawSquare;
-</script>
+  <!-- SQUARE-FREE -->
+  <section>
+    <h2>5. Livre de Quadrados (Square-free)</h2>
+    <p>
+      Nenhum fator primo aparece elevado ao quadrado.
+    </p>
+    <div class="math">
+      2026 = 2¹ × 1013¹
+    </div>
+    <p>
+      Consequências:
+      <ul>
+        <li>μ(2026) = +1</li>
+        <li>Estrutura multiplicativa simples</li>
+        <li>Ausência de camadas repetidas</li>
+      </ul>
+    </p>
+  </section>
+
+  <!-- BINÁRIO -->
+  <section>
+    <h2>6. Representação Binária</h2>
+    <p>
+      Em base 2:
+    </p>
+    <div class="math">
+      2026 = 11111101010₂
+    </div>
+    <p>
+      Há <strong>8 dígitos “1”</strong>.
+      Como 8 é par, 2026 é um <span class="highlight">Número Maligno (Evil Number)</span>.
+    </p>
+    <p style="font-size:.9rem;color:var(--muted)">
+      Na teoria dos números, “maligno” significa apenas paridade binária.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Página conceitual sobre o número 2026 · Matemática, Geometria e Estrutura ·
+  Gerado com apoio de IA
+</footer>
 
 </body>
 </html>
