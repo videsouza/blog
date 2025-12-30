@@ -6,211 +6,191 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root{
-      --bg:#0b1020;
-      --sidebar:#0f1635;
-      --card:#121a33;
-      --accent:#4da3ff;
-      --accent2:#7cf2c2;
-      --text:#e8ecff;
-      --muted:#aab0d6;
+      --bg:#f6f7f9;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --accent:#374151;
+      --border:#e5e7eb;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:Segoe UI,Roboto,Arial,sans-serif;
-      background:radial-gradient(circle at top,#162050,var(--bg));
+      font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
       color:var(--text);
-      display:flex;
-      min-height:100vh;
-    }
-    aside{
-      width:260px;
-      background:linear-gradient(180deg,var(--sidebar),#0a1026);
-      padding:1.5rem 1rem;
-      border-right:1px solid rgba(255,255,255,.08);
-      position:fixed;
-      height:100vh;
-      overflow:auto;
-    }
-    aside h1{
-      margin:0 0 1.5rem;
-      font-size:1.8rem;
-      text-align:center;
-      color:var(--accent);
-    }
-    aside a{
-      display:block;
-      padding:.6rem .8rem;
-      margin:.3rem 0;
-      text-decoration:none;
-      color:var(--muted);
-      border-radius:10px;
-      font-size:.95rem;
-    }
-    aside a:hover{
-      background:rgba(77,163,255,.18);
-      color:var(--text);
-    }
-    main{
-      margin-left:260px;
-      padding:2.5rem 3rem 4rem;
-      max-width:1200px;
+      line-height:1.65;
     }
     header{
+      max-width:1100px;
+      margin:3rem auto 2.5rem;
+      padding:0 1.5rem;
       text-align:center;
-      margin-bottom:3rem;
     }
-    header h2{
-      font-size:3rem;
+    header h1{
       margin:0;
+      font-size:3rem;
+      font-weight:600;
       color:var(--accent);
+      letter-spacing:.02em;
     }
     header p{
-      max-width:800px;
-      margin:1rem auto 0;
+      margin:1.2rem auto 0;
+      max-width:760px;
       color:var(--muted);
       font-size:1.1rem;
+    }
+    main{
+      max-width:1100px;
+      margin:0 auto 4rem;
+      padding:0 1.5rem;
     }
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:1.6rem;
+      gap:1.8rem;
     }
     section{
-      background:linear-gradient(180deg,var(--card),#0f152b);
-      border-radius:18px;
+      background:var(--card);
+      border-radius:14px;
       padding:1.6rem 1.8rem;
-      box-shadow:0 12px 30px rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.05);
+      border:1px solid var(--border);
     }
-    section h3{
+    section h2{
       margin-top:0;
-      color:var(--accent2);
-      border-bottom:1px solid rgba(255,255,255,.12);
-      padding-bottom:.4rem;
       font-size:1.35rem;
+      font-weight:600;
+      color:var(--accent);
+      border-bottom:1px solid var(--border);
+      padding-bottom:.4rem;
     }
     .math{
-      background:#0a1026;
-      border-radius:10px;
-      padding:.8rem 1rem;
+      background:#f3f4f6;
+      border-radius:8px;
+      padding:.75rem 1rem;
       margin:1rem 0;
-      font-family:Consolas,monospace;
-      color:#dbe4ff;
+      font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
       font-size:.95rem;
+      color:#111827;
     }
-    .highlight{color:var(--accent);font-weight:600}
+    .highlight{
+      font-weight:600;
+      color:#111827;
+    }
     footer{
+      max-width:1100px;
+      margin:4rem auto 2rem;
+      padding:0 1.5rem;
       text-align:center;
-      margin-top:4rem;
       color:var(--muted);
       font-size:.9rem;
-    }
-    @media(max-width:900px){
-      aside{display:none}
-      main{margin:0;padding:1.5rem}
-      header h2{font-size:2.2rem}
     }
   </style>
 </head>
 <body>
 
-<aside>
+<header>
   <h1>2026</h1>
-  <a href="#intro">Visão Geral</a>
-  <a href="#fatoracao">Semiprimo</a>
-  <a href="#quadrado">Quadrado + 1</a>
-  <a href="#consecutivos">4 Consecutivos</a>
-  <a href="#deficiente">Número Deficiente</a>
-  <a href="#squarefree">Square-free</a>
-  <a href="#binario">Binário</a>
-  <a href="#primos">Soma de Primos</a>
-  <a href="#pitagoras">Pitagórico</a>
-</aside>
-
-<main>
-
-<header id="intro">
-  <h2>O Número 2026</h2>
   <p>
-    Uma leitura matemática e geométrica do número <strong>2026</strong>,
-    explorando sua estrutura multiplicativa, aditiva e visual.
+    Uma leitura matemática, geométrica e estrutural do número <strong>2026</strong>,
+    organizada em propriedades independentes e demonstrações formais.
   </p>
 </header>
 
-<div class="cards">
+<main>
+  <div class="cards">
 
-<section id="fatoracao">
-  <h3>Semiprimo</h3>
-  <p>2026 é composto por exatamente dois números primos distintos.</p>
-  <div class="math">2026 = 2 × 1013</div>
-  <p>O fator 1013 é primo (testes até √1013 ≈ 31,8).</p>
-</section>
+    <section>
+      <h2>Semiprimo</h2>
+      <p>
+        O número 2026 é composto por exatamente dois números primos distintos.
+      </p>
+      <div class="math">2026 = 2 × 1013</div>
+      <p>
+        O fator 1013 é primo, conforme verificação por divisores até
+        √1013 ≈ 31,8.
+      </p>
+    </section>
 
-<section id="quadrado">
-  <h3>Quadrado Perfeito + 1</h3>
-  <p>2026 é o sucessor imediato de um quadrado perfeito.</p>
-  <div class="math">2026 = 45² + 1</div>
-  <p>
-    Ele representa um quadrado completo com <span class="highlight">um ponto excedente</span>,
-    rompendo a simetria perfeita.
-  </p>
-</section>
+    <section>
+      <h2>Quadrado Perfeito + 1</h2>
+      <p>
+        2026 é o sucessor imediato de um quadrado perfeito.
+      </p>
+      <div class="math">2026 = 45² + 1</div>
+      <p>
+        Geometricamente, representa um arranjo quadrado completo acrescido
+        de um único ponto excedente.
+      </p>
+    </section>
 
-<section id="consecutivos">
-  <h3>Soma de 4 Consecutivos</h3>
-  <div class="math">2026 = 505 + 506 + 507 + 508</div>
-  <p>Forma geral: n + (n+1) + (n+2) + (n+3).</p>
-</section>
+    <section>
+      <h2>Soma de 4 Inteiros Consecutivos</h2>
+      <div class="math">2026 = 505 + 506 + 507 + 508</div>
+      <p>
+        Forma geral: n + (n+1) + (n+2) + (n+3), com n = 505.
+      </p>
+    </section>
 
-<section id="deficiente">
-  <h3>Número Deficiente</h3>
-  <div class="math">
-    Divisores próprios: 1, 2, 1013<br>
-    Soma = 1016 &lt; 2026
+    <section>
+      <h2>Número Deficiente</h2>
+      <div class="math">
+        Divisores próprios: 1, 2, 1013<br>
+        Soma = 1016 &lt; 2026
+      </div>
+      <p>
+        A soma dos divisores próprios é menor que o próprio número.
+      </p>
+    </section>
+
+    <section>
+      <h2>Livre de Quadrados (Square-free)</h2>
+      <div class="math">2026 = 2¹ × 1013¹</div>
+      <p>
+        Nenhum fator primo aparece elevado ao quadrado.
+      </p>
+    </section>
+
+    <section>
+      <h2>Representação Binária</h2>
+      <div class="math">11111101010₂</div>
+      <p>
+        Possui oito dígitos "1"; portanto, trata-se de um
+        <span class="highlight">Número Maligno (Evil Number)</span>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Soma de Primos Consecutivos</h2>
+      <div class="math">
+        101 + 103 + 107 + 109 + 113 + 127 + 131 + 137 +<br>
+        139 + 149 + 151 + 157 + 163 + 167 + 173 + 179 = 2026
+      </div>
+      <p>
+        Soma exata de <strong>16 números primos consecutivos</strong>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Estrutura Pitagórica</h2>
+      <p>
+        Por ser da forma n² + 1, o número 2026 pode atuar como hipotenusa
+        de um triângulo retângulo com lados inteiros.
+      </p>
+      <div class="math">
+        n = 45<br>
+        Catetos: 2n = 90, n² − 1 = 2024<br>
+        Hipotenusa: 2026
+      </div>
+      <div class="math">90² + 2024² = 2026²</div>
+    </section>
+
   </div>
-  <p>A soma dos divisores próprios é menor que o próprio número.</p>
-</section>
-
-<section id="squarefree">
-  <h3>Square-free</h3>
-  <div class="math">2026 = 2¹ × 1013¹</div>
-  <p>Nenhum fator primo aparece elevado ao quadrado.</p>
-</section>
-
-<section id="binario">
-  <h3>Representação Binária</h3>
-  <div class="math">11111101010₂</div>
-  <p>
-    Possui 8 bits "1" → um <span class="highlight">Número Maligno (Evil)</span>.
-  </p>
-</section>
-
-<section id="primos">
-  <h3>Soma de Primos Consecutivos</h3>
-  <div class="math">
-    101 + 103 + 107 + 109 + 113 + 127 + 131 + 137 +<br>
-    139 + 149 + 151 + 157 + 163 + 167 + 173 + 179 = 2026
-  </div>
-  <p>Soma de <strong>16 primos consecutivos</strong>.</p>
-</section>
-
-<section id="pitagoras">
-  <h3>Estrutura Pitagórica</h3>
-  <p>Como 2026 = n² + 1 (n = 45), ele é uma hipotenusa inteira.</p>
-  <div class="math">
-    Catetos: 2n = 90, n² − 1 = 2024<br>
-    Hipotenusa: 2026
-  </div>
-  <div class="math">90² + 2024² = 2026²</div>
-</section>
-
-</div>
+</main>
 
 <footer>
-  Mini-site em cards · Estrutura matemática do número 2026
+  Página conceitual minimalista · Estrutura matemática do número 2026
 </footer>
 
-</main>
 </body>
 </html>
