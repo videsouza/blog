@@ -102,32 +102,27 @@
             opacity: 0.2;
         }
 
-        .music-item {
-            padding: 20px 0;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .music-card {
+            background: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
             transition: opacity 0.2s;
         }
 
-        .music-item:hover {
-            opacity: 0.6;
+        .music-card:hover {
+            opacity: 0.9;
         }
 
-        .music-item:last-child {
-            border-bottom: none;
-        }
-
-        .music-title {
-            font-weight: 500;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-        }
-
-        .music-artist {
-            color: #999;
-            font-size: 0.9em;
+        .spotify-embed {
+            width: 100%;
+            height: 352px;
+            border: none;
         }
 
         footer {
@@ -202,23 +197,38 @@
 
         <section class="section">
             <h2 class="section-title">Músicas</h2>
-            <div class="music-item">
-                <div>
-                    <div class="music-title">Impulse Voices</div>
-                    <div class="music-artist">Plini</div>
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5rTkosDj3SctQghimtqYXz?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="music-grid">
+                <div class="music-card">
+                    <iframe class="spotify-embed" 
+                        style="border-radius:4px" 
+                        src="https://open.spotify.com/intl-pt/track/5rTkosDj3SctQghimtqYXz?si=4ca02e2e4e3a4886" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
                 </div>
-            </div>
-            <div class="music-item">
-                <div>
-                    <div class="music-title">Outra música</div>
-                    <div class="music-artist">Artista</div>
+
+                <div class="music-card">
+                    <iframe class="spotify-embed" 
+                        style="border-radius:4px" 
+                        src="https://open.spotify.com/embed/track/0VjIjW4GlUZAMYd2vXMi3b?utm_source=generator" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
                 </div>
-            </div>
-            <div class="music-item">
-                <div>
-                    <div class="music-title">Mais uma</div>
-                    <div class="music-artist">Artista</div>
+
+                <div class="music-card">
+                    <iframe class="spotify-embed" 
+                        style="border-radius:4px" 
+                        src="https://open.spotify.com/embed/track/11dFghVXANMlKmJXsNCbNl?utm_source=generator" 
+                        frameBorder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </section>
