@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Espaço</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #999;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .post {
+            margin-bottom: 50px;
+        }
+
+        .post-title {
+            font-size: 1.3em;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #1a1a1a;
+        }
+
+        .post-date {
+            font-size: 0.85em;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .post-content {
+            color: #4a4a4a;
+            font-size: 0.95em;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: #f0f0f0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s;
+        }
+
+        .gallery-item:hover {
+            opacity: 0.8;
+        }
+
+        .gallery-placeholder {
+            font-size: 2em;
+            opacity: 0.2;
+        }
+
+        .music-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: opacity 0.2s;
+        }
+
+        .music-item:hover {
+            opacity: 0.6;
+        }
+
+        .music-item:last-child {
+            border-bottom: none;
+        }
+
+        .music-title {
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .music-artist {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        footer {
+            margin-top: 100px;
+            padding-top: 40px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #999;
+            font-size: 0.85em;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 30px 16px;
+            }
+
+            header {
+                margin-bottom: 60px;
+            }
+
+            h1 {
+                font-size: 1.75em;
+            }
+
+            .section {
+                margin-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Seu Nome</h1>
+            <p>Textos, imagens e músicas</p>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Textos</h2>
+            
+            <article class="post">
+                <h3 class="post-title">Bem-vindo</h3>
+                <div class="post-date">1 de janeiro, 2026</div>
+                <div class="post-content">
+                    Este é o meu espaço pessoal na web. Um lugar simples para compartilhar pensamentos, imagens e músicas que fazem parte da minha vida.
+                </div>
+            </article>
+
+            <article class="post">
+                <h3 class="post-title">Sobre simplicidade</h3>
+                <div class="post-date">28 de dezembro, 2025</div>
+                <div class="post-content">
+                    Menos é mais. A beleza está na clareza, no espaço em branco, no que decidimos não incluir.
+                </div>
+            </article>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Imagens</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <span class="gallery-placeholder">◯</span>
+                </div>
+                <div class="gallery-item">
+                    <span class="gallery-placeholder">◯</span>
+                </div>
+                <div class="gallery-item">
+                    <span class="gallery-placeholder">◯</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Músicas</h2>
+            <div class="music-item">
+                <div>
+                    <div class="music-title">Nome da música</div>
+                    <div class="music-artist">Artista</div>
+                </div>
+            </div>
+            <div class="music-item">
+                <div>
+                    <div class="music-title">Outra música</div>
+                    <div class="music-artist">Artista</div>
+                </div>
+            </div>
+            <div class="music-item">
+                <div>
+                    <div class="music-title">Mais uma</div>
+                    <div class="music-artist">Artista</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            2026
+        </footer>
+    </div>
+</body>
+</html>
