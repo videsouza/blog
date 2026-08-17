@@ -1,108 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>VINICIVS</title>
 
+    <meta
+        name="description"
+        content="VINICIVS — matemática, arquivologia, estatística e investigação."
+    >
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header class="site-header">
+<header class="header">
+
     <div class="header-inner">
 
-        <a href="index.html" class="site-title">VINICIVS</a>
+        <a href="index.html" class="logo">
+            VINICIVS
+        </a>
 
-        <nav class="site-nav">
-            <a href="#destaque">Destaque</a>
-            <a href="#artigos">Artigos</a>
-            <a href="#sobre">Sobre</a>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="artigos.html">Artigos</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="sobre.html">Sobre</a>
         </nav>
 
     </div>
+
 </header>
 
 
 <main>
 
-    <!-- INTRODUÇÃO -->
+    <section class="hero">
 
-    <section class="intro">
-
-        <div class="eyebrow">
+        <p class="eyebrow">
             MATEMÁTICA · ARQUIVOLOGIA · ESTATÍSTICA · PESQUISA
-        </div>
+        </p>
 
-        <p>
-            Investigação, método e pensamento quantitativo aplicados
-            a problemas teóricos e concretos.
+        <h1>
+            VINICIVS
+        </h1>
+
+        <p class="intro">
+            Um espaço dedicado à investigação, ao pensamento quantitativo
+            e à construção de métodos para problemas teóricos e concretos.
         </p>
 
     </section>
 
 
-    <!-- ARTIGO EM DESTAQUE -->
+    <section class="featured">
 
-    <section id="destaque" class="featured">
-
-        <div class="section-label">
+        <p class="section-label">
             ARTIGO EM DESTAQUE
-        </div>
-
-        <div class="featured-date">
-            17 AGOSTO 2026
-        </div>
-
-        <h1>
-            Uma introdução à amostragem documental
-        </h1>
-
-        <p class="featured-description">
-            Uma apresentação dos fundamentos matemáticos da amostragem
-            aplicada à documentação, explorando população, amostra,
-            fração amostral e determinação do tamanho da amostra.
         </p>
 
-        <a class="read-link"
-           href="artigo-amostragem-documental.html">
-            LEIA O ARTIGO →
+        <p class="date">
+            17 AGOSTO 2026
+        </p>
+
+        <h2>
+            Uma introdução à amostragem documental
+        </h2>
+
+        <p>
+            Fundamentos matemáticos da amostragem aplicada à documentação.
+        </p>
+
+        <a
+            href="URL-DO-PDF"
+            target="_blank"
+            rel="noopener"
+            class="pdf-link"
+        >
+            LER PDF →
         </a>
 
     </section>
 
 
-    <!-- ÚLTIMOS ARTIGOS -->
+    <section class="latest">
 
-    <section id="artigos" class="articles">
-
-        <div class="section-label">
+        <p class="section-label">
             ÚLTIMOS ARTIGOS
-        </div>
+        </p>
 
 
-        <article class="article-item">
+        <article class="item">
 
-            <div class="article-date">
+            <div class="item-date">
                 17.08.2026
             </div>
 
             <div>
 
-                <h2>
+                <h3>
                     Uma introdução à amostragem documental
-                </h2>
+                </h3>
 
                 <p>
                     Fundamentos matemáticos da amostragem aplicada
                     à documentação.
                 </p>
 
-                <a class="read-link"
-                   href="artigo-modelo.html">
-                    Leia →
+                <a
+                    href="URL-DO-PDF"
+                    target="_blank"
+                    rel="noopener"
+                    class="pdf-link"
+                >
+                    PDF →
                 </a>
 
             </div>
@@ -110,42 +125,42 @@
         </article>
 
 
-        <!--
-        COPIE O BLOCO ABAIXO PARA ADICIONAR NOVOS ARTIGOS
+        <article class="item">
 
-        <article class="article-item">
-
-            <div class="article-date">
-                DD.MM.AAAA
+            <div class="item-date">
+                12.08.2026
             </div>
 
             <div>
 
-                <h2>
-                    Título do artigo
-                </h2>
+                <h3>
+                    Título do segundo artigo
+                </h3>
 
                 <p>
-                    Descrição breve do artigo.
+                    Breve descrição do trabalho.
                 </p>
 
-                <a class="read-link"
-                   href="nome-do-artigo.html">
-                    Leia →
+                <a
+                    href="URL-DO-PDF"
+                    target="_blank"
+                    rel="noopener"
+                    class="pdf-link"
+                >
+                    PDF →
                 </a>
 
             </div>
 
         </article>
-        -->
+
 
     </section>
-
 
 </main>
 
 
-<footer class="site-footer">
+<footer>
 
     <span>© 2026 VINICIVS</span>
 
@@ -154,4 +169,5 @@
 </footer>
 
 </body>
+
 </html>
