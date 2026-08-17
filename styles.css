@@ -1,10 +1,9 @@
 :root {
-    --black: #111111;
-    --text: #222222;
-    --muted: #555555;
-    --light: #777777;
-    --line: #d8d8d8;
-    --background: #ffffff;
+    --black: #111;
+    --text: #292929;
+    --muted: #666;
+    --line: #dcdcdc;
+    --background: #fff;
 }
 
 
@@ -22,6 +21,7 @@ body {
     margin: 0;
 
     background: var(--background);
+
     color: var(--text);
 
     font-family:
@@ -30,24 +30,24 @@ body {
         serif;
 
     font-size: 17px;
+
+    line-height: 1.8;
 }
 
 
-/* =========================================================
-   CABEÇALHO
-   ========================================================= */
+/* =========================
+   HEADER
+   ========================= */
 
-.site-header {
+.header {
     border-bottom: 1px solid var(--line);
-
-    background: #ffffff;
 }
 
 
 .header-inner {
-    max-width: 900px;
+    max-width: 960px;
 
-    margin: 0 auto;
+    margin: auto;
 
     padding: 24px 32px;
 
@@ -59,78 +59,28 @@ body {
 }
 
 
-.site-title {
+.logo {
     color: var(--black);
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 21px;
+    font-size: 20px;
 
     font-weight: 600;
 
-    letter-spacing: 0.14em;
+    letter-spacing: .16em;
 
     text-decoration: none;
 }
 
 
-.site-nav {
+nav {
     display: flex;
 
-    gap: 28px;
+    gap: 26px;
 }
 
 
-.site-nav a {
-    color: #333;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 0.05em;
-
-    text-decoration: none;
-}
-
-
-.site-nav a:hover {
-    color: #000;
-}
-
-
-/* =========================================================
-   ÁREA PRINCIPAL
-   ========================================================= */
-
-main {
-    max-width: 760px;
-
-    margin: 0 auto;
-
-    padding: 70px 30px 100px;
-}
-
-
-/* =========================================================
-   INTRODUÇÃO
-   ========================================================= */
-
-.intro {
-    margin-bottom: 90px;
-}
-
-
-.eyebrow {
-    margin-bottom: 28px;
-
-    color: #222;
+nav a {
+    color: #444;
 
     font-family:
         Arial,
@@ -139,33 +89,42 @@ main {
 
     font-size: 11px;
 
-    letter-spacing: 0.14em;
+    letter-spacing: .04em;
+
+    text-decoration: none;
 }
 
 
-.intro p {
-    max-width: 650px;
-
-    margin: 0;
-
-    color: #222;
-
-    font-size: 25px;
-
-    line-height: 1.55;
+nav a:hover,
+nav a.active {
+    color: #000;
 }
 
 
-/* =========================================================
-   SEÇÕES
-   ========================================================= */
+/* =========================
+   MAIN
+   ========================= */
 
-.section-label {
-    padding-top: 20px;
+main {
+    max-width: 760px;
 
-    border-top: 1px solid var(--line);
+    margin: auto;
 
-    margin-bottom: 28px;
+    padding: 75px 30px 110px;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    margin-bottom: 100px;
+}
+
+
+.eyebrow {
+    margin: 0 0 28px;
 
     color: #555;
 
@@ -176,113 +135,72 @@ main {
 
     font-size: 10px;
 
-    letter-spacing: 0.15em;
+    letter-spacing: .15em;
 }
 
 
-/* =========================================================
-   ARTIGO EM DESTAQUE
-   ========================================================= */
+.hero h1 {
+    margin: 0 0 20px;
 
-.featured {
-    margin-bottom: 95px;
-}
+    color: #111;
 
-
-.featured-date {
-    margin-bottom: 14px;
-
-    color: #666;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 0.06em;
-}
-
-
-.featured h1 {
-    max-width: 700px;
-
-    margin: 0 0 22px;
-
-    color: var(--black);
-
-    font-size: 43px;
+    font-size: 48px;
 
     font-weight: 400;
 
-    line-height: 1.16;
+    line-height: 1.1;
 }
 
 
-.featured-description {
+.intro {
     max-width: 650px;
 
-    margin: 0 0 25px;
+    margin: 0;
 
-    color: #444;
+    color: #333;
 
-    font-size: 18px;
+    font-size: 22px;
 
-    line-height: 1.8;
+    line-height: 1.65;
 }
 
 
-.read-link {
-    color: #111;
+/* =========================
+   SEÇÕES
+   ========================= */
+
+.section-label {
+    margin: 0 0 28px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid var(--line);
+
+    color: #555;
 
     font-family:
         Arial,
         Helvetica,
         sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    font-weight: 600;
-
-    letter-spacing: 0.08em;
-
-    text-decoration: none;
+    letter-spacing: .15em;
 }
 
 
-.read-link:hover {
-    text-decoration: underline;
+/* =========================
+   DESTAQUE
+   ========================= */
 
-    text-underline-offset: 4px;
+.featured {
+    margin-bottom: 100px;
 }
 
 
-/* =========================================================
-   LISTA DE ARTIGOS
-   ========================================================= */
-
-.articles {
-    margin-bottom: 95px;
-}
-
-
-.article-item {
-    display: grid;
-
-    grid-template-columns: 100px 1fr;
-
-    column-gap: 35px;
-
-    padding: 30px 0;
-
-    border-bottom: 1px solid #e2e2e2;
-}
-
-
-.article-date {
-    padding-top: 5px;
-
+.date,
+.item-date,
+.publication-date {
     color: #666;
 
     font-family:
@@ -292,27 +210,100 @@ main {
 
     font-size: 10px;
 
-    letter-spacing: 0.05em;
+    letter-spacing: .05em;
 }
 
 
-.article-item h2 {
-    margin: 0 0 9px;
+.featured h2 {
+    margin: 12px 0 18px;
 
     color: #111;
 
-    font-size: 22px;
+    font-size: 39px;
 
     font-weight: 400;
 
-    line-height: 1.35;
+    line-height: 1.2;
 }
 
 
-.article-item p {
-    max-width: 580px;
+.featured p:not(.section-label):not(.date) {
+    max-width: 650px;
 
-    margin: 0 0 12px;
+    color: #444;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.pdf-link {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #111;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .09em;
+
+    text-decoration: none;
+}
+
+
+.pdf-link:hover {
+    text-decoration: underline;
+
+    text-underline-offset: 4px;
+}
+
+
+/* =========================
+   ARTIGOS
+   ========================= */
+
+.latest {
+    margin-bottom: 100px;
+}
+
+
+.item {
+    display: grid;
+
+    grid-template-columns: 95px 1fr;
+
+    gap: 30px;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid #e3e3e3;
+}
+
+
+.item h3 {
+    margin: 0 0 6px;
+
+    color: #111;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+}
+
+
+.item p {
+    margin: 0 0 5px;
 
     color: #444;
 
@@ -322,36 +313,115 @@ main {
 }
 
 
-/* =========================================================
-   SOBRE
-   ========================================================= */
+/* =========================
+   PÁGINAS INTERNAS
+   ========================= */
 
-.about {
-    margin-bottom: 70px;
+.page-intro {
+    margin-bottom: 75px;
 }
 
 
-.about p {
+.page-intro h1 {
+    margin: 0 0 20px;
+
+    color: #111;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+.page-intro > p:last-child {
     max-width: 650px;
 
     margin: 0;
 
-    font-size: 17px;
+    color: #444;
 
-    line-height: 1.8;
+    font-size: 18px;
 }
 
 
-/* =========================================================
-   RODAPÉ
-   ========================================================= */
+/* =========================
+   PUBLICAÇÕES
+   ========================= */
 
-.site-footer {
-    max-width: 900px;
+.publication {
+    display: grid;
 
-    margin: 0 auto;
+    grid-template-columns: 100px 1fr;
 
-    padding: 25px 30px 35px;
+    gap: 30px;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid #e1e1e1;
+}
+
+
+.publication-body h2 {
+    margin: 0 0 8px;
+
+    color: #111;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    line-height: 1.35;
+}
+
+
+.publication-body p {
+    margin: 0;
+
+    color: #444;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SOBRE
+   ========================= */
+
+.text-section {
+    border-top: 1px solid var(--line);
+
+    padding-top: 25px;
+}
+
+
+.text-section h2 {
+    margin-top: 0;
+
+    font-size: 25px;
+
+    font-weight: 400;
+}
+
+
+.text-section p {
+    max-width: 650px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    max-width: 960px;
+
+    margin: auto;
+
+    padding: 25px 32px 35px;
 
     border-top: 1px solid var(--line);
 
@@ -367,131 +437,12 @@ main {
         sans-serif;
 
     font-size: 10px;
-
-    letter-spacing: 0.03em;
 }
 
 
-/* =========================================================
-   ARTIGOS
-   ========================================================= */
-
-.article-page {
-    max-width: 760px;
-
-    margin: 0 auto;
-
-    padding: 70px 30px 100px;
-}
-
-
-.article-kicker {
-    margin-bottom: 25px;
-
-    color: #555;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 0.15em;
-}
-
-
-.article-page h1 {
-    margin: 0 0 25px;
-
-    color: #111;
-
-    font-size: 43px;
-
-    font-weight: 400;
-
-    line-height: 1.18;
-}
-
-
-.article-intro {
-    max-width: 680px;
-
-    margin-bottom: 25px;
-
-    color: #333;
-
-    font-size: 20px;
-
-    line-height: 1.7;
-}
-
-
-.article-meta {
-    margin-bottom: 65px;
-
-    color: #666;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 10px;
-
-    line-height: 1.8;
-
-    letter-spacing: 0.05em;
-}
-
-
-.article-page h2 {
-    margin-top: 55px;
-
-    margin-bottom: 20px;
-
-    padding-top: 25px;
-
-    border-top: 1px solid var(--line);
-
-    color: #111;
-
-    font-size: 25px;
-
-    font-weight: 400;
-}
-
-
-.article-page h3 {
-    margin-top: 40px;
-
-    font-size: 20px;
-
-    font-weight: 400;
-}
-
-
-.article-page p,
-.article-page li {
-    line-height: 1.85;
-}
-
-
-.article-page ul {
-    margin-top: 15px;
-
-    margin-bottom: 25px;
-}
-
-
-.article-page .math {
-    color: #111;
-}
-
-
-/* =========================================================
-   RESPONSIVO
-   ========================================================= */
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 700px) {
 
@@ -500,8 +451,8 @@ main {
     }
 
 
-    .site-nav {
-        gap: 15px;
+    nav {
+        gap: 14px;
     }
 
 
@@ -510,39 +461,35 @@ main {
     }
 
 
+    .hero {
+        margin-bottom: 70px;
+    }
+
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+
     .intro {
-        margin-bottom: 65px;
+        font-size: 19px;
     }
 
 
-    .intro p {
-        font-size: 22px;
+    .featured h2 {
+        font-size: 31px;
     }
 
 
-    .featured h1 {
-        font-size: 34px;
-    }
-
-
-    .featured-description {
-        font-size: 17px;
-    }
-
-
-    .article-item {
+    .item,
+    .publication {
         grid-template-columns: 1fr;
 
-        row-gap: 8px;
+        gap: 7px;
     }
 
 
-    .article-date {
-        padding-top: 0;
-    }
-
-
-    .site-footer {
+    footer {
         padding: 22px;
 
         flex-direction: column;
@@ -550,13 +497,4 @@ main {
         gap: 8px;
     }
 
-
-    .article-page {
-        padding: 50px 22px 80px;
-    }
-
-
-    .article-page h1 {
-        font-size: 34px;
-    }
 }
