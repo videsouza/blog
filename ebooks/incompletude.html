@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Limites da Computação | E-book</title>
+
+    <!-- Google Fonts para um visual mais acadêmico e elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Merriweather:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset e Configurações Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a121c;
+            color: #c8d8e8;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Paleta de Cores Base */
+        :root {
+            --primary-dark: #0d1b2a;
+            --primary-blue: #142144;
+            --secondary-blue: #1f4154;
+            --text-light: #e8edf3;
+            --text-muted: #a0b8cd;
+            --accent-gold: #e6c87c;
+            --accent-gold-dark: #b8993d;
+            --accent-cyan: #5bc0eb;
+            --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Canvas de Partículas (Fundo) */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none; /* Permite clicar nos botões por cima */
+        }
+
+        /* Container Principal (sobreposição) */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ---------- NAVEGAÇÃO ---------- */
+        nav {
+            background: rgba(20, 33, 68, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(31, 65, 84, 0.4);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+            color: var(--text-light);
+        }
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-cta {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(230, 200, 124, 0.2);
+        }
+        .nav-cta:hover {
+            background: #f5d88a;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(230, 200, 124, 0.4);
+        }
+
+        /* ---------- HERO ---------- */
+        #hero {
+            padding: 80px 0 40px 0;
+            text-align: center;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-badge {
+            background: rgba(31, 65, 84, 0.6);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid rgba(91, 192, 235, 0.2);
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #c8d8e8 40%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 0 80px rgba(230, 200, 124, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 400;
+        }
+        .hero-subtitle strong {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .hero-price-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .price-tag {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-light);
+            background: rgba(20, 33, 68, 0.7);
+            padding: 10px 50px;
+            border-radius: 60px;
+            border: 1px solid var(--accent-gold);
+            box-shadow: 0 0 40px rgba(230, 200, 124, 0.15);
+            backdrop-filter: blur(4px);
+        }
+        .price-tag small {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .cta-button {
+            background: linear-gradient(145deg, var(--accent-gold), var(--accent-gold-dark));
+            border: none;
+            padding: 18px 60px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #0a121c;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(230, 200, 124, 0.25);
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse-glow 2.5s infinite;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(230, 200, 124, 0.4);
+            background: #f5d88a;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(230, 200, 124, 0.3); }
+            70% { box-shadow: 0 0 0 20px rgba(230, 200, 124, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(230, 200, 124, 0); }
+        }
+
+        .installment-info {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            background: rgba(31, 65, 84, 0.4);
+            padding: 6px 20px;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+        }
+        .installment-info span {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* ---------- SEÇÕES GERAIS ---------- */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(31, 65, 84, 0.3);
+        }
+
+        .section-tag {
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            font-family: 'Merriweather', serif;
+        }
+        h2 span {
+            color: var(--accent-gold);
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* ---------- SOBRE / PROBLEMA ---------- */
+        #about {
+            background: linear-gradient(180deg, var(--primary-blue) 0%, #0d1b2a 100%);
+            border-radius: 40px 40px 0 0;
+            margin-top: 20px;
+            padding: 80px 40px;
+        }
+
+        .highlight-box {
+            background: rgba(31, 65, 84, 0.3);
+            border-left: 4px solid var(--accent-gold);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            backdrop-filter: blur(2px);
+        }
+
+        /* ---------- TÓPICOS (BENEFÍCIOS) ---------- */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .topic-card {
+            background: var(--secondary-blue);
+            padding: 30px 25px;
+            border-radius: 20px;
+            border-bottom: 3px solid var(--accent-cyan);
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .topic-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .topic-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-bottom-color: var(--accent-gold);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            background: #254a60;
+        }
+
+        .topic-card .icon {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .topic-card h3 {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .topic-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* ---------- PÚBLICO-ALVO ---------- */
+        #audience {
+            background: var(--primary-blue);
+            border-radius: 40px;
+            padding: 80px 40px;
+        }
+
+        .audience-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .audience-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(31, 65, 84, 0.3);
+            padding: 15px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+        .audience-item .check {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* ---------- PREÇO / CTA FINAL ---------- */
+        #pricing {
+            text-align: center;
+            padding: 60px 20px;
+            background: radial-gradient(ellipse at center, #142144 0%, #0a121c 100%);
+            border-radius: 40px;
+            margin: 40px 0;
+        }
+        .price-box-final {
+            display: inline-block;
+            background: rgba(20, 33, 68, 0.7);
+            padding: 40px 60px;
+            border-radius: 60px;
+            border: 1px solid var(--accent-gold);
+            backdrop-filter: blur(8px);
+            box-shadow: var(--shadow-heavy);
+        }
+        .price-box-final .old-price {
+            font-size: 1.2rem;
+            color: #6b7f94;
+            text-decoration: line-through;
+        }
+        .price-box-final .big-price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 10px 0;
+        }
+        .price-box-final .big-price small {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0 10px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .guarantee svg {
+            fill: var(--accent-gold);
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #5a6f84;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(31, 65, 84, 0.3);
+        }
+        footer a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        /* ---------- RESPONSIVIDADE ---------- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.8rem; }
+            .grid-2col { grid-template-columns: 1fr; gap: 20px; }
+            .topics-grid { grid-template-columns: 1fr; }
+            .audience-list { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 576px) {
+            h1 { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .price-tag { font-size: 2.5rem; padding: 8px 30px; }
+            .cta-button { padding: 14px 30px; font-size: 1.1rem; }
+            #about, #audience { padding: 40px 20px; }
+            .price-box-final { padding: 30px 20px; }
+        }
+
+        /* Utilitários de animação */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Canvas para Partículas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- NAVEGAÇÃO -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">⌨️ <span>Limites</span> da Computação</div>
+            <a href="#pricing" class="nav-cta">Adquirir Agora</a>
+        </div>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+
+        <!-- HERO -->
+        <section id="hero">
+            <div class="hero-badge">✧ 2ª Edição Revista e Ampliada</div>
+            <h1>Os Limites da Computação</h1>
+            <p class="hero-subtitle">
+                <strong>Indecidibilidade</strong> e <strong>Incompletude</strong> em Sistemas Formais.<br>
+                Uma jornada rigorosa do Problema da Parada ao Teorema de Gödel.
+            </p>
+            
+            <div class="hero-price-box">
+                <div class="price-tag">R$ 97,00 <small>à vista</small></div>
+                <div class="installment-info">ou em até <span>12x de R$ 10,00</span> no cartão</div>
+                <button class="cta-button" onclick="scrollToPricing()">▶ QUERO DOMINAR ESSE CONHECIMENTO</button>
+            </div>
+        </section>
+
+        <!-- SOBRE / O PROBLEMA -->
+        <section id="about">
+            <div class="grid-2col">
+                <div class="fade-up">
+                    <div class="section-tag">O Paradoxo Fundamental</div>
+                    <h2>O que a <span>computação</span> jamais poderá fazer?</h2>
+                    <p style="font-size:1.1rem; color: var(--text-muted);">
+                        Existem problemas matemáticos que nenhum algoritmo, por mais poderoso que seja, 
+                        conseguirá resolver. Este e-book demonstra, com rigor lógico, a existência 
+                        desses <strong>limites inexpugnáveis</strong>.
+                    </p>
+                    <div class="highlight-box">
+                        <p style="font-style: italic; color: #dde6f0; font-size: 1.05rem;">
+                            “Em um sistema formal consistente que expresse aritmética, 
+                            existem sentenças verdadeiras que são <strong>indemonstráveis</strong>.”
+                        </p>
+                        <p style="margin-top: 8px; color: var(--accent-gold);">— Teorema da Incompletude de Gödel</p>
+                    </div>
+                    <p style="color: var(--text-muted);">
+                        Conectamos a <strong>Máquina de Turing</strong> e o <strong>Problema da Parada</strong> 
+                        diretamente à prova de Gödel, revelando o núcleo filosófico e matemático 
+                        da <strong>indecidibilidade</strong>.
+                    </p>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div style="background: var(--secondary-blue); padding: 30px; border-radius: 30px; text-align: center; width: 100%; border: 1px solid rgba(91, 192, 235, 0.1);">
+                        <span style="font-size: 4rem; display: block;">⚡</span>
+                        <h3 style="color: #fff; font-size: 2rem;">K</h3>
+                        <p style="color: var(--text-muted);">Conjunto diagonal do Problema da Parada</p>
+                        <div style="background: #0a121c; padding: 15px; border-radius: 12px; font-family: monospace; color: var(--accent-cyan); margin-top: 15px; font-size: 0.9rem; word-break: break-all;">
+                            K = { i ∈ ℕ : P<sub>i</sub>(i) ↓ }
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">
+                            <span style="color: #5bc0eb;">Recursivamente Enumerável</span> 
+                            <span style="color: var(--text-muted);">|</span> 
+                            <span style="color: var(--accent-gold);">Indecidível</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TÓPICOS / O QUE VOCÊ APRENDE -->
+        <section id="topics">
+            <div class="section-tag">Roteiro do Conhecimento</div>
+            <h2>O que você vai <span>desbravar</span></h2>
+            <div class="topics-grid">
+                <div class="topic-card fade-up">
+                    <span class="icon">🧠</span>
+                    <h3>Máquinas de Turing</h3>
+                    <p>Formalização exata do conceito de "procedimento efetivo" e a base de toda a computabilidade.</p>
+                </div>
+                <div class="topic-card fade-up">
+                    <span class="icon">🔍</span>
+                    <h3>O Problema da Parada</h3>
+                    <p>A prova definitiva de que não existe algoritmo capaz de prever se um programa termina ou não.</p>
+                </div>
+                <div class="topic-card fade-up">
+                    <span class="icon">📊</span>
+                    <h3>Conjuntos Indecidíveis</h3>
+                    <p>Entenda a diferença entre decidibilidade e enumerabilidade recursiva com o conjunto diagonal K.</p>
+                </div>
+                <div class="topic-card fade-up">
+                    <span class="icon">📜</span>
+                    <h3>Teorema da Incompletude</h3>
+                    <p>A conexão direta entre a indecidibilidade computacional e os limites dos sistemas formais axiomáticos.</p>
+                </div>
+                <div class="topic-card fade-up">
+                    <span class="icon">🧩</span>
+                    <h3>10º Problema de Hilbert</h3>
+                    <p>Apêndice especial sobre equações diofantinas e a prova de Matiyasevich.</p>
+                </div>
+                <div class="topic-card fade-up">
+                    <span class="icon">🎯</span>
+                    <h3>Exercícios e Glossário</h3>
+                    <p>Material didático com questões para fixação e um glossário técnico completo para consulta.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÚBLICO-ALVO -->
+        <section id="audience">
+            <div class="section-tag">Para quem é essencial</div>
+            <h2>Este livro foi feito para <span>você</span></h2>
+            <div class="audience-list">
+                <div class="audience-item fade-up"><span class="check">✓</span> Estudantes de Ciência da Computação</div>
+                <div class="audience-item fade-up"><span class="check">✓</span> Matemáticos e Lógicos</div>
+                <div class="audience-item fade-up"><span class="check">✓</span> Filósofos da Ciência</div>
+                <div class="audience-item fade-up"><span class="check">✓</span> Pesquisadores e Acadêmicos</div>
+                <div class="audience-item fade-up"><span class="check">✓</span> Profissionais de TI que buscam fundamentos</div>
+                <div class="audience-item fade-up"><span class="check">✓</span> Entusiastas da Teoria da Computação</div>
+            </div>
+            <p style="margin-top: 30px; color: var(--text-muted); text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Não é uma leitura superficial. É um <strong>mergulho rigoroso</strong> que conecta a lógica matemática à prática computacional.
+            </p>
+        </section>
+
+        <!-- PREÇO E CTA FINAL -->
+        <section id="pricing">
+            <div class="price-box-final">
+                <span class="section-tag" style="color: var(--accent-gold);">Oferta Especial</span>
+                <div class="old-price">De R$ 197,00</div>
+                <div class="big-price">R$ 97,00 <small>à vista</small></div>
+                <div style="color: var(--text-muted); margin-bottom: 15px;">ou 12x de R$ 10,00 no cartão</div>
+                
+                <button class="cta-button" style="animation: pulse-glow 2s infinite; padding: 18px 50px; font-size: 1.3rem;">
+                    📘 GARANTIR MEU E-BOOK
+                </button>
+                
+                <div class="guarantee">
+                    <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>Compra 100% segura via Hotmart. Acesso imediato.</span>
+                </div>
+                <p style="font-size: 0.8rem; color: #5a6f84; margin-top: 10px;">* Preço sujeito a reajuste. Aproveite a 2ª edição revisada.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Vinícius Augusto de Souza. Todos os direitos reservados.</p>
+            <p style="margin-top: 5px;">Desenvolvido com 🧠 para mentes curiosas.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ==========================================
+        // 1. PARTICLES - Efeito de "Computação"
+        // ==========================================
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let particles = [];
+
+        function initParticles() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+
+            const count = Math.min(120, Math.floor((width * height) / 12000));
+            particles = [];
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.6,
+                    vy: (Math.random() - 0.5) * 0.6,
+                    radius: Math.random() * 2 + 1.5,
+                    phase: Math.random() * Math.PI * 2
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Fundo sutil
+            const gradient = ctx.createRadialGradient(width/2, height/2, 0, width/2, height/2, width*0.7);
+            gradient.addColorStop(0, '#142144');
+            gradient.addColorStop(1, '#0a121c');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+
+            // Atualizar posições
+            for (let p of particles) {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+            }
+
+            // Desenhar linhas
+            ctx.strokeStyle = 'rgba(31, 65, 84, 0.35)';
+            ctx.lineWidth = 0.8;
+            const maxDist = Math.min(180, (width + height) / 8);
+
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if (dist < maxDist) {
+                        const opacity = 1 - (dist / maxDist);
+                        ctx.strokeStyle = `rgba(91, 192, 235, ${opacity * 0.25})`;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Desenhar pontos
+            for (let p of particles) {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(91, 192, 235, 0.7)';
+                ctx.fill();
+                // Brilho em alguns pontos
+                if (p.radius > 2) {
+                    ctx.shadowColor = '#5bc0eb';
+                    ctx.shadowBlur = 10;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                }
+            }
+
+            requestAnimationFrame(drawParticles);
+        }
+
+        window.addEventListener('resize', () => {
+            initParticles();
+        });
+
+        initParticles();
+        drawParticles();
+
+        // ==========================================
+        // 2. ANIMAÇÃO DE SCROLL (Intersection Observer)
+        // ==========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-up, .topic-card');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Se for topic-card, já está com transition, mas podemos forçar
+                        if (entry.target.classList.contains('topic-card')) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    }
+                });
+            }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+
+            fadeElements.forEach(el => observer.observe(el));
+        });
+
+        // ==========================================
+        // 3. SCROLL SUAVE PARA O PREÇO
+        // ==========================================
+        function scrollToPricing() {
+            const pricingSection = document.getElementById('pricing');
+            if (pricingSection) {
+                pricingSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Adiciona evento ao botão do hero se existir
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroBtn = document.querySelector('#hero .cta-button');
+            if (heroBtn && !heroBtn.onclick) {
+                heroBtn.onclick = scrollToPricing;
+            }
+            
+            // Atualiza visibilidade inicial dos topic-cards (já que o observer cuida)
+            document.querySelectorAll('.topic-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                // Se já estiver visível na carga, o observer vai tratar, mas garantimos a classe
+            });
+        });
+
+        // Previne que o clique no CTA final recarregue a página
+        document.querySelectorAll('.cta-button').forEach(btn => {
+            if (!btn.onclick) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('🔗 Você será redirecionado para a Hotmart para finalizar sua compra com segurança.');
+                    // window.location.href = "https://go.hotmart.com/J107321051E";
+                });
+            }
+        });
+
+        console.log('⚡ Página "Os Limites da Computação" carregada!');
+        console.log('🎯 Cor base: #142144 e #1f4154');
+    </script>
+
+</body>
+</html>
