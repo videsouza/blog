@@ -94,6 +94,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 0 20px rgba(230, 200, 124, 0.2);
+            cursor: pointer;
         }
         .nav-cta:hover {
             background: #f5d88a;
@@ -283,7 +284,7 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(230, 200, 124, 0.15);
             transform: rotateY(-6deg) rotateX(4deg);
             transition: transform 0.5s ease, box-shadow 0.5s ease;
-            background: #142144; /* fallback */
+            background: #142144;
             overflow: hidden;
         }
 
@@ -299,7 +300,6 @@
             border-radius: 12px;
         }
 
-        /* Selo "2ª Edição" sobre a capa */
         .book-badge {
             position: absolute;
             top: 16px;
@@ -488,7 +488,7 @@
     <nav>
         <div class="container nav-content">
             <div class="logo">⌨️ <span>Limites</span> da Computação</div>
-            <a href="#pricing" class="nav-cta">Adquirir Agora</a>
+            <a class="nav-cta">Adquirir Agora</a>
         </div>
     </nav>
 
@@ -506,14 +506,13 @@
             <div class="hero-price-box">
                 <div class="price-tag">R$ 97,00 <small>à vista</small></div>
                 <div class="installment-info">ou em até <span>12x de R$ 10,00</span> no cartão</div>
-                <button class="cta-button" onclick="scrollToPricing()">▶ QUERO DOMINAR ESSE CONHECIMENTO</button>
+                <button class="cta-button">▶ QUERO DOMINAR ESSE CONHECIMENTO</button>
             </div>
         </section>
 
         <!-- ABOUT + CAPA -->
         <section id="about">
             <div class="grid-2col">
-                <!-- Texto -->
                 <div class="fade-up">
                     <div class="section-tag">O Paradoxo Fundamental</div>
                     <h2>O que a <span>computação</span> jamais poderá fazer?</h2>
@@ -539,10 +538,7 @@
                 <!-- CAPA DO E-BOOK -->
                 <div class="book-cover-wrapper fade-up">
                     <div class="book-cover">
-                        <!-- 
-                            ⚠️ SUBSTITUA "capa-do-ebook.png" PELO CAMINHO REAL DA SUA IMAGEM.
-                            Exemplo: "assets/capa-ebook.png" ou "../imagens/capa.png"
-                        -->
+                        <!-- ⚠️ SUBSTITUA "capa-do-ebook.png" PELO CAMINHO REAL DA SUA IMAGEM -->
                         <img src="incompletude.png" alt="Capa do e-book Os Limites da Computação">
                         <div class="book-badge">2ª Edição</div>
                     </div>
@@ -635,6 +631,11 @@
     </footer>
 
     <script>
+        // ==========================================
+        // 0. CONFIGURAÇÃO DO LINK HOTMART
+        // ==========================================
+        const HOTMART_LINK = "https://pay.hotmart.com/J107321051E"; // ← SUBSTITUA PELO SEU LINK
+
         // ==========================================
         // 1. PARTÍCULAS
         // ==========================================
@@ -731,20 +732,22 @@
         });
 
         // ==========================================
-        // 3. SCROLL SUAVE PARA O PREÇO
+        // 3. REDIRECIONAMENTO PARA A HOTMART
         // ==========================================
-        function scrollToPricing() {
-            document.getElementById('pricing').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        function redirectToHotmart(e) {
+            e.preventDefault();
+            window.open(HOTMART_LINK, '_blank');
+            // Caso queira abrir na mesma guia, use:
+            // window.location.href = HOTMART_LINK;
         }
 
-        // Ação dos botões CTA (simulação de redirecionamento)
+        // Todos os botões com a classe .cta-button
         document.querySelectorAll('.cta-button').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert('🔗 Você será redirecionado para a Hotmart para finalizar sua compra com segurança.');
-                // window.location.href = "https://pay.hotmart.com/J107321051E";
-            });
+            btn.addEventListener('click', redirectToHotmart);
         });
+
+        // Botão da navegação
+        document.querySelector('.nav-cta')?.addEventListener('click', redirectToHotmart);
     </script>
 
 </body>
