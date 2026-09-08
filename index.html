@@ -1,690 +1,208 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio · Nome</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
-  <style>
-    /* ===== RESET ===== */
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #fafafa;
-      color: #1a1a1a;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-      padding: 18px 0;
-    }
-
-    header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #111;
-    }
-    .logo span {
-      font-weight: 300;
-      color: #6b6b6b;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 28px;
-    }
-
-    nav ul li a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #3a3a3a;
-      transition: color 0.2s;
-      letter-spacing: -0.01em;
-    }
-    nav ul li a:hover {
-      color: #000;
-    }
-
-    /* ===== SEÇÕES ===== */
-    section {
-      padding: 80px 0 64px;
-    }
-
-    .section-title {
-      font-size: 1.75rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
-      color: #111;
-    }
-
-    .section-subtitle {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #6b6b6b;
-      margin-bottom: 44px;
-      border-left: 3px solid #d0d0d0;
-      padding-left: 16px;
-    }
-
-    /* ===== HOME ===== */
-    #home {
-      padding: 120px 0 80px;
-      background: #fff;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    #home .container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    #home h1 {
-      font-size: 3.2rem;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-    #home h1 span {
-      font-weight: 300;
-      color: #6b6b6b;
-    }
-    #home p {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #4a4a4a;
-      max-width: 540px;
-      margin-bottom: 36px;
-    }
-    .btn {
-      display: inline-block;
-      background: #111;
-      color: #fff;
-      padding: 12px 32px;
-      border-radius: 40px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: background 0.2s, transform 0.1s;
-    }
-    .btn:hover {
-      background: #2a2a2a;
-      transform: translateY(-1px);
-    }
-
-    /* ===== CARDS ===== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 32px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 0 0 20px 0;
-      transition: box-shadow 0.25s, transform 0.2s;
-      border: 1px solid #ededed;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .card:hover {
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
-      transform: translateY(-4px);
-    }
-
-    .card-image {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      background: #f0f0f0;
-    }
-
-    .card-body {
-      padding: 20px 22px 16px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 4px;
-      color: #111;
-    }
-
-    .card .meta {
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: #8a8a8a;
-      margin-bottom: 10px;
-      letter-spacing: 0.01em;
-    }
-
-    .card .meta a {
-      color: #8a8a8a;
-      border-bottom: 1px solid #e0e0e0;
-      transition: border-color 0.2s;
-    }
-    .card .meta a:hover {
-      border-color: #111;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #4a4a4a;
-      flex: 1;
-      margin-bottom: 18px;
-      line-height: 1.5;
-    }
-
-    .card .btn-small {
-      align-self: flex-start;
-      background: none;
-      border: 1px solid #d0d0d0;
-      color: #2a2a2a;
-      padding: 6px 20px;
-      border-radius: 30px;
-      font-weight: 500;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      letter-spacing: 0.01em;
-    }
-    .card .btn-small:hover {
-      background: #111;
-      border-color: #111;
-      color: #fff;
-    }
-
-    /* ===== SOBRE ===== */
-    #about {
-      background: #fff;
-      border-top: 1px solid #f0f0f0;
-    }
-    #about .about-content {
-      max-width: 640px;
-    }
-    #about .about-content p {
-      font-size: 1.05rem;
-      color: #3a3a3a;
-      margin-bottom: 20px;
-    }
-    #about .about-content .contact-line {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.95rem;
-      color: #4a4a4a;
-      margin-top: 8px;
-    }
-    #about .about-content .contact-line i {
-      width: 20px;
-      color: #888;
-      font-size: 1rem;
-    }
-
-    /* ===== MODAL ===== */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(4px);
-      z-index: 999;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal-overlay.active {
-      display: flex;
-    }
-
-    .modal {
-      background: #fff;
-      max-width: 660px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      border-radius: 16px;
-      padding: 40px 44px;
-      position: relative;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-size: 1.6rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: #9a9a9a;
-      transition: color 0.2s;
-      line-height: 1;
-    }
-    .modal-close:hover {
-      color: #111;
-    }
-
-    .modal h2 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 6px;
-      color: #111;
-    }
-    .modal .meta {
-      color: #8a8a8a;
-      margin-bottom: 24px;
-      font-size: 0.9rem;
-      border-bottom: 1px solid #f0f0f0;
-      padding-bottom: 16px;
-    }
-    .modal .meta a {
-      color: #8a8a8a;
-      border-bottom: 1px solid #ddd;
-    }
-    .modal .meta a:hover {
-      border-color: #111;
-    }
-    .modal .body {
-      color: #2a2a2a;
-      white-space: pre-wrap;
-      line-height: 1.7;
-      font-size: 0.98rem;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #fff;
-      border-top: 1px solid #f0f0f0;
-      padding: 40px 0 32px;
-      text-align: center;
-    }
-    footer .social {
-      margin-bottom: 12px;
-    }
-    footer .social a {
-      color: #4a4a4a;
-      font-size: 1.4rem;
-      margin: 0 14px;
-      transition: color 0.2s;
-    }
-    footer .social a:hover {
-      color: #111;
-    }
-    footer p {
-      font-size: 0.85rem;
-      color: #8a8a8a;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      header .container {
-        flex-direction: column;
-        gap: 12px;
-      }
-      nav ul {
-        gap: 18px;
-      }
-      nav ul li a {
-        font-size: 0.85rem;
-      }
-      #home {
-        padding: 80px 0 60px;
-      }
-      #home h1 {
-        font-size: 2.4rem;
-      }
-      #home p {
-        font-size: 1rem;
-      }
-      .section-title {
-        font-size: 1.5rem;
-      }
-      .modal {
-        padding: 32px 24px;
-      }
-      .modal h2 {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 16px;
-      }
-      nav ul {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      #home h1 {
-        font-size: 2rem;
-      }
-      #home p {
-        font-size: 0.95rem;
-      }
-      .card-image {
-        height: 140px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinícius Augusto de Souza — Projetos, Livros e Artigos</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="container">
-      <div class="logo">Nome<span>·</span></div>
-      <nav>
-        <ul>
-          <li><a href="#home">Início</a></li>
-          <li><a href="#projects">Projetos</a></li>
-          <li><a href="#articles">Artigos</a></li>
-          <li><a href="#books">Livros</a></li>
-          <li><a href="#about">Sobre</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- Header / Navegação -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-bold text-lg text-slate-900 tracking-tight">Vinícius Augusto de Souza</a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#sobre" class="hover:text-indigo-600 transition">Sobre</a>
+                <a href="#livros" class="hover:text-indigo-600 transition">Livros</a>
+                <a href="#projetos" class="hover:text-indigo-600 transition">Projetos & Ferramentas</a>
+                <a href="#artigos" class="hover:text-indigo-600 transition">Artigos</a>
+            </nav>
+            <a href="#projetos" class="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-indigo-700 transition shadow-sm">Ver Ferramentas</a>
+        </div>
+    </header>
 
-  <!-- ===== HOME ===== -->
-  <section id="home">
-    <div class="container">
-      <h1>Olá, <span>sou seu nome</span></h1>
-      <p>Desenvolvedor e escritor. Compartilho projetos, artigos e livros sobre tecnologia e design.</p>
-      <a href="#projects" class="btn">Explorar</a>
-    </div>
-  </section>
-
-  <!-- ===== PROJETOS ===== -->
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">Projetos</h2>
-      <div class="section-subtitle">Trabalhos recentes</div>
-      <div id="projects-grid" class="grid"></div>
-    </div>
-  </section>
-
-  <!-- ===== ARTIGOS ===== -->
-  <section id="articles" style="background:#f7f7f7;">
-    <div class="container">
-      <h2 class="section-title">Artigos</h2>
-      <div class="section-subtitle">Escritos sobre tecnologia</div>
-      <div id="articles-grid" class="grid"></div>
-    </div>
-  </section>
-
-  <!-- ===== LIVROS ===== -->
-  <section id="books">
-    <div class="container">
-      <h2 class="section-title">Livros</h2>
-      <div class="section-subtitle">Publicações e obras</div>
-      <div id="books-grid" class="grid"></div>
-    </div>
-  </section>
-
-  <!-- ===== SOBRE ===== -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">Sobre</h2>
-      <div class="about-content">
-        <p>
-          Trabalho com desenvolvimento web e escrita técnica. Acredito em
-          soluções simples, bem feitas e que resolvam problemas reais.
-        </p>
-        <div class="contact-line"><i class="fas fa-map-pin"></i> Brasil</div>
-        <div class="contact-line"><i class="fas fa-envelope"></i> contato@meusite.com</div>
-        <div class="contact-line"><i class="fab fa-github"></i> github.com/seuusuario</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="container">
-      <div class="social">
-        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      </div>
-      <p>&copy; 2026 · Todos os direitos reservados</p>
-    </div>
-  </footer>
-
-  <!-- ===== MODAL ===== -->
-  <div class="modal-overlay" id="modal-overlay">
-    <div class="modal" id="modal-content">
-      <button class="modal-close" id="modal-close">&times;</button>
-      <h2 id="modal-title">Título</h2>
-      <div class="meta" id="modal-meta">Data / Categoria</div>
-      <div class="body" id="modal-body">Conteúdo completo...</div>
-    </div>
-  </div>
-
-  <script>
-    // ============================================================
-    // DADOS (edite aqui)
-    // ============================================================
-
-    const projects = [{
-      id: 1,
-      title: 'E-commerce com React',
-      description: 'Loja virtual com carrinho e pagamentos.',
-      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=E-commerce',
-      link: 'https://github.com/seuusuario/ecommerce-react',
-      full: 'Projeto completo desenvolvido com React, Redux e Node.js. Inclui integração com Stripe e autenticação JWT.'
-    }, {
-      id: 2,
-      title: 'Dashboard Financeiro',
-      description: 'Painel de controle de despesas com gráficos.',
-      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=Dashboard',
-      link: 'https://github.com/seuusuario/dashboard-financeiro',
-      full: 'Desenvolvido com Vue.js e D3.js. Permite importar CSV e visualizar gastos por categoria.'
-    }, {
-      id: 3,
-      title: 'App de Clima',
-      description: 'Previsão do tempo com geolocalização.',
-      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=Clima',
-      link: 'https://github.com/seuusuario/app-clima',
-      full: 'PWA que consome a API OpenWeather. Mostra temperatura, umidade e previsão para 5 dias.'
-    }];
-
-    const articles = [{
-      id: 1,
-      title: 'Introdução ao CSS Grid',
-      date: '15/03/2026',
-      summary: 'Crie layouts modernos com Grid Layout.',
-      full: 'CSS Grid é uma ferramenta poderosa para layouts bidimensionais. Este artigo aborda desde conceitos básicos até técnicas avançadas como grids responsivos e alinhamento.'
-    }, {
-      id: 2,
-      title: 'Estrutura de projetos React',
-      date: '02/02/2026',
-      summary: 'Organização de pastas e hooks para escalabilidade.',
-      full: 'Uma boa estrutura de pastas é essencial para manter um projeto React sustentável. Sugerimos separar componentes, páginas, hooks, contextos e serviços.'
-    }, {
-      id: 3,
-      title: 'Autenticação com JWT',
-      date: '10/01/2026',
-      summary: 'Login seguro usando JSON Web Tokens.',
-      full: 'JWT é amplamente utilizado para autenticação stateless. Mostramos como gerar tokens, validar no backend e armazenar de forma segura no frontend.'
-    }];
-
-    const books = [{
-      id: 1,
-      title: 'JavaScript Moderno',
-      subtitle: 'Do básico ao ES2025',
-      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=JS+Moderno',
-      description: 'Guia completo com as últimas features.',
-      full: 'Cobre desde variáveis e funções até Promises, async/await, módulos, proxies e decorators. Inclui exercícios práticos e projetos.'
-    }, {
-      id: 2,
-      title: 'Arquitetura de Software',
-      subtitle: 'Padrões e boas práticas',
-      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=Arquitetura',
-      description: 'Entenda padrões arquiteturais para sistemas escaláveis.',
-      full: 'Explora MVC, Hexagonal, Microsserviços, Event-Driven e CQRS com exemplos em Java e Node.js.'
-    }, {
-      id: 3,
-      title: 'UX Design para Devs',
-      subtitle: 'Interfaces intuitivas',
-      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=UX+Design',
-      description: 'Fundamentos de UX aplicados ao desenvolvimento.',
-      full: 'Ensina princípios de UX, pesquisa com usuários, prototipagem, testes de usabilidade e colaboração com designers.'
-    }];
-
-    // ============================================================
-    // RENDER
-    // ============================================================
-
-    function renderCards(containerId, items, type) {
-      const container = document.getElementById(containerId);
-      if (!container) return;
-
-      container.innerHTML = items.map(item => {
-        let metaHtml = '';
-        let imageHtml = '';
-        let btnLabel = 'Ver mais';
-
-        if (type === 'project') {
-          imageHtml = `<img class="card-image" src="${item.image}" alt="${item.title}">`;
-          metaHtml = `<div class="meta"><i class="fas fa-external-link-alt"></i> <a href="${item.link}" target="_blank">Repositório</a></div>`;
-        } else if (type === 'article') {
-          metaHtml = `<div class="meta"><i class="far fa-calendar-alt"></i> ${item.date}</div>`;
-        } else if (type === 'book') {
-          imageHtml = `<img class="card-image" src="${item.image}" alt="${item.title}">`;
-          metaHtml = `<div class="meta"><i class="fas fa-bookmark"></i> ${item.subtitle || ''}</div>`;
-        }
-
-        return `
-          <div class="card" data-id="${item.id}" data-type="${type}">
-            ${imageHtml}
-            <div class="card-body">
-              <h3>${item.title}</h3>
-              ${metaHtml}
-              <p>${item.summary || item.description || ''}</p>
-              <button class="btn-small" data-id="${item.id}" data-type="${type}">${btnLabel}</button>
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 pt-20 pb-16 md:pt-32 md:pb-24 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-8 space-y-6">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-100">
+                Pesquisa, Computação & Arquivologia
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Explorando os limites da computação e da organização documental.
+            </h1>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
+                Espaço dedicado à publicação de obras teóricas, desenvolvimento de softwares para automação administrativa, ferramentas de cálculo e artigos sobre lógica formal, sistemas e ciência da informação.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+                <a href="#livros" class="bg-slate-900 text-white font-medium px-6 py-3 rounded-xl hover:bg-slate-800 transition shadow-md">Conhecer Livros</a>
+                <a href="#projetos" class="bg-white text-slate-700 font-medium px-6 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 transition">Explorar Ferramentas</a>
             </div>
-          </div>
-        `;
-      }).join('');
+        </div>
+        <div class="md:col-span-4 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center font-bold text-xl">
+                VAS
+            </div>
+            <h3 class="font-semibold text-slate-900 text-lg">Links Rápidos</h3>
+            <ul class="space-y-3 text-sm text-slate-600">
+                <li><a href="https://github.com" target="_blank" class="hover:text-indigo-600 flex items-center gap-2">📂 Repositórios no GitHub</a></li>
+                <li><a href="https://substack.com" target="_blank" class="hover:text-indigo-600 flex items-center gap-2">✍️ Substack (Número Imaginário)</a></li>
+                <li><a href="mailto:seu-email@exemplo.com" class="hover:text-indigo-600 flex items-center gap-2">✉️ Contato Direto</a></li>
+            </ul>
+        </div>
+    </section>
 
-      container.querySelectorAll('.btn-small').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const id = parseInt(this.dataset.id);
-          const type = this.dataset.type;
-          let item = null;
-          if (type === 'project') item = projects.find(p => p.id === id);
-          else if (type === 'article') item = articles.find(a => a.id === id);
-          else if (type === 'book') item = books.find(b => b.id === id);
-          if (item) openModal(item, type);
-        });
-      });
-    }
+    <!-- Seção de Livros -->
+    <section id="livros" class="bg-white border-y border-slate-200 py-20">
+        <div class="max-w-6xl mx-auto px-6 space-y-12">
+            <div class="space-y-2">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-indigo-600">Publicações</h2>
+                <h3 class="text-3xl font-bold text-slate-900 tracking-tight">Livros Publicados</h3>
+                <p class="text-slate-600">Obras focadas em lógica matemática, física teórica e métodos técnicos de amostragem.</p>
+            </div>
 
-    // ============================================================
-    // MODAL
-    // ============================================================
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Livro 1 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 bg-indigo-600 text-white rounded-lg flex items-center justify-center font-bold">01</div>
+                        <h4 class="font-bold text-slate-900 text-lg leading-snug">Os Limites da Computação: Indecidibilidade e Incompletude em Sistemas Formais</h4>
+                        <p class="text-sm text-slate-600">Análise profunda sobre os teoremas de Gödel, máquinas de Turing e barreiras teóricas da computabilidade.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-slate-200">
+                        <span class="text-xs font-medium text-slate-500">Lógica Matemática & Computação</span>
+                    </div>
+                </div>
 
-    const modalOverlay = document.getElementById('modal-overlay');
-    const modalTitle = document.getElementById('modal-title');
-    const modalMeta = document.getElementById('modal-meta');
-    const modalBody = document.getElementById('modal-body');
-    const modalClose = document.getElementById('modal-close');
+                <!-- Livro 2 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 bg-indigo-600 text-white rounded-lg flex items-center justify-center font-bold">02</div>
+                        <h4 class="font-bold text-slate-900 text-lg leading-snug">Método Axiomático e Teorias Físicas</h4>
+                        <p class="text-sm text-slate-600">Sistemas formais, teoria formal, mecânica de partículas e a independência de axiomas aplicados à física.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-slate-200">
+                        <span class="text-xs font-medium text-slate-500">Física Teórica & Axiomática</span>
+                    </div>
+                </div>
 
-    function openModal(item, type) {
-      let metaText = '';
-      if (type === 'project') {
-        metaText = `<i class="fas fa-code"></i> Projeto · <a href="${item.link}" target="_blank">GitHub</a>`;
-      } else if (type === 'article') {
-        metaText = `<i class="far fa-calendar-alt"></i> ${item.date}`;
-      } else if (type === 'book') {
-        metaText = `<i class="fas fa-book"></i> ${item.subtitle || 'Livro'}`;
-      }
-      modalTitle.textContent = item.title;
-      modalMeta.innerHTML = metaText;
-      modalBody.textContent = item.full || item.description || 'Conteúdo não disponível.';
-      modalOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+                <!-- Livro 3 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition">
+                    <div class="space-y-4">
+                        <div class="w-10 h-10 bg-indigo-600 text-white rounded-lg flex items-center justify-center font-bold">03</div>
+                        <h4 class="font-bold text-slate-900 text-lg leading-snug">Manual Técnico de Amostragem Documental</h4>
+                        <p class="text-sm text-slate-600">Diretrizes metodológicas para gestão de acervos, tabelas temporais e critérios de eliminação em arquivos públicos.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-slate-200">
+                        <span class="text-xs font-medium text-slate-500">Arquivologia & Gestão</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function closeModal() {
-      modalOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+    <!-- Seção de Projetos e Ferramentas de Cálculo -->
+    <section id="projetos" class="max-w-6xl mx-auto px-6 py-20 space-y-12">
+        <div class="space-y-2">
+            <h2 class="text-xs font-semibold uppercase tracking-wider text-indigo-600">Tecnologia & Prática</h2>
+            <h3 class="text-3xl font-bold text-slate-900 tracking-tight">Projetos & Ferramentas de Cálculo</h3>
+            <p class="text-slate-600">Ferramentas interativas desenvolvidas em JavaScript para apoio a cálculos, automações e organização.</p>
+        </div>
 
-    modalClose.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', function(e) {
-      if (e.target === this) closeModal();
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeModal();
-    });
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Mini Calculadora / Ferramenta Exemplo -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+                <div class="flex items-center justify-between">
+                    <h4 class="font-bold text-slate-900">🧮 Simulador / Calculadora de Amostragem</h4>
+                    <span class="text-xs bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full font-medium">Online no Browser</span>
+                </div>
+                <p class="text-sm text-slate-600">Ferramenta interativa de exemplo para cálculo rápido de amostras documentais com base no volume total do arquivo.</p>
+                
+                <div class="space-y-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-700 mb-1">Total de Caixas / Documentos:</label>
+                        <input type="number" id="inputVolume" value="1000" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <button onclick="calcularAmostra()" class="w-full bg-indigo-600 text-white font-medium py-2 rounded-lg text-sm hover:bg-indigo-700 transition">Calcular Amostra Recomendada</button>
+                    <div id="resultadoCalculo" class="text-sm font-semibold text-indigo-900 pt-2 border-t border-slate-200">
+                        Amostra estimada: 278 unidades (Margem de erro de 5%)
+                    </div>
+                </div>
+            </div>
 
-    // ============================================================
-    // INIT
-    // ============================================================
+            <!-- Card de Repositórios de Automação -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <h4 class="font-bold text-slate-900">⚡ Automações & Scripts (Python / VBA / JS)</h4>
+                    <p class="text-sm text-slate-600">Conjunto de rotinas voltadas para limpeza de dados em planilhas, mapeamento de diretórios locais, geração de etiquetas e tabelas temporais administrativas.</p>
+                    <ul class="text-sm space-y-2 text-slate-600 list-disc list-inside">
+                        <li>Processamento de metadados de arquivos</li>
+                        <li>Geração automática de estruturas de pastas</li>
+                        <li>Classificação semântica de descrições textuais</li>
+                    </ul>
+                </div>
+                <div class="pt-4">
+                    <a href="https://github.com" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800">
+                        Ver repositórios completos no GitHub &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    document.addEventListener('DOMContentLoaded', function() {
-      renderCards('projects-grid', projects, 'project');
-      renderCards('articles-grid', articles, 'article');
-      renderCards('books-grid', books, 'book');
-    });
-  </script>
+    <!-- Seção de Artigos -->
+    <section id="artigos" class="bg-white border-t border-slate-200 py-20">
+        <div class="max-w-6xl mx-auto px-6 space-y-12">
+            <div class="space-y-2">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-indigo-600">Escritos</h2>
+                <h3 class="text-3xl font-bold text-slate-900 tracking-tight">Artigos & Ensaios</h3>
+                <p class="text-slate-600">Textos recentes publicados sobre computação, lógica e organização de acervos.</p>
+            </div>
+
+            <div class="space-y-4 max-w-3xl">
+                <article class="p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 transition bg-slate-50 space-y-2">
+                    <span class="text-xs font-medium text-indigo-600">Julho, 2026</span>
+                    <h4 class="text-lg font-bold text-slate-900">Entropia de Shannon aplicada à organização de arquivos físicos</h4>
+                    <p class="text-sm text-slate-600">Uma análise sobre como mensurar o grau de desordem informacional em caixas de guarda permanente e intermediária.</p>
+                </article>
+
+                <article class="p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 transition bg-slate-50 space-y-2">
+                    <span class="text-xs font-medium text-indigo-600">Junho, 2026</span>
+                    <h4 class="text-lg font-bold text-slate-900">O problema da parada e as limitações práticas dos algoritmos de validação</h4>
+                    <p class="text-sm text-slate-600">Reflexões sobre a indecidibilidade formal e suas implicações no desenvolvimento de software de auditoria.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+            <p>&copy; 2026 Vinícius Augusto de Souza. Todos os direitos reservados.</p>
+            <div class="flex space-x-6">
+                <a href="https://github.com" target="_blank" class="hover:text-white transition">GitHub</a>
+                <a href="https://substack.com" target="_blank" class="hover:text-white transition">Substack</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Simples para a Ferramenta de Cálculo de Exemplo -->
+    <script>
+        function calcularAmostra() {
+            const volume = parseInt(document.getElementById('inputVolume').value) || 0;
+            if (volume <= 0) {
+                document.getElementById('resultadoCalculo').innerText = "Por favor, insira um valor válido.";
+                return;
+            }
+            // Cálculo simplificado de proporção amostral genérica
+            const amostra = Math.ceil(volume / (1 + (volume * 0.05 * 0.05)));
+            document.getElementById('resultadoCalculo').innerText = `Amostra estimada: ${amostra} unidades (Margem de erro de 5%)`;
+        }
+    </script>
 </body>
 </html>
