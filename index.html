@@ -1,65 +1,620 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Portfólio</title>
+  <!-- Font Awesome (ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <title>VINICIVS</title>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fc;
+      color: #1e2a3a;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-    <meta
-        name="description"
-        content="VINICIVS — livros, artigos, coding e pesquisa."
-    >
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-    <link rel="stylesheet" href="styles.css">
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 0;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    .logo span {
+      color: #3498db;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      font-weight: 500;
+      color: #2c3e50;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
+    nav ul li a:hover {
+      color: #3498db;
+    }
+
+    /* ===== SEÇÕES ===== */
+    section {
+      padding: 70px 0 50px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1e2a3a;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title i {
+      color: #3498db;
+    }
+    .section-subtitle {
+      color: #5a6a7a;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+      border-left: 4px solid #3498db;
+      padding-left: 16px;
+    }
+
+    /* ===== HOME ===== */
+    #home {
+      padding: 100px 0 80px;
+      background: linear-gradient(145deg, #ffffff 0%, #f0f4fa 100%);
+    }
+    #home .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #home h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    #home h1 span {
+      color: #3498db;
+    }
+    #home p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      color: #3a4a5a;
+      margin-bottom: 32px;
+    }
+    .btn {
+      display: inline-block;
+      background: #3498db;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn:hover {
+      background: #2176ae;
+      transform: translateY(-2px);
+    }
+
+    /* ===== CARDS ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      padding: 24px 20px 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #edf2f7;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #e9edf4;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: #1e2a3a;
+    }
+
+    .card .meta {
+      font-size: 0.85rem;
+      color: #6a7a8a;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #3a4a5a;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+
+    .card .btn-small {
+      align-self: flex-start;
+      background: none;
+      border: 2px solid #3498db;
+      color: #3498db;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .card .btn-small:hover {
+      background: #3498db;
+      color: #fff;
+    }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: #fff;
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 20px;
+      padding: 36px 40px;
+      position: relative;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #5a6a7a;
+      transition: color 0.2s;
+    }
+    .modal-close:hover {
+      color: #1e2a3a;
+    }
+
+    .modal h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #1e2a3a;
+    }
+    .modal .meta {
+      color: #6a7a8a;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .modal .body {
+      color: #2c3e50;
+      white-space: pre-wrap;
+      line-height: 1.8;
+    }
+    .modal .body img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 16px 0;
+    }
+
+    /* ===== RODAPÉ ===== */
+    footer {
+      background: #1e2a3a;
+      color: #c8d6e5;
+      padding: 40px 0;
+      text-align: center;
+      margin-top: 30px;
+    }
+    footer .social {
+      margin-bottom: 16px;
+    }
+    footer .social a {
+      color: #c8d6e5;
+      font-size: 1.6rem;
+      margin: 0 12px;
+      transition: color 0.2s;
+    }
+    footer .social a:hover {
+      color: #3498db;
+    }
+    footer p {
+      font-size: 0.95rem;
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        gap: 12px;
+      }
+      nav ul {
+        justify-content: center;
+        gap: 16px;
+      }
+      #home h1 {
+        font-size: 2.4rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .modal {
+        padding: 28px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav ul {
+        gap: 10px;
+        font-size: 0.9rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      #home h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<main class="home">
-
-    <div class="home-content">
-
-        <h1 class="home-logo">
-            VINICIVS
-        </h1>
-
-        <p class="home-subtitle">
-            MATEMÁTICA · ESTATÍSTICA · MÉTODO
-        </p>
-
-        <div class="home-line"></div>
-
-        <nav class="home-nav">
-
-            <a href="livros.html">
-                <span>LIVROS</span>
-                <small>03</small>
-            </a>
-
-            <a href="artigos.html">
-                <span>ARTIGOS</span>
-                <small>03</small>
-            </a>
-
-            <a href="coding.html">
-                <span>CODING</span>
-                <small>03</small>
-            </a>
-
-            <a href="sobre.html">
-                <span>SOBRE</span>
-                <small>04</small>
-            </a>
-
-        </nav>
-
-        <div class="home-line"></div>
-
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container">
+      <div class="logo">Meu<span>Site</span></div>
+      <nav>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#articles">Artigos</a></li>
+          <li><a href="#books">Livros</a></li>
+          <li><a href="#about">Sobre</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-</main>
+  <!-- ===== HOME ===== -->
+  <section id="home">
+    <div class="container">
+      <h1>Olá, sou <span>Seu Nome</span></h1>
+      <p>
+        Desenvolvedor, escritor e entusiasta de tecnologia. Aqui você encontra
+        meus projetos, artigos e livros. Fique à vontade para explorar!
+      </p>
+      <a href="#projects" class="btn">Ver projetos</a>
+    </div>
+  </section>
 
+  <!-- ===== PROJETOS ===== -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-code"></i> Projetos</h2>
+      <div class="section-subtitle">Alguns dos meus trabalhos mais recentes</div>
+      <div id="projects-grid" class="grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== ARTIGOS ===== -->
+  <section id="articles" style="background: #f0f4fa;">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-pen-fancy"></i> Artigos</h2>
+      <div class="section-subtitle">Reflexões e tutoriais sobre tecnologia</div>
+      <div id="articles-grid" class="grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== LIVROS ===== -->
+  <section id="books">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-book-open"></i> Livros</h2>
+      <div class="section-subtitle">Obras publicadas ou em andamento</div>
+      <div id="books-grid" class="grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE ===== -->
+  <section id="about" style="background: #f0f4fa;">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-user"></i> Sobre mim</h2>
+      <div style="max-width: 700px;">
+        <p style="font-size: 1.15rem; color: #2c3e50;">
+          Sou apaixonado por criar soluções que unem design e funcionalidade.
+          Atuo no desenvolvimento web, escrita técnica e produção de conteúdo
+          educativo. Acredito que compartilhar conhecimento é a melhor forma de
+          crescer.
+        </p>
+        <p style="margin-top: 20px;">
+          <i class="fas fa-map-pin" style="color: #3498db; width: 24px;"></i> Brasil<br>
+          <i class="fas fa-envelope" style="color: #3498db; width: 24px;"></i> contato@meusite.com<br>
+          <i class="fab fa-github" style="color: #3498db; width: 24px;"></i> github.com/seuusuario
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <div class="container">
+      <div class="social">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p>&copy; 2026 MeuSite. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <h2 id="modal-title">Título</h2>
+      <div class="meta" id="modal-meta">Data / Categoria</div>
+      <div class="body" id="modal-body">Conteúdo completo...</div>
+    </div>
+  </div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // ============================================================
+    // 1. DADOS (edite aqui para atualizar o conteúdo)
+    // ============================================================
+
+    const projects = [
+      {
+        id: 1,
+        title: 'E-commerce com React',
+        description: 'Loja virtual com carrinho, pagamentos e autenticação.',
+        image: 'https://via.placeholder.com/400x200/3498db/fff?text=E-commerce',
+        link: 'https://github.com/seuusuario/ecommerce-react',
+        full: 'Projeto completo desenvolvido com React, Redux e Node.js. Inclui integração com Stripe para pagamentos e autenticação JWT.'
+      },
+      {
+        id: 2,
+        title: 'Dashboard Financeiro',
+        description: 'Painel para controle de despesas com gráficos interativos.',
+        image: 'https://via.placeholder.com/400x200/2ecc71/fff?text=Dashboard',
+        link: 'https://github.com/seuusuario/dashboard-financeiro',
+        full: 'Dashboard desenvolvido com Vue.js e D3.js. Permite importar arquivos CSV e visualizar gastos por categoria.'
+      },
+      {
+        id: 3,
+        title: 'App de Clima',
+        description: 'Previsão do tempo em tempo real com geolocalização.',
+        image: 'https://via.placeholder.com/400x200/e67e22/fff?text=Clima',
+        link: 'https://github.com/seuusuario/app-clima',
+        full: 'Aplicativo PWA que consome a API OpenWeather. Mostra temperatura, umidade e previsão para 5 dias.'
+      }
+    ];
+
+    const articles = [
+      {
+        id: 1,
+        title: 'Introdução ao CSS Grid',
+        date: '15/03/2026',
+        summary: 'Aprenda a criar layouts modernos com CSS Grid Layout.',
+        full: 'CSS Grid é uma ferramenta poderosa para criar layouts bidimensionais. Neste artigo, exploramos desde conceitos básicos até técnicas avançadas como grids responsivos e alinhamento de itens.'
+      },
+      {
+        id: 2,
+        title: 'Como estruturar um projeto React',
+        date: '02/02/2026',
+        summary: 'Organização de pastas, componentes e hooks para escalabilidade.',
+        full: 'Uma boa estrutura de pastas é essencial para manter um projeto React sustentável. Sugerimos separar componentes, páginas, hooks, contextos e serviços, além de usar padrões como Atomic Design.'
+      },
+      {
+        id: 3,
+        title: 'Autenticação com JWT',
+        date: '10/01/2026',
+        summary: 'Implemente login seguro usando JSON Web Tokens.',
+        full: 'JWT é amplamente utilizado para autenticação stateless. Mostramos como gerar tokens, validar no backend e armazenar de forma segura no frontend com refresh tokens.'
+      }
+    ];
+
+    const books = [
+      {
+        id: 1,
+        title: 'JavaScript Moderno',
+        subtitle: 'Do básico ao ES2025',
+        image: 'https://via.placeholder.com/400x200/8e44ad/fff?text=JS+Moderno',
+        description: 'Um guia completo para dominar JavaScript com as últimas features.',
+        full: 'Este livro cobre desde variáveis e funções até Promises, async/await, módulos, proxies e decorators. Inclui exercícios práticos e projetos para fixação.'
+      },
+      {
+        id: 2,
+        title: 'Arquitetura de Software',
+        subtitle: 'Padrões e boas práticas',
+        image: 'https://via.placeholder.com/400x200/d35400/fff?text=Arquitetura',
+        description: 'Entenda os principais padrões arquiteturais para sistemas escaláveis.',
+        full: 'Exploramos MVC, Hexagonal, Microsserviços, Event-Driven e CQRS. Com estudos de caso e exemplos em Java e Node.js.'
+      },
+      {
+        id: 3,
+        title: 'UX Design para Devs',
+        subtitle: 'Criando interfaces intuitivas',
+        image: 'https://via.placeholder.com/400x200/2980b9/fff?text=UX+Design',
+        description: 'Fundamentos de experiência do usuário aplicados ao desenvolvimento.',
+        full: 'Este livro ensina princípios de UX, pesquisa com usuários, prototipagem, testes de usabilidade e como colaborar com designers no dia a dia.'
+      }
+    ];
+
+    // ============================================================
+    // 2. FUNÇÕES PARA RENDERIZAR CARDS
+    // ============================================================
+
+    function renderCards(containerId, items, type) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      container.innerHTML = items.map(item => {
+        // Monta o HTML do card de acordo com o tipo
+        let metaHtml = '';
+        let imageHtml = '';
+        let buttonLabel = 'Ver mais';
+        let buttonClass = 'btn-small';
+
+        if (type === 'project') {
+          imageHtml = `<img src="${item.image}" alt="${item.title}">`;
+          metaHtml = `<div class="meta"><i class="fas fa-external-link-alt"></i> <a href="${item.link}" target="_blank">Repositório</a></div>`;
+        } else if (type === 'article') {
+          metaHtml = `<div class="meta"><i class="far fa-calendar-alt"></i> ${item.date}</div>`;
+        } else if (type === 'book') {
+          imageHtml = `<img src="${item.image}" alt="${item.title}">`;
+          metaHtml = `<div class="meta"><i class="fas fa-bookmark"></i> ${item.subtitle || ''}</div>`;
+        }
+
+        // Usamos um atributo data-id para identificar o item no modal
+        return `
+          <div class="card" data-id="${item.id}" data-type="${type}">
+            ${imageHtml}
+            <h3>${item.title}</h3>
+            ${metaHtml}
+            <p>${item.summary || item.description || ''}</p>
+            <button class="${buttonClass}" data-id="${item.id}" data-type="${type}">${buttonLabel}</button>
+          </div>
+        `;
+      }).join('');
+
+      // Adiciona event listeners para os botões "Ver mais"
+      container.querySelectorAll('.btn-small').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          const id = parseInt(this.dataset.id);
+          const type = this.dataset.type;
+          let item = null;
+          if (type === 'project') item = projects.find(p => p.id === id);
+          else if (type === 'article') item = articles.find(a => a.id === id);
+          else if (type === 'book') item = books.find(b => b.id === id);
+          if (item) openModal(item, type);
+        });
+      });
+    }
+
+    // ============================================================
+    // 3. MODAL
+    // ============================================================
+
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalTitle = document.getElementById('modal-title');
+    const modalMeta = document.getElementById('modal-meta');
+    const modalBody = document.getElementById('modal-body');
+    const modalClose = document.getElementById('modal-close');
+
+    function openModal(item, type) {
+      let metaText = '';
+      if (type === 'project') {
+        metaText = `<i class="fas fa-code"></i> Projeto · <a href="${item.link}" target="_blank">GitHub</a>`;
+      } else if (type === 'article') {
+        metaText = `<i class="far fa-calendar-alt"></i> ${item.date}`;
+      } else if (type === 'book') {
+        metaText = `<i class="fas fa-book"></i> ${item.subtitle || 'Livro'}`;
+      }
+      modalTitle.textContent = item.title;
+      modalMeta.innerHTML = metaText;
+      // Se o item tiver um campo 'full' use-o, senão use 'description'
+      modalBody.textContent = item.full || item.description || 'Conteúdo não disponível.';
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Fechar com tecla ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // ============================================================
+    // 4. INICIALIZAÇÃO
+    // ============================================================
+
+    document.addEventListener('DOMContentLoaded', function() {
+      renderCards('projects-grid', projects, 'project');
+      renderCards('articles-grid', articles, 'article');
+      renderCards('books-grid', books, 'book');
+    });
+  </script>
 </body>
 </html>
