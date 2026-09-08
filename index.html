@@ -14,113 +14,105 @@
 </head>
 <body class="bg-[#faf9f6] text-zinc-800 antialiased selection:bg-zinc-800 selection:text-zinc-100">
 
-    <!-- Container com maior largura horizontal -->
-    <main class="max-w-4xl mx-auto px-6 py-16 md:py-24 space-y-16">
+    <main class="max-w-5xl mx-auto px-6 py-20 md:py-32">
 
-        <!-- Cabeçalho / Perfil -->
-        <header class="space-y-6">
-            <div class="space-y-2">
-                <h1 class="text-3xl md:text-4xl font-academic font-medium text-zinc-900 tracking-tight">Vinícius Augusto de Souza</h1>
-                <p class="text-sm md:text-base text-zinc-600">Pesquisador em Lógica Matemática, Física Teórica e Arquivologia</p>
+        <!-- Cabeçalho -->
+        <header class="mb-24 space-y-8">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-academic font-medium text-zinc-900 tracking-tight mb-2">Vinícius Augusto de Souza</h1>
+                <p class="text-sm md:text-base text-zinc-600 font-medium">Pesquisador, Autor e Administrador Público</p>
             </div>
             
-            <p class="text-zinc-700 leading-relaxed text-base font-light max-w-3xl">
-                Espaço acadêmico dedicado à publicação de ensaios teóricos, monografias, livros e ao desenvolvimento de ferramentas computacionais, algoritmos de cálculo e automações aplicadas à organização de acervos e à análise formal.
+            <p class="text-zinc-700 leading-relaxed text-base font-light max-w-2xl">
+                Espaço dedicado à publicação de obras e ensaios, bem como ao desenvolvimento de ferramentas computacionais aplicadas à análise formal, lógica matemática e organização de acervos documentais.
             </p>
 
-            <!-- Navegação Minimalista -->
-            <nav class="flex flex-wrap gap-x-8 gap-y-2 text-xs tracking-wide uppercase text-zinc-500 pt-4 border-t border-zinc-200">
-                <a href="#livros" class="hover:text-zinc-900 transition">Livros</a>
-                <a href="#projetos" class="hover:text-zinc-900 transition">Ferramentas & Projetos</a>
-                <a href="#artigos" class="hover:text-zinc-900 transition">Artigos</a>
+            <nav class="flex flex-wrap gap-x-8 gap-y-3 text-xs tracking-widest uppercase text-zinc-500 font-medium pt-2">
+                <a href="#obras" class="hover:text-zinc-900 transition">Obras</a>
+                <a href="#laboratorio" class="hover:text-zinc-900 transition">Laboratório</a>
+                <a href="#ensaios" class="hover:text-zinc-900 transition">Ensaios</a>
                 <a href="https://github.com" target="_blank" class="hover:text-zinc-900 transition">GitHub ↗</a>
-                <a href="https://substack.com" target="_blank" class="hover:text-zinc-900 transition">Substack (Número Imaginário) ↗</a>
+                <a href="https://substack.com" target="_blank" class="hover:text-zinc-900 transition">Substack ↗</a>
             </nav>
         </header>
 
-        <hr class="border-zinc-200">
-
         <!-- Seção: Livros -->
-        <section id="livros" class="space-y-8">
-            <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-medium">Obras & Livros</h2>
+        <section id="obras" class="grid grid-cols-1 md:grid-cols-4 gap-8 py-16 border-t border-zinc-200">
+            <div class="col-span-1">
+                <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-semibold sticky top-8">Livros Publicados</h2>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="col-span-1 md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
                 <article class="space-y-2">
-                    <span class="text-xs text-zinc-400 font-mono">01</span>
-                    <h3 class="font-academic text-lg font-medium text-zinc-900">Os Limites da Computação: Indecidibilidade e Incompletude em Sistemas Formais</h3>
-                    <p class="text-xs text-zinc-500">Lógica Matemática & Computabilidade</p>
-                    <p class="text-sm text-zinc-700 font-light pt-1">Análise aprofundada sobre os teoremas de Gödel, máquinas de Turing e as barreiras teóricas fundamentais dos sistemas formais.</p>
+                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug">Os Limites da Computação: Indecidibilidade e Incompletude em Sistemas Formais</h3>
+                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Lógica & Computabilidade</p>
+                    <p class="text-sm text-zinc-700 font-light pt-2">Análise aprofundada sobre os teoremas de Gödel, máquinas de Turing e as barreiras teóricas fundamentais dos sistemas formais.</p>
                 </article>
 
                 <article class="space-y-2">
-                    <span class="text-xs text-zinc-400 font-mono">02</span>
-                    <h3 class="font-academic text-lg font-medium text-zinc-900">Método Axiomático e Teorias Físicas</h3>
-                    <p class="text-xs text-zinc-500">Física Teórica</p>
-                    <p class="text-sm text-zinc-700 font-light pt-1">Estudo sobre sistemas formais aplicados à mecânica, axiomática de teorias físicas e independência de premissas.</p>
+                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug">Método Axiomático e Teorias Físicas</h3>
+                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Física Teórica</p>
+                    <p class="text-sm text-zinc-700 font-light pt-2">Estudo sobre sistemas formais aplicados à mecânica, axiomática de teorias físicas e independência de premissas.</p>
                 </article>
 
                 <article class="space-y-2">
-                    <span class="text-xs text-zinc-400 font-mono">03</span>
-                    <h3 class="font-academic text-lg font-medium text-zinc-900">Manual Técnico de Amostragem Documental</h3>
-                    <p class="text-xs text-zinc-500">Arquivologia</p>
-                    <p class="text-sm text-zinc-700 font-light pt-1">Diretrizes metodológicas para o gerenciamento de acervos públicos, tabelas de temporalidade e critérios de descarte.</p>
+                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug">Manual Técnico de Amostragem Documental</h3>
+                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Arquivologia</p>
+                    <p class="text-sm text-zinc-700 font-light pt-2">Diretrizes metodológicas para o gerenciamento de acervos públicos, tabelas de temporalidade e critérios de descarte.</p>
                 </article>
             </div>
         </section>
 
-        <hr class="border-zinc-200">
-
-        <!-- Seção: Ferramentas de Cálculo & Projetos -->
-        <section id="projetos" class="space-y-8">
-            <div class="space-y-1">
-                <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-medium">Ferramentas & Laboratório Computacional</h2>
-                <p class="text-sm text-zinc-600 font-light">Repositórios de rotinas de cálculo, processamento de dados e automação administrativa.</p>
+        <!-- Seção: Ferramentas & Projetos -->
+        <section id="laboratorio" class="grid grid-cols-1 md:grid-cols-4 gap-8 py-16 border-t border-zinc-200">
+            <div class="col-span-1">
+                <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-semibold sticky top-8">Tecnologia & Código</h2>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white/50 border border-zinc-200 p-6 rounded-lg space-y-2">
-                    <h3 class="font-academic text-base font-medium text-zinc-900">
-                        <a href="https://github.com" target="_blank" class="hover:underline">automacoes-arquivisticas ↗</a>
+            
+            <div class="col-span-1 md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
+                <article class="space-y-2">
+                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug">
+                        <a href="https://github.com" target="_blank" class="hover:underline decoration-zinc-300 underline-offset-4">Automações Arquivísticas ↗</a>
                     </h3>
-                    <p class="text-xs text-zinc-500 font-mono">Python / JavaScript</p>
-                    <p class="text-sm text-zinc-700 font-light">Rotinas para processamento de metadados, limpeza de planilhas tabulares, cálculo de amostragem e hierarquias textuais.</p>
-                </div>
+                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Python / JavaScript</p>
+                    <p class="text-sm text-zinc-700 font-light pt-2">Rotinas para processamento de metadados, limpeza de planilhas tabulares, cálculo de amostragem e processamento de hierarquias textuais.</p>
+                </article>
 
-                <div class="bg-white/50 border border-zinc-200 p-6 rounded-lg space-y-2">
-                    <h3 class="font-academic text-base font-medium text-zinc-900">
-                        <a href="https://github.com" target="_blank" class="hover:underline">sistemas-formais-calculadores ↗</a>
+                <article class="space-y-2">
+                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug">
+                        <a href="https://github.com" target="_blank" class="hover:underline decoration-zinc-300 underline-offset-4">Sistemas Formais & Cálculo ↗</a>
                     </h3>
-                    <p class="text-xs text-zinc-500 font-mono">JavaScript / WebAssembly</p>
-                    <p class="text-sm text-zinc-700 font-light">Ferramentas interativas executadas no navegador para simulações lógicas e verificação de consistência de regras.</p>
-                </div>
+                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">WebAssembly / JS</p>
+                    <p class="text-sm text-zinc-700 font-light pt-2">Scripts desenvolvidos para simulações lógicas e verificação de consistência de regras, executados diretamente do lado do cliente.</p>
+                </article>
             </div>
         </section>
-
-        <hr class="border-zinc-200">
 
         <!-- Seção: Artigos -->
-        <section id="artigos" class="space-y-8">
-            <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-medium">Artigos & Ensaios</h2>
+        <section id="ensaios" class="grid grid-cols-1 md:grid-cols-4 gap-8 py-16 border-t border-y border-zinc-200">
+            <div class="col-span-1">
+                <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-semibold sticky top-8">Ensaios & Artigos</h2>
+            </div>
             
-            <div class="space-y-6 max-w-2xl">
-                <article class="space-y-1">
-                    <span class="text-xs text-zinc-400 font-mono">Julho, 2026</span>
-                    <h3 class="font-academic text-base font-medium text-zinc-900 hover:underline cursor-pointer">Entropia de Shannon aplicada à organização de acervos físicos</h3>
-                    <p class="text-xs text-zinc-600 font-light">Uma forma quantitativa de medir o grau de desordem informacional em fundos documentais.</p>
+            <div class="col-span-1 md:col-span-3 flex flex-col gap-10">
+                <article class="space-y-2 max-w-2xl">
+                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug hover:underline decoration-zinc-300 underline-offset-4 cursor-pointer">Entropia de Shannon aplicada à organização de acervos físicos</h3>
+                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Julho, 2026</p>
+                    <p class="text-sm text-zinc-700 font-light pt-2">Uma proposta de modelo quantitativo para mensurar o grau de desordem informacional e otimizar o armazenamento em fundos documentais.</p>
                 </article>
 
-                <article class="space-y-1">
-                    <span class="text-xs text-zinc-400 font-mono">Junho, 2026</span>
-                    <h3 class="font-academic text-base font-medium text-zinc-900 hover:underline cursor-pointer">O problema da parada e as limitações práticas dos auditores lógicos</h3>
-                    <p class="text-xs text-zinc-600 font-light">Reflexões sobre a indecidibilidade formal no projeto de softwares de verificação.</p>
+                <article class="space-y-2 max-w-2xl">
+                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug hover:underline decoration-zinc-300 underline-offset-4 cursor-pointer">O problema da parada e as limitações práticas dos auditores lógicos</h3>
+                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Junho, 2026</p>
+                    <p class="text-sm text-zinc-700 font-light pt-2">Reflexões filosóficas e computacionais sobre a indecidibilidade formal no projeto arquitetural de softwares de verificação e validação.</p>
                 </article>
             </div>
         </section>
 
         <!-- Rodapé -->
-        <footer class="pt-8 border-t border-zinc-200 text-xs text-zinc-500 flex justify-between items-center font-mono">
-            <p>&copy; 2026 Vinícius Augusto de Souza</p>
-            <a href="#" class="hover:text-zinc-900">↑ Voltar ao topo</a>
+        <footer class="pt-8 text-xs text-zinc-400 flex justify-between items-center font-mono uppercase tracking-widest">
+            <p>&copy; 2026</p>
+            <a href="#" class="hover:text-zinc-900 transition">Topo ↑</a>
         </footer>
 
     </main>
