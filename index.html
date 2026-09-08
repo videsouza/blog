@@ -3,23 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Portfólio</title>
-  <!-- Font Awesome (ícones) -->
+  <title>Portfólio · Nome</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
   <style>
-    /* ===== RESET & BASE ===== */
-    * {
+    /* ===== RESET ===== */
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f8f9fc;
-      color: #1e2a3a;
-      line-height: 1.6;
+    html {
       scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fafafa;
+      color: #1a1a1a;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -27,183 +35,241 @@
       color: inherit;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     .container {
-      max-width: 1200px;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
     /* ===== HEADER ===== */
     header {
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       position: sticky;
       top: 0;
       z-index: 100;
-      padding: 16px 0;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      padding: 18px 0;
     }
 
     header .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #2c3e50;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #111;
     }
     .logo span {
-      color: #3498db;
+      font-weight: 300;
+      color: #6b6b6b;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 28px;
-      flex-wrap: wrap;
     }
 
     nav ul li a {
+      font-size: 0.9rem;
       font-weight: 500;
-      color: #2c3e50;
+      color: #3a3a3a;
       transition: color 0.2s;
-      font-size: 1rem;
+      letter-spacing: -0.01em;
     }
     nav ul li a:hover {
-      color: #3498db;
+      color: #000;
     }
 
     /* ===== SEÇÕES ===== */
     section {
-      padding: 70px 0 50px;
+      padding: 80px 0 64px;
     }
 
     .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #1e2a3a;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: #111;
     }
-    .section-title i {
-      color: #3498db;
-    }
+
     .section-subtitle {
-      color: #5a6a7a;
-      margin-bottom: 40px;
-      font-size: 1.1rem;
-      border-left: 4px solid #3498db;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #6b6b6b;
+      margin-bottom: 44px;
+      border-left: 3px solid #d0d0d0;
       padding-left: 16px;
     }
 
     /* ===== HOME ===== */
     #home {
-      padding: 100px 0 80px;
-      background: linear-gradient(145deg, #ffffff 0%, #f0f4fa 100%);
+      padding: 120px 0 80px;
+      background: #fff;
+      border-bottom: 1px solid #f0f0f0;
     }
     #home .container {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: flex-start;
     }
     #home h1 {
       font-size: 3.2rem;
-      font-weight: 700;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
       margin-bottom: 16px;
     }
     #home h1 span {
-      color: #3498db;
+      font-weight: 300;
+      color: #6b6b6b;
     }
     #home p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      color: #3a4a5a;
-      margin-bottom: 32px;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #4a4a4a;
+      max-width: 540px;
+      margin-bottom: 36px;
     }
     .btn {
       display: inline-block;
-      background: #3498db;
+      background: #111;
       color: #fff;
-      padding: 14px 36px;
+      padding: 12px 32px;
       border-radius: 40px;
-      font-weight: 600;
+      font-weight: 500;
+      font-size: 0.95rem;
       transition: background 0.2s, transform 0.1s;
     }
     .btn:hover {
-      background: #2176ae;
-      transform: translateY(-2px);
+      background: #2a2a2a;
+      transform: translateY(-1px);
     }
 
     /* ===== CARDS ===== */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 32px;
     }
 
     .card {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      padding: 24px 20px 20px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      background: #fff;
+      border-radius: 12px;
+      padding: 0 0 20px 0;
+      transition: box-shadow 0.25s, transform 0.2s;
+      border: 1px solid #ededed;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      border: 1px solid #edf2f7;
     }
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+      transform: translateY(-4px);
     }
 
-    .card img {
+    .card-image {
       width: 100%;
       height: 160px;
       object-fit: cover;
-      border-radius: 10px;
-      background: #e9edf4;
-      margin-bottom: 14px;
+      background: #f0f0f0;
+    }
+
+    .card-body {
+      padding: 20px 22px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-      color: #1e2a3a;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+      color: #111;
     }
 
     .card .meta {
-      font-size: 0.85rem;
-      color: #6a7a8a;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #8a8a8a;
       margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .card .meta a {
+      color: #8a8a8a;
+      border-bottom: 1px solid #e0e0e0;
+      transition: border-color 0.2s;
+    }
+    .card .meta a:hover {
+      border-color: #111;
     }
 
     .card p {
-      color: #3a4a5a;
+      font-size: 0.95rem;
+      color: #4a4a4a;
       flex: 1;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      line-height: 1.5;
     }
 
     .card .btn-small {
       align-self: flex-start;
       background: none;
-      border: 2px solid #3498db;
-      color: #3498db;
-      padding: 8px 20px;
+      border: 1px solid #d0d0d0;
+      color: #2a2a2a;
+      padding: 6px 20px;
       border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.9rem;
+      font-weight: 500;
+      font-size: 0.8rem;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      transition: all 0.2s;
+      letter-spacing: 0.01em;
     }
     .card .btn-small:hover {
-      background: #3498db;
+      background: #111;
+      border-color: #111;
       color: #fff;
+    }
+
+    /* ===== SOBRE ===== */
+    #about {
+      background: #fff;
+      border-top: 1px solid #f0f0f0;
+    }
+    #about .about-content {
+      max-width: 640px;
+    }
+    #about .about-content p {
+      font-size: 1.05rem;
+      color: #3a3a3a;
+      margin-bottom: 20px;
+    }
+    #about .about-content .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: #4a4a4a;
+      margin-top: 8px;
+    }
+    #about .about-content .contact-line i {
+      width: 20px;
+      color: #888;
+      font-size: 1rem;
     }
 
     /* ===== MODAL ===== */
@@ -211,7 +277,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(4px);
       z-index: 999;
       align-items: center;
@@ -224,107 +290,137 @@
 
     .modal {
       background: #fff;
-      max-width: 700px;
+      max-width: 660px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      border-radius: 20px;
-      padding: 36px 40px;
+      border-radius: 16px;
+      padding: 40px 44px;
       position: relative;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
     }
 
     .modal-close {
       position: absolute;
       top: 16px;
       right: 20px;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       cursor: pointer;
       background: none;
       border: none;
-      color: #5a6a7a;
+      color: #9a9a9a;
       transition: color 0.2s;
+      line-height: 1;
     }
     .modal-close:hover {
-      color: #1e2a3a;
+      color: #111;
     }
 
     .modal h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #1e2a3a;
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      color: #111;
     }
     .modal .meta {
-      color: #6a7a8a;
-      margin-bottom: 20px;
-      font-size: 0.95rem;
+      color: #8a8a8a;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #f0f0f0;
+      padding-bottom: 16px;
+    }
+    .modal .meta a {
+      color: #8a8a8a;
+      border-bottom: 1px solid #ddd;
+    }
+    .modal .meta a:hover {
+      border-color: #111;
     }
     .modal .body {
-      color: #2c3e50;
+      color: #2a2a2a;
       white-space: pre-wrap;
-      line-height: 1.8;
-    }
-    .modal .body img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin: 16px 0;
+      line-height: 1.7;
+      font-size: 0.98rem;
     }
 
-    /* ===== RODAPÉ ===== */
+    /* ===== FOOTER ===== */
     footer {
-      background: #1e2a3a;
-      color: #c8d6e5;
-      padding: 40px 0;
+      background: #fff;
+      border-top: 1px solid #f0f0f0;
+      padding: 40px 0 32px;
       text-align: center;
-      margin-top: 30px;
     }
     footer .social {
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     footer .social a {
-      color: #c8d6e5;
-      font-size: 1.6rem;
-      margin: 0 12px;
+      color: #4a4a4a;
+      font-size: 1.4rem;
+      margin: 0 14px;
       transition: color 0.2s;
     }
     footer .social a:hover {
-      color: #3498db;
+      color: #111;
     }
     footer p {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
+      color: #8a8a8a;
     }
 
-    /* ===== RESPONSIVO ===== */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       header .container {
         flex-direction: column;
         gap: 12px;
       }
       nav ul {
-        justify-content: center;
-        gap: 16px;
+        gap: 18px;
+      }
+      nav ul li a {
+        font-size: 0.85rem;
+      }
+      #home {
+        padding: 80px 0 60px;
       }
       #home h1 {
         font-size: 2.4rem;
       }
+      #home p {
+        font-size: 1rem;
+      }
       .section-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
       .modal {
-        padding: 28px 20px;
+        padding: 32px 24px;
+      }
+      .modal h2 {
+        font-size: 1.5rem;
       }
     }
 
     @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
       nav ul {
-        gap: 10px;
-        font-size: 0.9rem;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
       .grid {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
       #home h1 {
         font-size: 2rem;
+      }
+      #home p {
+        font-size: 0.95rem;
+      }
+      .card-image {
+        height: 140px;
       }
     }
   </style>
@@ -334,7 +430,7 @@
   <!-- ===== HEADER ===== -->
   <header>
     <div class="container">
-      <div class="logo">Meu<span>Site</span></div>
+      <div class="logo">Nome<span>·</span></div>
       <nav>
         <ul>
           <li><a href="#home">Início</a></li>
@@ -350,29 +446,26 @@
   <!-- ===== HOME ===== -->
   <section id="home">
     <div class="container">
-      <h1>Olá, sou <span>Seu Nome</span></h1>
-      <p>
-        Desenvolvedor, escritor e entusiasta de tecnologia. Aqui você encontra
-        meus projetos, artigos e livros. Fique à vontade para explorar!
-      </p>
-      <a href="#projects" class="btn">Ver projetos</a>
+      <h1>Olá, <span>sou seu nome</span></h1>
+      <p>Desenvolvedor e escritor. Compartilho projetos, artigos e livros sobre tecnologia e design.</p>
+      <a href="#projects" class="btn">Explorar</a>
     </div>
   </section>
 
   <!-- ===== PROJETOS ===== -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-code"></i> Projetos</h2>
-      <div class="section-subtitle">Alguns dos meus trabalhos mais recentes</div>
+      <h2 class="section-title">Projetos</h2>
+      <div class="section-subtitle">Trabalhos recentes</div>
       <div id="projects-grid" class="grid"></div>
     </div>
   </section>
 
   <!-- ===== ARTIGOS ===== -->
-  <section id="articles" style="background: #f0f4fa;">
+  <section id="articles" style="background:#f7f7f7;">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-pen-fancy"></i> Artigos</h2>
-      <div class="section-subtitle">Reflexões e tutoriais sobre tecnologia</div>
+      <h2 class="section-title">Artigos</h2>
+      <div class="section-subtitle">Escritos sobre tecnologia</div>
       <div id="articles-grid" class="grid"></div>
     </div>
   </section>
@@ -380,42 +473,37 @@
   <!-- ===== LIVROS ===== -->
   <section id="books">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-book-open"></i> Livros</h2>
-      <div class="section-subtitle">Obras publicadas ou em andamento</div>
+      <h2 class="section-title">Livros</h2>
+      <div class="section-subtitle">Publicações e obras</div>
       <div id="books-grid" class="grid"></div>
     </div>
   </section>
 
   <!-- ===== SOBRE ===== -->
-  <section id="about" style="background: #f0f4fa;">
+  <section id="about">
     <div class="container">
-      <h2 class="section-title"><i class="fas fa-user"></i> Sobre mim</h2>
-      <div style="max-width: 700px;">
-        <p style="font-size: 1.15rem; color: #2c3e50;">
-          Sou apaixonado por criar soluções que unem design e funcionalidade.
-          Atuo no desenvolvimento web, escrita técnica e produção de conteúdo
-          educativo. Acredito que compartilhar conhecimento é a melhor forma de
-          crescer.
+      <h2 class="section-title">Sobre</h2>
+      <div class="about-content">
+        <p>
+          Trabalho com desenvolvimento web e escrita técnica. Acredito em
+          soluções simples, bem feitas e que resolvam problemas reais.
         </p>
-        <p style="margin-top: 20px;">
-          <i class="fas fa-map-pin" style="color: #3498db; width: 24px;"></i> Brasil<br>
-          <i class="fas fa-envelope" style="color: #3498db; width: 24px;"></i> contato@meusite.com<br>
-          <i class="fab fa-github" style="color: #3498db; width: 24px;"></i> github.com/seuusuario
-        </p>
+        <div class="contact-line"><i class="fas fa-map-pin"></i> Brasil</div>
+        <div class="contact-line"><i class="fas fa-envelope"></i> contato@meusite.com</div>
+        <div class="contact-line"><i class="fab fa-github"></i> github.com/seuusuario</div>
       </div>
     </div>
   </section>
 
-  <!-- ===== RODAPÉ ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="container">
       <div class="social">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       </div>
-      <p>&copy; 2026 MeuSite. Todos os direitos reservados.</p>
+      <p>&copy; 2026 · Todos os direitos reservados</p>
     </div>
   </footer>
 
@@ -429,92 +517,79 @@
     </div>
   </div>
 
-  <!-- ===== JAVASCRIPT ===== -->
   <script>
     // ============================================================
-    // 1. DADOS (edite aqui para atualizar o conteúdo)
+    // DADOS (edite aqui)
     // ============================================================
 
-    const projects = [
-      {
-        id: 1,
-        title: 'E-commerce com React',
-        description: 'Loja virtual com carrinho, pagamentos e autenticação.',
-        image: 'https://via.placeholder.com/400x200/3498db/fff?text=E-commerce',
-        link: 'https://github.com/seuusuario/ecommerce-react',
-        full: 'Projeto completo desenvolvido com React, Redux e Node.js. Inclui integração com Stripe para pagamentos e autenticação JWT.'
-      },
-      {
-        id: 2,
-        title: 'Dashboard Financeiro',
-        description: 'Painel para controle de despesas com gráficos interativos.',
-        image: 'https://via.placeholder.com/400x200/2ecc71/fff?text=Dashboard',
-        link: 'https://github.com/seuusuario/dashboard-financeiro',
-        full: 'Dashboard desenvolvido com Vue.js e D3.js. Permite importar arquivos CSV e visualizar gastos por categoria.'
-      },
-      {
-        id: 3,
-        title: 'App de Clima',
-        description: 'Previsão do tempo em tempo real com geolocalização.',
-        image: 'https://via.placeholder.com/400x200/e67e22/fff?text=Clima',
-        link: 'https://github.com/seuusuario/app-clima',
-        full: 'Aplicativo PWA que consome a API OpenWeather. Mostra temperatura, umidade e previsão para 5 dias.'
-      }
-    ];
+    const projects = [{
+      id: 1,
+      title: 'E-commerce com React',
+      description: 'Loja virtual com carrinho e pagamentos.',
+      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=E-commerce',
+      link: 'https://github.com/seuusuario/ecommerce-react',
+      full: 'Projeto completo desenvolvido com React, Redux e Node.js. Inclui integração com Stripe e autenticação JWT.'
+    }, {
+      id: 2,
+      title: 'Dashboard Financeiro',
+      description: 'Painel de controle de despesas com gráficos.',
+      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=Dashboard',
+      link: 'https://github.com/seuusuario/dashboard-financeiro',
+      full: 'Desenvolvido com Vue.js e D3.js. Permite importar CSV e visualizar gastos por categoria.'
+    }, {
+      id: 3,
+      title: 'App de Clima',
+      description: 'Previsão do tempo com geolocalização.',
+      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=Clima',
+      link: 'https://github.com/seuusuario/app-clima',
+      full: 'PWA que consome a API OpenWeather. Mostra temperatura, umidade e previsão para 5 dias.'
+    }];
 
-    const articles = [
-      {
-        id: 1,
-        title: 'Introdução ao CSS Grid',
-        date: '15/03/2026',
-        summary: 'Aprenda a criar layouts modernos com CSS Grid Layout.',
-        full: 'CSS Grid é uma ferramenta poderosa para criar layouts bidimensionais. Neste artigo, exploramos desde conceitos básicos até técnicas avançadas como grids responsivos e alinhamento de itens.'
-      },
-      {
-        id: 2,
-        title: 'Como estruturar um projeto React',
-        date: '02/02/2026',
-        summary: 'Organização de pastas, componentes e hooks para escalabilidade.',
-        full: 'Uma boa estrutura de pastas é essencial para manter um projeto React sustentável. Sugerimos separar componentes, páginas, hooks, contextos e serviços, além de usar padrões como Atomic Design.'
-      },
-      {
-        id: 3,
-        title: 'Autenticação com JWT',
-        date: '10/01/2026',
-        summary: 'Implemente login seguro usando JSON Web Tokens.',
-        full: 'JWT é amplamente utilizado para autenticação stateless. Mostramos como gerar tokens, validar no backend e armazenar de forma segura no frontend com refresh tokens.'
-      }
-    ];
+    const articles = [{
+      id: 1,
+      title: 'Introdução ao CSS Grid',
+      date: '15/03/2026',
+      summary: 'Crie layouts modernos com Grid Layout.',
+      full: 'CSS Grid é uma ferramenta poderosa para layouts bidimensionais. Este artigo aborda desde conceitos básicos até técnicas avançadas como grids responsivos e alinhamento.'
+    }, {
+      id: 2,
+      title: 'Estrutura de projetos React',
+      date: '02/02/2026',
+      summary: 'Organização de pastas e hooks para escalabilidade.',
+      full: 'Uma boa estrutura de pastas é essencial para manter um projeto React sustentável. Sugerimos separar componentes, páginas, hooks, contextos e serviços.'
+    }, {
+      id: 3,
+      title: 'Autenticação com JWT',
+      date: '10/01/2026',
+      summary: 'Login seguro usando JSON Web Tokens.',
+      full: 'JWT é amplamente utilizado para autenticação stateless. Mostramos como gerar tokens, validar no backend e armazenar de forma segura no frontend.'
+    }];
 
-    const books = [
-      {
-        id: 1,
-        title: 'JavaScript Moderno',
-        subtitle: 'Do básico ao ES2025',
-        image: 'https://via.placeholder.com/400x200/8e44ad/fff?text=JS+Moderno',
-        description: 'Um guia completo para dominar JavaScript com as últimas features.',
-        full: 'Este livro cobre desde variáveis e funções até Promises, async/await, módulos, proxies e decorators. Inclui exercícios práticos e projetos para fixação.'
-      },
-      {
-        id: 2,
-        title: 'Arquitetura de Software',
-        subtitle: 'Padrões e boas práticas',
-        image: 'https://via.placeholder.com/400x200/d35400/fff?text=Arquitetura',
-        description: 'Entenda os principais padrões arquiteturais para sistemas escaláveis.',
-        full: 'Exploramos MVC, Hexagonal, Microsserviços, Event-Driven e CQRS. Com estudos de caso e exemplos em Java e Node.js.'
-      },
-      {
-        id: 3,
-        title: 'UX Design para Devs',
-        subtitle: 'Criando interfaces intuitivas',
-        image: 'https://via.placeholder.com/400x200/2980b9/fff?text=UX+Design',
-        description: 'Fundamentos de experiência do usuário aplicados ao desenvolvimento.',
-        full: 'Este livro ensina princípios de UX, pesquisa com usuários, prototipagem, testes de usabilidade e como colaborar com designers no dia a dia.'
-      }
-    ];
+    const books = [{
+      id: 1,
+      title: 'JavaScript Moderno',
+      subtitle: 'Do básico ao ES2025',
+      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=JS+Moderno',
+      description: 'Guia completo com as últimas features.',
+      full: 'Cobre desde variáveis e funções até Promises, async/await, módulos, proxies e decorators. Inclui exercícios práticos e projetos.'
+    }, {
+      id: 2,
+      title: 'Arquitetura de Software',
+      subtitle: 'Padrões e boas práticas',
+      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=Arquitetura',
+      description: 'Entenda padrões arquiteturais para sistemas escaláveis.',
+      full: 'Explora MVC, Hexagonal, Microsserviços, Event-Driven e CQRS com exemplos em Java e Node.js.'
+    }, {
+      id: 3,
+      title: 'UX Design para Devs',
+      subtitle: 'Interfaces intuitivas',
+      image: 'https://via.placeholder.com/600x300/eaeef3/2a2a2a?text=UX+Design',
+      description: 'Fundamentos de UX aplicados ao desenvolvimento.',
+      full: 'Ensina princípios de UX, pesquisa com usuários, prototipagem, testes de usabilidade e colaboração com designers.'
+    }];
 
     // ============================================================
-    // 2. FUNÇÕES PARA RENDERIZAR CARDS
+    // RENDER
     // ============================================================
 
     function renderCards(containerId, items, type) {
@@ -522,37 +597,35 @@
       if (!container) return;
 
       container.innerHTML = items.map(item => {
-        // Monta o HTML do card de acordo com o tipo
         let metaHtml = '';
         let imageHtml = '';
-        let buttonLabel = 'Ver mais';
-        let buttonClass = 'btn-small';
+        let btnLabel = 'Ver mais';
 
         if (type === 'project') {
-          imageHtml = `<img src="${item.image}" alt="${item.title}">`;
+          imageHtml = `<img class="card-image" src="${item.image}" alt="${item.title}">`;
           metaHtml = `<div class="meta"><i class="fas fa-external-link-alt"></i> <a href="${item.link}" target="_blank">Repositório</a></div>`;
         } else if (type === 'article') {
           metaHtml = `<div class="meta"><i class="far fa-calendar-alt"></i> ${item.date}</div>`;
         } else if (type === 'book') {
-          imageHtml = `<img src="${item.image}" alt="${item.title}">`;
+          imageHtml = `<img class="card-image" src="${item.image}" alt="${item.title}">`;
           metaHtml = `<div class="meta"><i class="fas fa-bookmark"></i> ${item.subtitle || ''}</div>`;
         }
 
-        // Usamos um atributo data-id para identificar o item no modal
         return `
           <div class="card" data-id="${item.id}" data-type="${type}">
             ${imageHtml}
-            <h3>${item.title}</h3>
-            ${metaHtml}
-            <p>${item.summary || item.description || ''}</p>
-            <button class="${buttonClass}" data-id="${item.id}" data-type="${type}">${buttonLabel}</button>
+            <div class="card-body">
+              <h3>${item.title}</h3>
+              ${metaHtml}
+              <p>${item.summary || item.description || ''}</p>
+              <button class="btn-small" data-id="${item.id}" data-type="${type}">${btnLabel}</button>
+            </div>
           </div>
         `;
       }).join('');
 
-      // Adiciona event listeners para os botões "Ver mais"
       container.querySelectorAll('.btn-small').forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function() {
           const id = parseInt(this.dataset.id);
           const type = this.dataset.type;
           let item = null;
@@ -565,7 +638,7 @@
     }
 
     // ============================================================
-    // 3. MODAL
+    // MODAL
     // ============================================================
 
     const modalOverlay = document.getElementById('modal-overlay');
@@ -585,7 +658,6 @@
       }
       modalTitle.textContent = item.title;
       modalMeta.innerHTML = metaText;
-      // Se o item tiver um campo 'full' use-o, senão use 'description'
       modalBody.textContent = item.full || item.description || 'Conteúdo não disponível.';
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -600,14 +672,12 @@
     modalOverlay.addEventListener('click', function(e) {
       if (e.target === this) closeModal();
     });
-
-    // Fechar com tecla ESC
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeModal();
     });
 
     // ============================================================
-    // 4. INICIALIZAÇÃO
+    // INIT
     // ============================================================
 
     document.addEventListener('DOMContentLoaded', function() {
