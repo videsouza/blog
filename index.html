@@ -1,207 +1,149 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinícius Augusto de Souza — Projetos, Livros e Artigos</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Vinícius Augusto de Souza</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+        .font-academic { font-family: 'Newsreader', serif; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+<body class="bg-[#faf9f6] text-zinc-800 antialiased selection:bg-zinc-800 selection:text-zinc-100">
 
-    <!-- Header / Navegação -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="font-bold text-lg text-slate-900 tracking-tight">Vinícius Augusto de Souza</a>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
-                <a href="#sobre" class="hover:text-indigo-600 transition">Sobre</a>
-                <a href="#livros" class="hover:text-indigo-600 transition">Livros</a>
-                <a href="#projetos" class="hover:text-indigo-600 transition">Projetos & Ferramentas</a>
-                <a href="#artigos" class="hover:text-indigo-600 transition">Artigos</a>
-            </nav>
-            <a href="#projetos" class="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-indigo-700 transition shadow-sm">Ver Ferramentas</a>
-        </div>
-    </header>
+    <!-- Container Centralizado (Estilo Artigo/Research Page) -->
+    <main class="max-w-2xl mx-auto px-6 py-16 md:py-24 space-y-16">
 
-    <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-6 pt-20 pb-16 md:pt-32 md:pb-24 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-8 space-y-6">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-100">
-                Pesquisa, Computação & Arquivologia
-            </span>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Explorando os limites da computação e da organização documental.
-            </h1>
-            <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
-                Espaço dedicado à publicação de obras teóricas, desenvolvimento de softwares para automação administrativa, ferramentas de cálculo e artigos sobre lógica formal, sistemas e ciência da informação.
+        <!-- Cabeçalho / Perfil -->
+        <header class="space-y-6">
+            <div class="space-y-2">
+                <h1 class="text-3xl font-academic font-medium text-zinc-900 tracking-tight">Vinícius Augusto de Souza</h1>
+                <p class="text-sm text-zinc-600">Pesquisador em Lógica Matemática, Física Teórica e Arquivologia</p>
+            </div>
+            
+            <p class="text-zinc-700 leading-relaxed text-sm md:text-base font-light">
+                Espaço acadêmico dedicado à publicação de ensaios teóricos, monografias, livros e ao desenvolvimento de ferramentas computacionais e de cálculo aplicadas à organização de acervos e à análise formal.
             </p>
-            <div class="flex flex-wrap gap-4 pt-2">
-                <a href="#livros" class="bg-slate-900 text-white font-medium px-6 py-3 rounded-xl hover:bg-slate-800 transition shadow-md">Conhecer Livros</a>
-                <a href="#projetos" class="bg-white text-slate-700 font-medium px-6 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 transition">Explorar Ferramentas</a>
-            </div>
-        </div>
-        <div class="md:col-span-4 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center font-bold text-xl">
-                VAS
-            </div>
-            <h3 class="font-semibold text-slate-900 text-lg">Links Rápidos</h3>
-            <ul class="space-y-3 text-sm text-slate-600">
-                <li><a href="https://github.com" target="_blank" class="hover:text-indigo-600 flex items-center gap-2">📂 Repositórios no GitHub</a></li>
-                <li><a href="https://substack.com" target="_blank" class="hover:text-indigo-600 flex items-center gap-2">✍️ Substack (Número Imaginário)</a></li>
-                <li><a href="mailto:seu-email@exemplo.com" class="hover:text-indigo-600 flex items-center gap-2">✉️ Contato Direto</a></li>
-            </ul>
-        </div>
-    </section>
 
-    <!-- Seção de Livros -->
-    <section id="livros" class="bg-white border-y border-slate-200 py-20">
-        <div class="max-w-6xl mx-auto px-6 space-y-12">
-            <div class="space-y-2">
-                <h2 class="text-xs font-semibold uppercase tracking-wider text-indigo-600">Publicações</h2>
-                <h3 class="text-3xl font-bold text-slate-900 tracking-tight">Livros Publicados</h3>
-                <p class="text-slate-600">Obras focadas em lógica matemática, física teórica e métodos técnicos de amostragem.</p>
+            <!-- Navegação Minimalista -->
+            <nav class="flex flex-wrap gap-x-6 gap-y-2 text-xs tracking-wide uppercase text-zinc-500 pt-2 border-t border-zinc-200">
+                <a href="#livros" class="hover:text-zinc-900 transition">Livros</a>
+                <a href="#projetos" class="hover:text-zinc-900 transition">Ferramentas & Projetos</a>
+                <a href="#artigos" class="hover:text-zinc-900 transition">Artigos</a>
+                <a href="https://github.com" target="_blank" class="hover:text-zinc-900 transition">GitHub ↗</a>
+                <a href="https://substack.com" target="_blank" class="hover:text-zinc-900 transition">Substack ↗</a>
+            </nav>
+        </header>
+
+        <hr class="border-zinc-200">
+
+        <!-- Seção: Livros -->
+        <section id="livros" class="space-y-8">
+            <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-medium">Obras & Livros</h2>
+            
+            <div class="space-y-6">
+                <article class="space-y-1">
+                    <h3 class="font-academic text-lg font-medium text-zinc-900">Os Limites da Computação: Indecidibilidade e Incompletude em Sistemas Formais</h3>
+                    <p class="text-xs text-zinc-500">Lógica Matemática & Computabilidade</p>
+                    <p class="text-sm text-zinc-700 font-light pt-1">Análise aprofundada sobre os teoremas de Gödel, máquinas de Turing e as barreiras teóricas fundamentais dos sistemas formais.</p>
+                </article>
+
+                <article class="space-y-1">
+                    <h3 class="font-academic text-lg font-medium text-zinc-900">Método Axiomático e Teorias Físicas</h3>
+                    <p class="text-xs text-zinc-500">Física Teórica</p>
+                    <p class="text-sm text-zinc-700 font-light pt-1">Estudo sobre sistemas formais aplicados à mecânica, axiomática de teorias físicas e independência de premissas.</p>
+                </article>
+
+                <article class="space-y-1">
+                    <h3 class="font-academic text-lg font-medium text-zinc-900">Manual Técnico de Amostragem Documental</h3>
+                    <p class="text-xs text-zinc-500">Arquivologia</p>
+                    <p class="text-sm text-zinc-700 font-light pt-1">Diretrizes metodológicas para o gerenciamento de acervos públicos, tabelas de temporalidade e critérios de descarte.</p>
+                </article>
+            </div>
+        </section>
+
+        <hr class="border-zinc-200">
+
+        <!-- Seção: Ferramentas de Cálculo & Projetos -->
+        <section id="projetos" class="space-y-8">
+            <div class="space-y-1">
+                <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-medium">Ferramentas & Laboratório Computacional</h2>
+                <p class="text-sm text-zinc-600 font-light">Scripts e calculadoras interativas executadas diretamente no navegador.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Livro 1 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition">
-                    <div class="space-y-4">
-                        <div class="w-10 h-10 bg-indigo-600 text-white rounded-lg flex items-center justify-center font-bold">01</div>
-                        <h4 class="font-bold text-slate-900 text-lg leading-snug">Os Limites da Computação: Indecidibilidade e Incompletude em Sistemas Formais</h4>
-                        <p class="text-sm text-slate-600">Análise profunda sobre os teoremas de Gödel, máquinas de Turing e barreiras teóricas da computabilidade.</p>
-                    </div>
-                    <div class="pt-6 mt-6 border-t border-slate-200">
-                        <span class="text-xs font-medium text-slate-500">Lógica Matemática & Computação</span>
-                    </div>
+            <!-- Widget de Cálculo Minimalista -->
+            <div class="bg-white border border-zinc-200 p-6 rounded-lg space-y-4 shadow-sm">
+                <div class="space-y-1">
+                    <h4 class="text-sm font-medium text-zinc-900">Calculadora de Amostragem Documental</h4>
+                    <p class="text-xs text-zinc-500">Estima o volume amostral com base em parâmetros estatísticos padrão.</p>
                 </div>
 
-                <!-- Livro 2 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition">
-                    <div class="space-y-4">
-                        <div class="w-10 h-10 bg-indigo-600 text-white rounded-lg flex items-center justify-center font-bold">02</div>
-                        <h4 class="font-bold text-slate-900 text-lg leading-snug">Método Axiomático e Teorias Físicas</h4>
-                        <p class="text-sm text-slate-600">Sistemas formais, teoria formal, mecânica de partículas e a independência de axiomas aplicados à física.</p>
-                    </div>
-                    <div class="pt-6 mt-6 border-t border-slate-200">
-                        <span class="text-xs font-medium text-slate-500">Física Teórica & Axiomática</span>
-                    </div>
-                </div>
-
-                <!-- Livro 3 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md transition">
-                    <div class="space-y-4">
-                        <div class="w-10 h-10 bg-indigo-600 text-white rounded-lg flex items-center justify-center font-bold">03</div>
-                        <h4 class="font-bold text-slate-900 text-lg leading-snug">Manual Técnico de Amostragem Documental</h4>
-                        <p class="text-sm text-slate-600">Diretrizes metodológicas para gestão de acervos, tabelas temporais e critérios de eliminação em arquivos públicos.</p>
-                    </div>
-                    <div class="pt-6 mt-6 border-t border-slate-200">
-                        <span class="text-xs font-medium text-slate-500">Arquivologia & Gestão</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Projetos e Ferramentas de Cálculo -->
-    <section id="projetos" class="max-w-6xl mx-auto px-6 py-20 space-y-12">
-        <div class="space-y-2">
-            <h2 class="text-xs font-semibold uppercase tracking-wider text-indigo-600">Tecnologia & Prática</h2>
-            <h3 class="text-3xl font-bold text-slate-900 tracking-tight">Projetos & Ferramentas de Cálculo</h3>
-            <p class="text-slate-600">Ferramentas interativas desenvolvidas em JavaScript para apoio a cálculos, automações e organização.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Mini Calculadora / Ferramenta Exemplo -->
-            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
-                <div class="flex items-center justify-between">
-                    <h4 class="font-bold text-slate-900">🧮 Simulador / Calculadora de Amostragem</h4>
-                    <span class="text-xs bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full font-medium">Online no Browser</span>
-                </div>
-                <p class="text-sm text-slate-600">Ferramenta interativa de exemplo para cálculo rápido de amostras documentais com base no volume total do arquivo.</p>
-                
-                <div class="space-y-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                <div class="space-y-3 pt-2">
                     <div>
-                        <label class="block text-xs font-medium text-slate-700 mb-1">Total de Caixas / Documentos:</label>
-                        <input type="number" id="inputVolume" value="1000" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <label class="block text-xs text-zinc-600 mb-1 font-mono">Volume Total (unidades):</label>
+                        <input type="number" id="inputVolume" value="1000" class="w-full px-3 py-1.5 bg-[#faf9f6] border border-zinc-300 rounded text-sm font-mono focus:outline-none focus:border-zinc-600">
                     </div>
-                    <button onclick="calcularAmostra()" class="w-full bg-indigo-600 text-white font-medium py-2 rounded-lg text-sm hover:bg-indigo-700 transition">Calcular Amostra Recomendada</button>
-                    <div id="resultadoCalculo" class="text-sm font-semibold text-indigo-900 pt-2 border-t border-slate-200">
-                        Amostra estimada: 278 unidades (Margem de erro de 5%)
+                    <button onclick="calcularAmostra()" class="w-full bg-zinc-900 text-zinc-100 text-xs tracking-wider uppercase py-2 rounded hover:bg-zinc-800 transition">Executar Cálculo</button>
+                    
+                    <div id="resultadoCalculo" class="text-xs font-mono text-zinc-800 bg-zinc-50 p-3 rounded border border-zinc-200">
+                        Amostra recomendada: 278 unidades (Erro: 5%)
                     </div>
                 </div>
             </div>
 
-            <!-- Card de Repositórios de Automação -->
-            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between">
-                <div class="space-y-4">
-                    <h4 class="font-bold text-slate-900">⚡ Automações & Scripts (Python / VBA / JS)</h4>
-                    <p class="text-sm text-slate-600">Conjunto de rotinas voltadas para limpeza de dados em planilhas, mapeamento de diretórios locais, geração de etiquetas e tabelas temporais administrativas.</p>
-                    <ul class="text-sm space-y-2 text-slate-600 list-disc list-inside">
-                        <li>Processamento de metadados de arquivos</li>
-                        <li>Geração automática de estruturas de pastas</li>
-                        <li>Classificação semântica de descrições textuais</li>
-                    </ul>
-                </div>
-                <div class="pt-4">
-                    <a href="https://github.com" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800">
-                        Ver repositórios completos no GitHub &rarr;
-                    </a>
-                </div>
+            <div class="space-y-3 pt-2">
+                <h4 class="text-xs uppercase tracking-widest text-zinc-400 font-medium">Outros Repositórios</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>
+                        <a href="https://github.com" target="_blank" class="text-zinc-900 hover:underline font-medium">automacoes-arquivisticas ↗</a>
+                        <p class="text-xs text-zinc-600 font-light">Rotinas em Python/JS para processamento de metadados e hierarquias textuais.</p>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seção de Artigos -->
-    <section id="artigos" class="bg-white border-t border-slate-200 py-20">
-        <div class="max-w-6xl mx-auto px-6 space-y-12">
-            <div class="space-y-2">
-                <h2 class="text-xs font-semibold uppercase tracking-wider text-indigo-600">Escritos</h2>
-                <h3 class="text-3xl font-bold text-slate-900 tracking-tight">Artigos & Ensaios</h3>
-                <p class="text-slate-600">Textos recentes publicados sobre computação, lógica e organização de acervos.</p>
-            </div>
+        <hr class="border-zinc-200">
 
-            <div class="space-y-4 max-w-3xl">
-                <article class="p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 transition bg-slate-50 space-y-2">
-                    <span class="text-xs font-medium text-indigo-600">Julho, 2026</span>
-                    <h4 class="text-lg font-bold text-slate-900">Entropia de Shannon aplicada à organização de arquivos físicos</h4>
-                    <p class="text-sm text-slate-600">Uma análise sobre como mensurar o grau de desordem informacional em caixas de guarda permanente e intermediária.</p>
+        <!-- Seção: Artigos -->
+        <section id="artigos" class="space-y-8">
+            <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-medium">Artigos & Ensaios</h2>
+            
+            <div class="space-y-6">
+                <article class="space-y-1">
+                    <span class="text-xs text-zinc-400 font-mono">Julho, 2026</span>
+                    <h3 class="font-academic text-base font-medium text-zinc-900 hover:underline cursor-pointer">Entropia de Shannon aplicada à organização de acervos físicos</h3>
+                    <p class="text-xs text-zinc-600 font-light">Uma forma quantitativa de medir o grau de desordem informacional em fundos documentais.</p>
                 </article>
 
-                <article class="p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 transition bg-slate-50 space-y-2">
-                    <span class="text-xs font-medium text-indigo-600">Junho, 2026</span>
-                    <h4 class="text-lg font-bold text-slate-900">O problema da parada e as limitações práticas dos algoritmos de validação</h4>
-                    <p class="text-sm text-slate-600">Reflexões sobre a indecidibilidade formal e suas implicações no desenvolvimento de software de auditoria.</p>
+                <article class="space-y-1">
+                    <span class="text-xs text-zinc-400 font-mono">Junho, 2026</span>
+                    <h3 class="font-academic text-base font-medium text-zinc-900 hover:underline cursor-pointer">O problema da parada e as limitações práticas dos auditores lógicos</h3>
+                    <p class="text-xs text-zinc-600 font-light">Reflexões sobre a indecidibilidade formal no projeto de softwares de verificação.</p>
                 </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
-            <p>&copy; 2026 Vinícius Augusto de Souza. Todos os direitos reservados.</p>
-            <div class="flex space-x-6">
-                <a href="https://github.com" target="_blank" class="hover:text-white transition">GitHub</a>
-                <a href="https://substack.com" target="_blank" class="hover:text-white transition">Substack</a>
-            </div>
-        </div>
-    </footer>
+        <!-- Rodapé -->
+        <footer class="pt-8 border-t border-zinc-200 text-xs text-zinc-500 flex justify-between items-center font-mono">
+            <p>&copy; Vinícius Augusto de Souza</p>
+            <a href="#" class="hover:text-zinc-900">↑ Voltar ao topo</a>
+        </footer>
 
-    <!-- Script Simples para a Ferramenta de Cálculo de Exemplo -->
+    </main>
+
+    <!-- Script da Calculadora -->
     <script>
         function calcularAmostra() {
             const volume = parseInt(document.getElementById('inputVolume').value) || 0;
             if (volume <= 0) {
-                document.getElementById('resultadoCalculo').innerText = "Por favor, insira um valor válido.";
+                document.getElementById('resultadoCalculo').innerText = "Insira um valor numérico válido.";
                 return;
             }
-            // Cálculo simplificado de proporção amostral genérica
             const amostra = Math.ceil(volume / (1 + (volume * 0.05 * 0.05)));
-            document.getElementById('resultadoCalculo').innerText = `Amostra estimada: ${amostra} unidades (Margem de erro de 5%)`;
+            document.getElementById('resultadoCalculo').innerText = `Amostra recomendada: ${amostra} unidades (Erro: 5%)`;
         }
     </script>
 </body>
