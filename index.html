@@ -1,121 +1,260 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinícius Augusto de Souza</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vinicius A. de Souza</title>
+    <!-- Font Awesome para ícones sociais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .font-academic { font-family: 'Newsreader', serif; }
+        /* Reset básico e fonte */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #fafafa;
+            color: #1e1e1e;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 720px;
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Título – nome */
+        .nome {
+            font-size: 3.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+            color: #0a0a0a;
+        }
+
+        .subtitulo {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #6b6b6b;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 1.5rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Grade de links – projetos / arquivos */
+        .links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .link-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1.6rem;
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #1e1e1e;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+        }
+
+        .link-card i {
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            transition: color 0.2s;
+        }
+
+        .link-card:hover {
+            background: #f3f3f3;
+            border-color: #c0c0c0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .link-card:hover i {
+            color: #0a0a0a;
+        }
+
+        /* Rodapé */
+        footer {
+            width: 100%;
+            max-width: 720px;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e8e8e8;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #6b6b6b;
+        }
+
+        .footer-copy {
+            letter-spacing: 0.01em;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .footer-social a {
+            color: #6b6b6b;
+            text-decoration: none;
+            transition: color 0.2s, transform 0.2s;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .footer-social a:hover {
+            color: #0a0a0a;
+            transform: translateY(-1px);
+        }
+
+        .footer-social .label {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #8a8a8a;
+        }
+
+        /* Responsivo */
+        @media (max-width: 540px) {
+            .nome {
+                font-size: 2.4rem;
+            }
+            .subtitulo {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+            }
+            .link-card {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            footer {
+                flex-direction: column;
+                gap: 0.8rem;
+                text-align: center;
+                padding-top: 1.2rem;
+            }
+            .footer-social {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .footer-social .label {
+                display: none;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .nome {
+                font-size: 2rem;
+            }
+            .links-grid {
+                gap: 0.6rem;
+            }
+            .link-card {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
-<body class="bg-[#faf9f6] text-zinc-800 antialiased selection:bg-zinc-800 selection:text-zinc-100">
+<body>
+    <div class="container">
+        <!-- Título principal -->
+        <h1 class="nome">Vinicius A. de Souza</h1>
+        <p class="subtitulo">Design &amp; Desenvolvimento</p>
 
-    <main class="max-w-5xl mx-auto px-6 py-20 md:py-32">
-
-        <!-- Cabeçalho -->
-        <header class="mb-24 space-y-8">
-            <div>
-                <h1 class="text-4xl md:text-5xl font-academic font-medium text-zinc-900 tracking-tight mb-2">Vinícius Augusto de Souza</h1>
-                <p class="text-sm md:text-base text-zinc-600 font-medium">Pesquisador, Autor e Administrador Público</p>
-            </div>
-            
-            <p class="text-zinc-700 leading-relaxed text-base font-light max-w-2xl">
-                Espaço dedicado à publicação de obras e ensaios, bem como ao desenvolvimento de ferramentas computacionais aplicadas à análise formal, lógica matemática e organização de acervos documentais.
-            </p>
-
-            <nav class="flex flex-wrap gap-x-8 gap-y-3 text-xs tracking-widest uppercase text-zinc-500 font-medium pt-2">
-                <a href="#obras" class="hover:text-zinc-900 transition">Obras</a>
-                <a href="#laboratorio" class="hover:text-zinc-900 transition">Laboratório</a>
-                <a href="#ensaios" class="hover:text-zinc-900 transition">Ensaios</a>
-                <a href="https://github.com" target="_blank" class="hover:text-zinc-900 transition">GitHub ↗</a>
-                <a href="https://substack.com" target="_blank" class="hover:text-zinc-900 transition">Substack ↗</a>
-            </nav>
-        </header>
-
-        <!-- Seção: Livros -->
-        <section id="obras" class="grid grid-cols-1 md:grid-cols-4 gap-8 py-16 border-t border-zinc-200">
-            <div class="col-span-1">
-                <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-semibold sticky top-8">Livros Publicados</h2>
-            </div>
-            
-            <div class="col-span-1 md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
-                <article class="space-y-2">
-                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug">Os Limites da Computação: Indecidibilidade e Incompletude em Sistemas Formais</h3>
-                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Lógica & Computabilidade</p>
-                    <p class="text-sm text-zinc-700 font-light pt-2">Análise aprofundada sobre os teoremas de Gödel, máquinas de Turing e as barreiras teóricas fundamentais dos sistemas formais.</p>
-                </article>
-
-                <article class="space-y-2">
-                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug">Método Axiomático e Teorias Físicas</h3>
-                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Física Teórica</p>
-                    <p class="text-sm text-zinc-700 font-light pt-2">Estudo sobre sistemas formais aplicados à mecânica, axiomática de teorias físicas e independência de premissas.</p>
-                </article>
-
-                <article class="space-y-2">
-                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug">Manual Técnico de Amostragem Documental</h3>
-                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Arquivologia</p>
-                    <p class="text-sm text-zinc-700 font-light pt-2">Diretrizes metodológicas para o gerenciamento de acervos públicos, tabelas de temporalidade e critérios de descarte.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Seção: Ferramentas & Projetos -->
-        <section id="laboratorio" class="grid grid-cols-1 md:grid-cols-4 gap-8 py-16 border-t border-zinc-200">
-            <div class="col-span-1">
-                <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-semibold sticky top-8">Tecnologia & Código</h2>
-            </div>
-            
-            <div class="col-span-1 md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
-                <article class="space-y-2">
-                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug">
-                        <a href="https://github.com" target="_blank" class="hover:underline decoration-zinc-300 underline-offset-4">Automações Arquivísticas ↗</a>
-                    </h3>
-                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Python / JavaScript</p>
-                    <p class="text-sm text-zinc-700 font-light pt-2">Rotinas para processamento de metadados, limpeza de planilhas tabulares, cálculo de amostragem e processamento de hierarquias textuais.</p>
-                </article>
-
-                <article class="space-y-2">
-                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug">
-                        <a href="https://github.com" target="_blank" class="hover:underline decoration-zinc-300 underline-offset-4">Sistemas Formais & Cálculo ↗</a>
-                    </h3>
-                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">WebAssembly / JS</p>
-                    <p class="text-sm text-zinc-700 font-light pt-2">Scripts desenvolvidos para simulações lógicas e verificação de consistência de regras, executados diretamente do lado do cliente.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Seção: Artigos -->
-        <section id="ensaios" class="grid grid-cols-1 md:grid-cols-4 gap-8 py-16 border-t border-y border-zinc-200">
-            <div class="col-span-1">
-                <h2 class="text-xs uppercase tracking-widest text-zinc-400 font-semibold sticky top-8">Ensaios & Artigos</h2>
-            </div>
-            
-            <div class="col-span-1 md:col-span-3 flex flex-col gap-10">
-                <article class="space-y-2 max-w-2xl">
-                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug hover:underline decoration-zinc-300 underline-offset-4 cursor-pointer">Entropia de Shannon aplicada à organização de acervos físicos</h3>
-                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Julho, 2026</p>
-                    <p class="text-sm text-zinc-700 font-light pt-2">Uma proposta de modelo quantitativo para mensurar o grau de desordem informacional e otimizar o armazenamento em fundos documentais.</p>
-                </article>
-
-                <article class="space-y-2 max-w-2xl">
-                    <h3 class="font-academic text-xl font-medium text-zinc-900 leading-snug hover:underline decoration-zinc-300 underline-offset-4 cursor-pointer">O problema da parada e as limitações práticas dos auditores lógicos</h3>
-                    <p class="text-xs text-zinc-500 uppercase tracking-wide font-mono">Junho, 2026</p>
-                    <p class="text-sm text-zinc-700 font-light pt-2">Reflexões filosóficas e computacionais sobre a indecidibilidade formal no projeto arquitetural de softwares de verificação e validação.</p>
-                </article>
-            </div>
-        </section>
+        <!-- Links para projetos / arquivos -->
+        <div class="links-grid">
+            <a href="#" class="link-card">
+                <i class="fas fa-folder-open"></i> Projeto Alpha
+            </a>
+            <a href="#" class="link-card">
+                <i class="fas fa-file-code"></i> Repositório
+            </a>
+            <a href="#" class="link-card">
+                <i class="fas fa-palette"></i> Design System
+            </a>
+            <a href="#" class="link-card">
+                <i class="fas fa-archive"></i> Arquivos
+            </a>
+            <!-- Adicione ou remova links conforme necessário -->
+        </div>
 
         <!-- Rodapé -->
-        <footer class="pt-8 text-xs text-zinc-400 flex justify-between items-center font-mono uppercase tracking-widest">
-            <p>&copy; 2026</p>
-            <a href="#" class="hover:text-zinc-900 transition">Topo ↑</a>
+        <footer>
+            <span class="footer-copy">&copy; 2026 Vinicius A. de Souza</span>
+            <div class="footer-social">
+                <a href="mailto:vinicius@example.com" aria-label="E-mail">
+                    <i class="fas fa-envelope"></i>
+                    <span class="label">E-mail</span>
+                </a>
+                <a href="https://linkedin.com/in/vinicius" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span class="label">LinkedIn</span>
+                </a>
+            </div>
         </footer>
+    </div>
 
-    </main>
+    <!-- JS mínimo (apenas para demonstrar interatividade opcional) -->
+    <script>
+        // Pequeno efeito de digitação no título (opcional, mantém o minimalismo)
+        // Descomente se quiser ativar:
+        /*
+        (function typeEffect() {
+            const nome = document.querySelector('.nome');
+            const texto = nome.textContent;
+            nome.textContent = '';
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < texto.length) {
+                    nome.textContent += texto.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 80);
+        })();
+        */
 
+        // Exemplo: console para indicar que o site está pronto
+        console.log('Site minimalista carregado.');
+    </script>
 </body>
 </html>
