@@ -29,14 +29,15 @@
         }
 
         .container {
-            max-width: 720px;        /* container mais largo */
+            max-width: 620px;
             width: 100%;
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
+            /* conteúdo alinhado à esquerda */
+            align-items: flex-start;
+            text-align: left;
         }
 
         /* Título */
@@ -46,28 +47,28 @@
             letter-spacing: -0.02em;
             margin-bottom: 0.3rem;
             color: #0a0a0a;
+            line-height: 1.15;
         }
 
         .subtitulo {
             font-size: 1rem;
             font-weight: 400;
             color: #6b6b6b;
-            margin-bottom: 2.8rem;
-            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 2.5rem;
             padding-bottom: 1.2rem;
             width: 100%;
-            max-width: 380px;
+            border-bottom: 1px solid #e0e0e0;
+            letter-spacing: 0.01em;
         }
 
-        /* Lista de links – vertical, sem botão, mais larga */
+        /* Lista de links – vertical, alinhada à esquerda */
         .links-list {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
             gap: 0.9rem;
             width: 100%;
-            max-width: 620px;        /* largura ampliada para textos longos */
-            margin: 0 auto 3rem;
+            margin-bottom: 3rem;
             list-style: none;
         }
 
@@ -87,10 +88,11 @@
             transition: all 0.2s ease;
             border-bottom: 1px solid transparent;
             letter-spacing: 0.01em;
-            text-align: left;         /* texto alinhado à esquerda */
-            /* permite quebra de linha em textos muito longos */
+            text-align: left;
             white-space: normal;
             word-break: break-word;
+            /* alinha o início do link com o título */
+            margin-left: -1rem;
         }
 
         /* Efeito de destaque no hover */
@@ -119,7 +121,6 @@
         /* Rodapé */
         footer {
             width: 100%;
-            max-width: 720px;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid #e8e8e8;
@@ -164,6 +165,9 @@
 
         /* Responsivo */
         @media (max-width: 600px) {
+            body {
+                padding: 2rem 1.25rem;
+            }
             .nome {
                 font-size: 2.4rem;
             }
@@ -174,11 +178,11 @@
             }
             .links-list {
                 gap: 0.7rem;
-                max-width: 100%;
             }
             .links-list a {
                 font-size: 0.95rem;
                 padding: 0.45rem 0.8rem;
+                margin-left: -0.8rem;
             }
             .links-list a i {
                 font-size: 0.85rem;
@@ -188,13 +192,13 @@
             footer {
                 flex-direction: column;
                 gap: 0.6rem;
-                text-align: center;
+                text-align: left;
+                align-items: flex-start;
                 padding-top: 1rem;
             }
             .footer-social {
                 gap: 0.8rem;
                 flex-wrap: wrap;
-                justify-content: center;
             }
             .footer-social .label {
                 display: none;
@@ -208,6 +212,7 @@
             .links-list a {
                 font-size: 0.88rem;
                 padding: 0.4rem 0.6rem;
+                margin-left: -0.6rem;
             }
         }
     </style>
@@ -215,10 +220,10 @@
 <body>
     <div class="container">
         <!-- Título -->
-        <h1 class="nome">Vinicius A. de Souza</h1>
+        <h1 class="nome">VINICIVS</h1>
         <p class="subtitulo">Design &amp; Desenvolvimento</p>
 
-        <!-- Lista de links empilhados, mais larga -->
+        <!-- Lista de links empilhados, alinhados à esquerda -->
         <ul class="links-list">
             <li>
                 <a href="#">
@@ -265,7 +270,7 @@
 
     <!-- JS mínimo -->
     <script>
-        console.log('Site minimalista com lista ampliada carregado.');
+        console.log('Site minimalista com alinhamento à esquerda carregado.');
     </script>
 </body>
 </html>
