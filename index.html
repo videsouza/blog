@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vinicius A. de Souza</title>
-    <!-- Font Awesome para ícones sociais -->
+    <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
         /* Reset e base */
@@ -29,7 +29,7 @@
         }
 
         .container {
-            max-width: 560px;
+            max-width: 720px;        /* container mais largo */
             width: 100%;
             flex: 1;
             display: flex;
@@ -56,56 +56,59 @@
             border-bottom: 1px solid #e0e0e0;
             padding-bottom: 1.2rem;
             width: 100%;
-            max-width: 320px;
+            max-width: 380px;
         }
 
-        /* Lista de links – vertical, sem botão */
+        /* Lista de links – vertical, sem botão, mais larga */
         .links-list {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            gap: 0.9rem;
             width: 100%;
-            margin-bottom: 3rem;
+            max-width: 620px;        /* largura ampliada para textos longos */
+            margin: 0 auto 3rem;
             list-style: none;
         }
 
         .links-list li {
             width: 100%;
-            max-width: 300px;
         }
 
         .links-list a {
-            display: inline-block;
-            padding: 0.4rem 0.8rem;
+            display: flex;
+            align-items: center;
+            padding: 0.55rem 1rem;
             font-size: 1.05rem;
             font-weight: 450;
             color: #2c2c2c;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: all 0.2s ease;
             border-bottom: 1px solid transparent;
-            /* reserva para o hover */
             letter-spacing: 0.01em;
+            text-align: left;         /* texto alinhado à esquerda */
+            /* permite quebra de linha em textos muito longos */
+            white-space: normal;
+            word-break: break-word;
         }
 
         /* Efeito de destaque no hover */
         .links-list a:hover {
             color: #000000;
-            background-color: rgba(0, 0, 0, 0.04);
+            background-color: rgba(0, 0, 0, 0.045);
             border-bottom-color: #1e1e1e;
-            transform: translateX(4px);
-            /* pequeno deslocamento */
+            transform: translateX(6px);
         }
 
-        /* Ícone opcional (mantém alinhamento) */
+        /* Ícone à esquerda, fixo e alinhado */
         .links-list a i {
-            margin-right: 0.6rem;
+            flex-shrink: 0;
+            margin-right: 0.85rem;
             font-size: 0.95rem;
             color: #6b6b6b;
             transition: color 0.2s;
-            width: 1.2rem;
-            display: inline-block;
+            width: 1.3rem;
             text-align: center;
         }
 
@@ -116,7 +119,7 @@
         /* Rodapé */
         footer {
             width: 100%;
-            max-width: 560px;
+            max-width: 720px;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid #e8e8e8;
@@ -160,7 +163,7 @@
         }
 
         /* Responsivo */
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .nome {
                 font-size: 2.4rem;
             }
@@ -169,13 +172,18 @@
                 margin-bottom: 2rem;
                 padding-bottom: 0.8rem;
             }
+            .links-list {
+                gap: 0.7rem;
+                max-width: 100%;
+            }
             .links-list a {
                 font-size: 0.95rem;
-                padding: 0.3rem 0.6rem;
+                padding: 0.45rem 0.8rem;
             }
             .links-list a i {
                 font-size: 0.85rem;
-                width: 1rem;
+                width: 1.1rem;
+                margin-right: 0.7rem;
             }
             footer {
                 flex-direction: column;
@@ -197,8 +205,9 @@
             .nome {
                 font-size: 2rem;
             }
-            .links-list {
-                gap: 0.6rem;
+            .links-list a {
+                font-size: 0.88rem;
+                padding: 0.4rem 0.6rem;
             }
         }
     </style>
@@ -206,24 +215,33 @@
 <body>
     <div class="container">
         <!-- Título -->
-        <h1 class="nome">VINICIVS</h1>
-        <p class="subtitulo">SILENTIVM RATIOQUE</p>
+        <h1 class="nome">Vinicius A. de Souza</h1>
+        <p class="subtitulo">Design &amp; Desenvolvimento</p>
 
-        <!-- Links empilhados verticalmente, sem botão -->
+        <!-- Lista de links empilhados, mais larga -->
         <ul class="links-list">
-            
-            <li>
-                <a href="https://doi.org/10.5281/zenodo.22692615"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp; Guia de materiais de arquivologia</a>
-                
-            </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-palette"></i> Design System
+                    <i class="fas fa-folder-open"></i>
+                    Projeto Alpha — Plataforma de análise de dados
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-archive"></i> Arquivos
+                    <i class="fas fa-code"></i>
+                    Repositório GitHub com experimentos e utilitários
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-palette"></i>
+                    Design System e biblioteca de componentes
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-archive"></i>
+                    Arquivos, documentos e materiais diversos
                 </a>
             </li>
             <!-- Adicione ou remova itens conforme necessário -->
@@ -245,9 +263,9 @@
         </footer>
     </div>
 
-    <!-- JS (apenas para feedback) -->
+    <!-- JS mínimo -->
     <script>
-        console.log('Site minimalista com links empilhados carregado.');
+        console.log('Site minimalista com lista ampliada carregado.');
     </script>
 </body>
 </html>
