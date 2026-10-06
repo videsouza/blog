@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- MODELO DE POST — copie este arquivo (ex.: posts/meu-texto.html),
+       troque o conteúdo e aponte o link em js/blog-content.js para ele. -->
+  <title>Título do post — Vinicius A. de Souza</title>
+  <meta name="description" content="Resumo curto do post para busca e redes sociais." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a class="back-link" href="../blog.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        Blog
+      </a>
+      <nav class="topbar-nav">
+        <a href="../index.html">Início</a>
+        <a href="../livros.html">Livros</a>
+        <a href="../blog.html" class="is-current">Blog</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="page-head">
+    <div class="container">
+      <p class="page-eyebrow">Artigo</p>
+      <h1 class="page-title">Título do post</h1>
+      <!-- Ajuste a data e os temas abaixo -->
+      <div class="post-meta">
+        <span>1 out 2026</span>
+        <span class="dot">·</span>
+        <span>Ensaio</span>
+        <span class="dot">·</span>
+        <span>5 min de leitura</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ===== ESCREVA SEU TEXTO AQUI =====
+         Use os elementos abaixo como referência. Apague os exemplos
+         e escreva o seu conteúdo. Elementos disponíveis:
+         parágrafo <p>, subtítulos <h2>/<h3>, lista <ul>/<ol>,
+         citação <blockquote>, imagem <figure>, divisória <hr>. -->
+    <article class="post-article">
+      <p>Este é um parágrafo de abertura. Comece apresentando a ideia
+        central do texto em poucas linhas, de forma que o leitor entenda
+        logo sobre o que vai ler. Substitua por seu conteúdo.</p>
+
+      <p>Outro parágrafo. Você pode destacar palavras com
+        <strong>negrito</strong> ou com <em>itálico</em>, e inserir um
+        <a href="../index.html">link</a> quando quiser referenciar algo.</p>
+
+      <h2>Um subtítulo de seção</h2>
+      <p>Use subtítulos para organizar o texto em partes. Abaixo, um
+        exemplo de lista:</p>
+      <ul>
+        <li>Primeiro ponto importante.</li>
+        <li>Segundo ponto, com um pouco mais de detalhe.</li>
+        <li>Terceiro ponto.</li>
+      </ul>
+
+      <blockquote>
+        “Uma citação em destaque dá respiro ao texto e realça uma ideia.”
+        <cite>— Autor da frase</cite>
+      </blockquote>
+
+      <h3>Um subtítulo menor</h3>
+      <p>Continue o raciocínio. Se quiser incluir uma imagem, use o bloco
+        abaixo e troque o caminho (coloque a imagem na pasta
+        <code>assets/</code> do site).</p>
+
+      <figure>
+        <img src="../assets/exemplo.jpg" alt="Descrição da imagem" loading="lazy" />
+        <figcaption>Legenda da imagem (opcional).</figcaption>
+      </figure>
+
+      <hr />
+
+      <p>Parágrafo final, com a conclusão ou um convite à conversa. Para
+        publicar: salve uma cópia deste arquivo com outro nome dentro da
+        pasta <code>posts/</code> e aponte o link no
+        <code>js/blog-content.js</code>.</p>
+    </article>
+
+    <nav class="post-foot-nav" aria-label="Navegação do post">
+      <a href="../blog.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        Voltar ao blog
+      </a>
+      <a href="mailto:va.vinicius@gmail.com">Comentar por e-mail</a>
+    </nav>
+  </main>
+
+  <footer class="page-foot">
+    <div class="container"><p>&copy; <span id="year"></span> Vinicius A. de Souza</p></div>
+  </footer>
+
+  <script src="../js/pages.js"></script>
+</body>
+</html>
