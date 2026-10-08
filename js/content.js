@@ -54,7 +54,6 @@ window.LINKS = [
     color: "#7a5c8e",
     bg: "#f0eaf5"
   },
-  {
   
   {
     title: "LinkedIn",
