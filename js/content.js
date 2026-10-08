@@ -49,7 +49,7 @@ window.LINKS = [
   {
     title: "Poemas",
     sub: ": Poesia e outros escritos",
-    url: "https://www.seavien.com/user/videsouza/rss",
+    url: "https://www.seavien.com/user/videsouza/discussions",
     icon: "feather",
     color: "#7a5c8e",
     bg: "#f0eaf5"
