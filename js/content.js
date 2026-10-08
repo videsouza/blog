@@ -23,7 +23,7 @@ window.LINKS = [
     title: "Serviços",
     sub: ": Consultoria e desenvolvimento",
     url: "https://videsouza.github.io/blog/servicos.html",
-    icon: "music",
+    icon: "globe",
     color: "#1DB954",
     bg: "#e7f8ee"
   },
@@ -32,7 +32,7 @@ window.LINKS = [
     title: "Portfólio",
     sub: ": Apps, sistemas, manuais, etc.",
     url: "https://videsouza.github.io/blog/apps.html",
-    icon: "linkedin",
+    icon: "app",
     color: "#0A66C2",
     bg: "#e7f0fa"
   },
