@@ -47,7 +47,7 @@ window.LINKS = [
   },
   {
     title: "Poemas",
-    sub: "Poesia e outros escritos",
+    sub: ": Poesia e outros escritos",
     url: "https://www.seavien.com/user/videsouza/rss",
     icon: "feather",
     color: "#7a5c8e",
@@ -55,7 +55,7 @@ window.LINKS = [
   },
   {
     title: "Biblioteca",
-    sub: "Leituras e referências",
+    sub: ": Leituras e referências",
     url: "https://www.librarything.com/catalog/videsouza",
     icon: "library",
     color: "#4a6b52",
@@ -64,7 +64,7 @@ window.LINKS = [
   
   {
     title: "LinkedIn",
-    sub: "Perfil profissional",
+    sub: ": Perfil profissional",
     url: "https://www.linkedin.com/in/vihdesouza",
     icon: "linkedin",
     color: "#0A66C2",
@@ -72,7 +72,7 @@ window.LINKS = [
   },
   {
     title: "E-mail",
-    sub: "Fale comigo",
+    sub: ": Fale comigo",
     url: "mailto:va.vinicius@gmail.com",
     icon: "mail",
     color: "#9a4a3a",
