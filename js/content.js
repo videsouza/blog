@@ -40,11 +40,12 @@ window.LINKS = [
   {
     title: "Livros",
     sub: ": Minhas obras publicadas",
-    url: "https://uiclap.bio/videsouza",
-    icon: "book",
+    url: "https://videsouza.github.io/blog/livros.html",
+    icon: "library",
     color: "#6b4f3a",
     bg: "#f0e9df"
   },
+   
   {
     title: "Poemas",
     sub: ": Poesia e outros escritos",
@@ -54,13 +55,6 @@ window.LINKS = [
     bg: "#f0eaf5"
   },
   {
-    title: "Biblioteca",
-    sub: ": Leituras e referências",
-    url: "https://www.librarything.com/catalog/videsouza",
-    icon: "library",
-    color: "#4a6b52",
-    bg: "#e8f1ea"
-  },
   
   {
     title: "LinkedIn",
