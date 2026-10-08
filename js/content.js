@@ -19,9 +19,18 @@
    ========================================================= */
 
 window.LINKS = [
+    {
+    title: "Serviços",
+    sub: ": Consultoria e desenvolvimento",
+    url: "https://videsouza.github.io/blog/servicos.html",
+    icon: "music",
+    color: "#1DB954",
+    bg: "#e7f8ee"
+  },
+   
   {
     title: "Livros",
-    sub: "Minhas obras publicadas",
+    sub: ": Minhas obras publicadas",
     url: "https://uiclap.bio/videsouza",
     icon: "book",
     color: "#6b4f3a",
@@ -29,7 +38,7 @@ window.LINKS = [
   },
   {
     title: "Poemas",
-    sub: "Poesia e escritos",
+    sub: "Poesia e outros escritos",
     url: "https://www.seavien.com/user/videsouza/rss",
     icon: "feather",
     color: "#7a5c8e",
@@ -43,22 +52,7 @@ window.LINKS = [
     color: "#4a6b52",
     bg: "#e8f1ea"
   },
-  {
-    title: "Chess.com",
-    sub: "Meu perfil de xadrez",
-    url: "https://www.chess.com/member/videsouza",
-    icon: "chess",
-    color: "#3d4043",
-    bg: "#ececec"
-  },
-  {
-    title: "Spotify",
-    sub: "Playlists e podcasts",
-    url: "https://open.spotify.com/user/videsouza",
-    icon: "music",
-    color: "#1DB954",
-    bg: "#e7f8ee"
-  },
+  
   {
     title: "LinkedIn",
     sub: "Perfil profissional",
