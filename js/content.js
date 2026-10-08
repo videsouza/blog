@@ -27,6 +27,15 @@ window.LINKS = [
     color: "#1DB954",
     bg: "#e7f8ee"
   },
+
+     {
+    title: "Portfólio",
+    sub: ": Apps, sistemas, manuais e outros artefatos",
+    url: "https://videsouza.github.io/blog/apps.html",
+    icon: "linkedin",
+    color: "#0A66C2",
+    bg: "#e7f0fa"
+  },
    
   {
     title: "Livros",
