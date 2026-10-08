@@ -30,7 +30,7 @@ window.LINKS = [
 
      {
     title: "Portfólio",
-    sub: ": Apps, sistemas, manuais e outros artefatos",
+    sub: ": Apps, sistemas, manuais, etc.",
     url: "https://videsouza.github.io/blog/apps.html",
     icon: "linkedin",
     color: "#0A66C2",
