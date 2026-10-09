@@ -39,18 +39,18 @@ window.SERVICES_PAGE = {
     },
     {
       icon: "library", color: "#4a6b52", bg: "#e8f1ea",
-      title: "Consultoria & Pesquisa",
+      title: "Desenvolvimento de Aplicações",
       price: "Sob consulta",
-      desc: "Apoio em pesquisa, curadoria de fontes e organização de ideias para projetos de escrita e publicação.",
-      feats: ["Levantamento de fontes", "Fichamento e síntese", "Plano de obra"],
+      desc: "Criação de ferramentas digitais para automatizar rotinas, organizar informações e apoiar processos administrativos e de gestão educacional.",
+      feats: ["Sistemas web", "Aplicativos Android", "Soluções locais"],
       cta: { label: "Conversar", url: "mailto:va.vinicius@gmail.com?subject=Consultoria" }
     },
     {
       icon: "globe", color: "#9a4a3a", bg: "#f7ebe8",
-      title: "Palestras & Oficinas",
+      title: "Consultoria e Pesquisa Aplicada",
       price: "Sob consulta",
-      desc: "Palestras e oficinas sobre escrita, leitura e temas das minhas áreas de pesquisa, presenciais ou on-line.",
-      feats: ["Formato sob medida", "Material de apoio", "Sessão de perguntas"],
+      desc: "Apoio a projetos de pesquisa e inovação, com foco em métodos quantitativos, modelagem computacional e resolução de problemas educacionais.",
+      feats: ["Delimitação e estruturação de problemas", "Pesquisa e análise de evidências", "Modelagem e avaliação de soluções"],
       cta: { label: "Convidar", url: "mailto:va.vinicius@gmail.com?subject=Palestra" }
     }
   ],
