@@ -18,23 +18,23 @@
 
 window.SERVICES_PAGE = {
   title: "Como posso ajudar",
-  lede: "Serviços ligados à escrita, à pesquisa e à edição de textos. Abaixo, as frentes em que atuo — ajuste livremente conforme sua oferta.",
+  lede: "Serviços ligados à escrita, à pesquisa e à edição de textos. Abaixo, as frentes em que atuo.",
 
   services: [
     {
       icon: "feather", color: "#7a5c8e", bg: "#f0eaf5",
-      title: "Escrita & Ghostwriting",
+      title: "Análise de Dados",
       price: "Sob consulta",
-      desc: "Criação de textos autorais — ensaios, artigos, discursos e conteúdo long-form — com voz e ritmo cuidados.",
-      feats: ["Pesquisa e estrutura", "Redação completa", "Duas rodadas de ajuste"],
+      desc: "Análise e interpretação de dados para identificar padrões, construir indicadores e apoiar decisões em contextos educacionais e institucionais.",
+      feats: ["Tratamento e organização de dados", "Análise estatística e exploratória", "Relatórios e visualizações"],
       cta: { label: "Pedir orçamento", url: "mailto:va.vinicius@gmail.com?subject=Escrita" }
     },
     {
       icon: "book", color: "#6b4f3a", bg: "#f0e9df",
-      title: "Edição & Revisão",
+      title: "Otimização de Horários Escolares",
       price: "Sob consulta",
-      desc: "Leitura crítica, edição de desenvolvimento e revisão final de livros, artigos e trabalhos acadêmicos.",
-      feats: ["Coerência e clareza", "Gramática e estilo", "Normas e referências"],
+      desc: "Desenvolvimento de soluções computacionais para geração de grades horárias, considerando restrições pedagógicas, disponibilidade docente e organização das turmas.",
+      feats: ["Modelagem de restrições", "Geração automatizada de horários", "Avaliação e ajuste de soluções"],
       cta: { label: "Pedir orçamento", url: "mailto:va.vinicius@gmail.com?subject=Edicao" }
     },
     {
