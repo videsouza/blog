@@ -22,7 +22,7 @@ window.SERVICES_PAGE = {
 
   services: [
     {
-      icon: "feather", color: "#7a5c8e", bg: "#f0eaf5",
+      icon: "code", color: "#7a5c8e", bg: "#f0eaf5",
       title: "Análise de Dados",
       price: "Sob consulta",
       desc: "Análise e interpretação de dados para identificar padrões, construir indicadores e apoiar decisões em contextos educacionais e institucionais.",
@@ -30,7 +30,7 @@ window.SERVICES_PAGE = {
       cta: { label: "Pedir orçamento", url: "mailto:va.vinicius@gmail.com?subject=Escrita" }
     },
     {
-      icon: "book", color: "#6b4f3a", bg: "#f0e9df",
+      icon: "library", color: "#6b4f3a", bg: "#f0e9df",
       title: "Otimização de Horários Escolares",
       price: "Sob consulta",
       desc: "Desenvolvimento de soluções computacionais para geração de grades horárias, considerando restrições pedagógicas, disponibilidade docente e organização das turmas.",
@@ -38,7 +38,7 @@ window.SERVICES_PAGE = {
       cta: { label: "Pedir orçamento", url: "mailto:va.vinicius@gmail.com?subject=Edicao" }
     },
     {
-      icon: "library", color: "#4a6b52", bg: "#e8f1ea",
+      icon: "app", color: "#4a6b52", bg: "#e8f1ea",
       title: "Desenvolvimento de Aplicações",
       price: "Sob consulta",
       desc: "Criação de ferramentas digitais para automatizar rotinas, organizar informações e apoiar processos administrativos e de gestão educacional.",
@@ -46,7 +46,7 @@ window.SERVICES_PAGE = {
       cta: { label: "Conversar", url: "mailto:va.vinicius@gmail.com?subject=Consultoria" }
     },
     {
-      icon: "globe", color: "#9a4a3a", bg: "#f7ebe8",
+      icon: "book", color: "#9a4a3a", bg: "#f7ebe8",
       title: "Consultoria e Pesquisa Aplicada",
       price: "Sob consulta",
       desc: "Apoio a projetos de pesquisa e inovação, com foco em métodos quantitativos, modelagem computacional e resolução de problemas educacionais.",
