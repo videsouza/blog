@@ -27,7 +27,7 @@ window.SERVICES_PAGE = {
       price: "Sob consulta",
       desc: "Análise e interpretação de dados para identificar padrões, construir indicadores e apoiar decisões em contextos educacionais e institucionais.",
       feats: ["Tratamento e organização de dados", "Análise estatística e exploratória", "Relatórios e visualizações"],
-      cta: { label: "Pedir orçamento", url: "mailto:va.vinicius@gmail.com?subject=Escrita" }
+   
     },
     {
       icon: "library", color: "#6b4f3a", bg: "#f0e9df",
@@ -35,7 +35,7 @@ window.SERVICES_PAGE = {
       price: "Sob consulta",
       desc: "Desenvolvimento de soluções computacionais para geração de grades horárias, considerando restrições pedagógicas, disponibilidade docente e organização das turmas.",
       feats: ["Modelagem de restrições", "Geração automatizada de horários", "Avaliação e ajuste de soluções"],
-      cta: { label: "Pedir orçamento", url: "mailto:va.vinicius@gmail.com?subject=Edicao" }
+     
     },
     {
       icon: "app", color: "#4a6b52", bg: "#e8f1ea",
@@ -43,7 +43,7 @@ window.SERVICES_PAGE = {
       price: "Sob consulta",
       desc: "Criação de ferramentas digitais para automatizar rotinas, organizar informações e apoiar processos administrativos e de gestão educacional.",
       feats: ["Sistemas web", "Aplicativos Android", "Soluções locais"],
-      cta: { label: "Conversar", url: "mailto:va.vinicius@gmail.com?subject=Consultoria" }
+   
     },
     {
       icon: "book", color: "#9a4a3a", bg: "#f7ebe8",
@@ -51,7 +51,7 @@ window.SERVICES_PAGE = {
       price: "Sob consulta",
       desc: "Apoio a projetos de pesquisa e inovação, com foco em métodos quantitativos, modelagem computacional e resolução de problemas educacionais.",
       feats: ["Delimitação e estruturação de problemas", "Pesquisa e análise de evidências", "Modelagem e avaliação de soluções"],
-      cta: { label: "Convidar", url: "mailto:va.vinicius@gmail.com?subject=Palestra" }
+      
     }
   ],
 
