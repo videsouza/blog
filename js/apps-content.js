@@ -23,23 +23,23 @@ window.APPS_PAGE = {
   apps: [
     {
       icon: "app", color: "#0A66C2", bg: "#e7f0fa",
-      title: "Nome do App",
-      status: "No ar",
-      desc: "O que o aplicativo faz e para quem serve. Uma ou duas frases.",
-      tags: ["Web", "JavaScript"],
+      title: "Sistema de Apoio à Gestão Documental",
+      status: "Funcionando (privado)",
+      desc: "Visualização de dados, otimização de eliminação, criação de etiquetas, etc.",
+      tags: ["Web", "Gemini", "Claude"],
       links: [
-        { label: "Acessar", url: "#" },
-        { label: "Código", url: "https://github.com/" }
+        { label: "Conheça", url: "https://zenodo.org/records/23188714/files/Manual_Hub_Com_DOI.pdf?download=1" },
+        
       ]
     },
     {
       icon: "code", color: "#4a6b52", bg: "#e8f1ea",
-      title: "Nome do Sistema",
-      status: "Beta",
-      desc: "Descrição do sistema: problema que resolve e principais recursos.",
-      tags: ["API", "Automação"],
+      title: "Métrica Poética: Sistema de Análise de Poemas",
+      status: "Funcionando (público)",
+      desc: "Análise métrica, identificação de figuras de linguagem, ferramentas de pesquisa: dicionário de palavras e referências.",
+      tags: ["Lovable"],
       links: [
-        { label: "Saiba mais", url: "#" }
+        { label: "Acessar", url: "https://camoes.lovable.app/" }
       ]
     },
     {
